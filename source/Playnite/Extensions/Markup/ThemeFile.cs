@@ -1,23 +1,12 @@
 ﻿using Playnite.Common;
-using Playnite.Extensions;
 using Playnite.SDK;
-using Playnite.Settings;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.ComponentModel.Design;
+using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Markup;
-using System.Windows.Media;
-using System.Xaml;
-using System.Diagnostics;
-using System.Text.RegularExpressions;
-using CommandLine;
 
 namespace Playnite.Extensions.Markup
 {

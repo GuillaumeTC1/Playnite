@@ -1,10 +1,9 @@
 ﻿using Playnite.SDK;
-using Playnite.Commands;
+using Playnite.Windows;
 using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Windows;
-using Playnite.Windows;
 
 namespace Playnite.ViewModels
 {

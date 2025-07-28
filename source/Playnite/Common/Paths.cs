@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Playnite.Native;
+using System;
 using System.ComponentModel;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using Playnite.Native;
 
 namespace Playnite.Common
 {
@@ -206,7 +203,7 @@ namespace Playnite.Common
                 return string.Empty;
             }
 
-            if (common[common.Length -1] == Path.DirectorySeparatorChar)
+            if (common[common.Length - 1] == Path.DirectorySeparatorChar)
             {
                 return common;
             }

@@ -1,7 +1,4 @@
-﻿using Playnite.Controls;
-using Playnite.Native;
-using System;
-using System.Windows.Interop;
+﻿using System.Windows.Interop;
 
 namespace Playnite.DesktopApp.Windows
 {

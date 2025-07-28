@@ -1,13 +1,8 @@
 ﻿using Playnite.SDK;
-using Playnite.ViewModels;
-using Playnite.Windows;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace Playnite.DesktopApp.ViewModels
 {

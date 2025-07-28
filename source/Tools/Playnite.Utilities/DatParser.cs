@@ -1,7 +1,4 @@
-﻿using Playnite.Common;
-using Playnite.Emulators;
-using SqlNado;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;

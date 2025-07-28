@@ -1,12 +1,4 @@
-﻿using Playnite.Controls;
-using Playnite.Windows;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows;
-
-namespace Playnite.DesktopApp.Windows
+﻿namespace Playnite.DesktopApp.Windows
 {
     public class RandomGameSelectWindowFactory : WindowFactory
     {

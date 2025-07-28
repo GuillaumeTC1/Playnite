@@ -1,11 +1,7 @@
 ﻿using Playnite.SDK;
-using SqlNado;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Playnite.Emulators
 {

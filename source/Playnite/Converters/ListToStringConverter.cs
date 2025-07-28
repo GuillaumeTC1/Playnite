@@ -1,11 +1,7 @@
-﻿using Playnite.SDK;
-using Playnite.SDK.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Markup;
@@ -151,7 +147,7 @@ namespace Playnite.Converters
                     sep = customSep;
                 }
 
-                var converted = stringVal.Split(new [] { sep }, StringSplitOptions.None);
+                var converted = stringVal.Split(new[] { sep }, StringSplitOptions.None);
                 if (targetType == typeof(ComparableList<string>))
                 {
                     return new ComparableList<string>(converted);

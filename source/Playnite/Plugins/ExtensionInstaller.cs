@@ -1,13 +1,10 @@
-﻿using Playnite.API;
-using Playnite.Common;
+﻿using Playnite.Common;
 using Playnite.SDK;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Playnite.Plugins
 {
@@ -53,7 +50,7 @@ namespace Playnite.Plugins
             PackagePath = packagePath;
         }
 
-        public ExtensionInstallResult(Exception installError,  string packagePath)
+        public ExtensionInstallResult(Exception installError, string packagePath)
         {
             InstallError = installError;
             PackagePath = packagePath;

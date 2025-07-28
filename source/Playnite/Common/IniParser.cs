@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace Playnite.Common
 {
@@ -76,7 +74,7 @@ namespace Playnite.Common
     public class IniParser
     {
         public static IniData Parse(string[] iniString)
-        {            
+        {
             if (iniString?.Any() != true)
             {
                 throw new ArgumentNullException();

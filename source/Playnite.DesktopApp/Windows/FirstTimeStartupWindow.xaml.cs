@@ -1,7 +1,4 @@
-﻿using Playnite.Controls;
-using Playnite.Windows;
-
-namespace Playnite.DesktopApp.Windows
+﻿namespace Playnite.DesktopApp.Windows
 {
     public class FirstTimeStartupWindowFactory : WindowFactory
     {
@@ -15,7 +12,7 @@ namespace Playnite.DesktopApp.Windows
     /// Interaction logic for FirstTimeStartupWindow.xaml
     /// </summary>
     public partial class FirstTimeStartupWindow : WindowBase
-    {        
+    {
         public FirstTimeStartupWindow() : base()
         {
             InitializeComponent();

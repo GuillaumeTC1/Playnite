@@ -1,6 +1,5 @@
 ﻿using Playnite.Common;
 using Playnite.SDK;
-using Playnite.Settings;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -8,10 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Markup;
 
 namespace Playnite
 {

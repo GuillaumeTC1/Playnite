@@ -7,17 +7,12 @@ using Playnite.SDK.Plugins;
 using Playnite.Windows;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Input;
 
 namespace Playnite.ViewModels
@@ -415,8 +410,10 @@ namespace Playnite.ViewModels
         public bool ContextHintVisible { get => contextHintVisible; set => SetValue(ref contextHintVisible, value); }
         public bool SlowAnimationActive { get => slowAnimationActive; set => SetValue(ref slowAnimationActive, value); }
         public string CurrentSearchProviderDescription { get => currentSearchProviderDescription; set => SetValue(ref currentSearchProviderDescription, value); }
-        public List<SearchItem> SearchResults { get => searchResults; set =>SetValue(ref searchResults, value); }
-        public SearchItem SelectedSearchItem { get => selectedSearchItem;
+        public List<SearchItem> SearchResults { get => searchResults; set => SetValue(ref searchResults, value); }
+        public SearchItem SelectedSearchItem
+        {
+            get => selectedSearchItem;
             set
             {
                 SetValue(ref selectedSearchItem, value);
@@ -721,7 +718,7 @@ namespace Playnite.ViewModels
                 CancelToken = searchToken.Token,
                 SearchTerm = SearchTerm,
                 SwitchContextAction = SetCurrentContext,
-                GameFilterSettings =  GameFilterSettings
+                GameFilterSettings = GameFilterSettings
             };
 
             var results = await Task.Run(() =>

@@ -1,20 +1,11 @@
 ﻿using CommandLine;
 using CommandLine.Text;
-using Playnite.API;
-using Playnite.Common;
-using Playnite.Plugins;
 using Playnite.SDK;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Runtime;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Xml;
-using System.Xml.Linq;
 
 namespace Playnite.Toolbox
 {
@@ -232,7 +223,7 @@ namespace Playnite.Toolbox
                         throw new NotSupportedException();
                 }
             }
-            catch (Exception e) when(!Debugger.IsAttached)
+            catch (Exception e) when (!Debugger.IsAttached)
             {
                 AppResult = 1;
                 logger.Error(e, "Failed to verify manifest." + Environment.NewLine + e.Message);

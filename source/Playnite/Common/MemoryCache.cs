@@ -2,15 +2,8 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Runtime.InteropServices;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Media.Imaging;
 
 namespace Playnite.Common
 {
@@ -49,7 +42,7 @@ namespace Playnite.Common
             Size = size;
         }
 
-        public CacheItem(object item, long size, Dictionary<string, object> metadata) : this (item, size)
+        public CacheItem(object item, long size, Dictionary<string, object> metadata) : this(item, size)
         {
             Metadata = metadata;
         }

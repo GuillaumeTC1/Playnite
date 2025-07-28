@@ -1,13 +1,9 @@
-﻿using System;
+﻿using Playnite.SDK;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Management;
-using System.Threading;
 using System.IO;
-using Playnite.SDK;
+using System.Linq;
 
 namespace Playnite.Common
 {

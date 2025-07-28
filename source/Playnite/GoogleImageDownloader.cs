@@ -1,16 +1,11 @@
-﻿using AngleSharp.Parser.Html;
-using Flurl;
+﻿using Flurl;
 using Newtonsoft.Json;
 using Playnite.Common;
 using Playnite.SDK;
 using Playnite.WebView;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace Playnite

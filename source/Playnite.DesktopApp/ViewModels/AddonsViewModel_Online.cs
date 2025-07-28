@@ -1,22 +1,13 @@
-﻿using Playnite.Common;
-using Playnite.Common.Web;
-using Playnite.DesktopApp.Windows;
-using Playnite.Plugins;
-using Playnite.SDK;
-using Playnite.Services;
-using Playnite.ViewModels;
+﻿using Playnite.SDK;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace Playnite.DesktopApp.ViewModels
 {
-    public partial class AddonsViewModel :  Playnite.ViewModels.AddonsViewModelBase
+    public partial class AddonsViewModel : Playnite.ViewModels.AddonsViewModelBase
     {
         private AddonType activeAddonSearchMode;
 
@@ -53,7 +44,7 @@ namespace Playnite.DesktopApp.ViewModels
                 {
                     var progressModel = new ProgressViewViewModel(
                         new Playnite.Windows.ProgressWindowFactory(),
-                            new GlobalProgressOptions(LOC.GettingsAddonInformation.GetLocalized(), true) { IsIndeterminate = true});
+                            new GlobalProgressOptions(LOC.GettingsAddonInformation.GetLocalized(), true) { IsIndeterminate = true });
                     var progRes = progressModel.ActivateProgress((args) =>
                     {
                         selectedOnlineAddon.DownloadInstallerManifest(args.CancelToken);

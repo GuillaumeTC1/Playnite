@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using System.Xml.Linq;
 
 namespace Playnite.Common
@@ -64,7 +59,7 @@ namespace Playnite.Common
                     if (!AreEqual(elems1[i], elems2[i]))
                     {
                         return false;
-                    }                        
+                    }
                 }
             }
 

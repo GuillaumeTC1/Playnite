@@ -1,16 +1,9 @@
-﻿using Playnite.Behaviors;
-using Playnite.Commands;
-using Playnite.Common;
-using Playnite.FullscreenApp.ViewModels;
-using Playnite.Input;
+﻿using Playnite.FullscreenApp.ViewModels;
 using Playnite.SDK;
 using Playnite.SDK.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Automation;
 using System.Windows.Controls;

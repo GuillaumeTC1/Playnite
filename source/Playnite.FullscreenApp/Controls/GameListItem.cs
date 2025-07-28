@@ -1,23 +1,10 @@
-﻿using Playnite.Commands;
-using Playnite.Common;
-using Playnite.Controls;
-using Playnite.Converters;
-using Playnite.FullscreenApp.ViewModels;
-using Playnite.Extensions;
+﻿using Playnite.FullscreenApp.ViewModels;
 using Playnite.SDK;
-using Playnite.ViewModels;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
-using BooleanToVisibilityConverter = Playnite.Converters.BooleanToVisibilityConverter;
 
 namespace Playnite.FullscreenApp.Controls
 {

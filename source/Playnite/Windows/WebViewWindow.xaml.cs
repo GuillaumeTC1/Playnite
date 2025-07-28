@@ -1,5 +1,4 @@
-﻿using CefSharp;
-using Playnite.Controls;
+﻿using Playnite.Controls;
 using System.Windows;
 
 namespace Playnite.Windows
@@ -7,7 +6,7 @@ namespace Playnite.Windows
     /// <summary>
     /// Interaction logic for WebViewWindow.xaml
     /// </summary>
-    public partial class WebViewWindow :  WindowBase
+    public partial class WebViewWindow : WindowBase
     {
         public WebViewWindow() : base()
         {

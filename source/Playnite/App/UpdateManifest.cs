@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Playnite
 {
@@ -18,13 +15,13 @@ namespace Playnite
         private List<string> packageUrls;
         private List<Version> versionHistory;
 
-        public Version Version                  { get => version; set => SetValue(ref version, value); }
-        public Version SdkVersion               { get => sdkVersion; set => SetValue(ref sdkVersion, value); }
-        public Version FullscreenThemeVersion   { get => fullscreenThemeVersion; set => SetValue(ref fullscreenThemeVersion, value); }
-        public Version DesktopThemeVersion      { get => desktopThemeVersion; set => SetValue(ref desktopThemeVersion, value); }
-        public string Checksum                  { get => checksum; set => SetValue(ref checksum, value); }
-        public List<string> PackageUrls         { get => packageUrls; set => SetValue(ref packageUrls, value); }
-        public List<Version> VersionHistory     { get => versionHistory; set => SetValue(ref versionHistory, value); }
+        public Version Version { get => version; set => SetValue(ref version, value); }
+        public Version SdkVersion { get => sdkVersion; set => SetValue(ref sdkVersion, value); }
+        public Version FullscreenThemeVersion { get => fullscreenThemeVersion; set => SetValue(ref fullscreenThemeVersion, value); }
+        public Version DesktopThemeVersion { get => desktopThemeVersion; set => SetValue(ref desktopThemeVersion, value); }
+        public string Checksum { get => checksum; set => SetValue(ref checksum, value); }
+        public List<string> PackageUrls { get => packageUrls; set => SetValue(ref packageUrls, value); }
+        public List<Version> VersionHistory { get => versionHistory; set => SetValue(ref versionHistory, value); }
     }
 
     public class ReleaseNoteData

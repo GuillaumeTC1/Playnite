@@ -1,17 +1,8 @@
-﻿using Playnite.Controllers;
-using Playnite.Database;
-using Playnite.DesktopApp.ViewModels;
+﻿using Playnite.DesktopApp.ViewModels;
 using Playnite.DesktopApp.Windows;
-using Playnite.Plugins;
 using Playnite.SDK;
 using Playnite.SDK.Models;
-using Playnite.Settings;
-using Playnite.ViewModels;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Playnite.DesktopApp
 {

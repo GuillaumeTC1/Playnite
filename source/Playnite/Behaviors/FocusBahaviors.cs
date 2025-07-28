@@ -1,16 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 
 namespace Playnite.Behaviors
 {
@@ -45,7 +34,7 @@ namespace Playnite.Behaviors
             {
                 if (control.Focusable)
                 {
-                    control.Focus();                    
+                    control.Focus();
                 }
                 else
                 {
@@ -109,7 +98,7 @@ namespace Playnite.Behaviors
             var control = (FrameworkElement)obj;
             if ((bool)args.NewValue)
             {
-                control.IsVisibleChanged += Control_IsVisibleChanged;                
+                control.IsVisibleChanged += Control_IsVisibleChanged;
             }
             else
             {

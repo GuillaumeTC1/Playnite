@@ -1,13 +1,6 @@
-﻿using Playnite.Common;
-using Playnite.FullscreenApp.ViewModels;
+﻿using Playnite.FullscreenApp.ViewModels;
 using Playnite.SDK;
-using Playnite.ViewModels;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Automation;
 using System.Windows.Controls;
@@ -67,13 +60,13 @@ namespace Playnite.FullscreenApp.Controls
                          AutomationProperties.NameProperty,
                          preset,
                          nameof(preset.Name));
-                     BindingTools.SetBinding(item,
-                        CheckBox.IsCheckedProperty,
-                        mainModel,
-                        nameof(mainModel.ActiveFilterPreset),
-                        converter: new Converters.ObjectEqualityToBoolConverter(),
-                        converterParameter: preset,
-                        mode: BindingMode.OneWay);
+                    BindingTools.SetBinding(item,
+                       CheckBox.IsCheckedProperty,
+                       mainModel,
+                       nameof(mainModel.ActiveFilterPreset),
+                       converter: new Converters.ObjectEqualityToBoolConverter(),
+                       converterParameter: preset,
+                       mode: BindingMode.OneWay);
                     ItemsFilterPresets.Items.Add(item);
                 }
             }

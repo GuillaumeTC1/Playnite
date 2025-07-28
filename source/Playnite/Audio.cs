@@ -1,11 +1,5 @@
 ﻿using Playnite.SDK;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static SDL2.SDL;
 using static SDL2.SDL_mixer;
 
 namespace Playnite.Audio

@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Flurl;
 using Newtonsoft.Json;
-using System.Windows;
-using Flurl;
-using System.Net;
 using Playnite.Common;
 using Playnite.Common.Web;
-using Playnite.Settings;
 using Playnite.SDK;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
+using System.Net;
+using System.Threading.Tasks;
 
 namespace Playnite
 {

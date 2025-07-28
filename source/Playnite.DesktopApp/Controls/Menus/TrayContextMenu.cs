@@ -1,19 +1,12 @@
-﻿using Playnite.Commands;
-using Playnite.Common;
-using Playnite.DesktopApp.Markup;
-using Playnite.DesktopApp.ViewModels;
+﻿using Playnite.DesktopApp.ViewModels;
 using Playnite.SDK;
 using Playnite.SDK.Models;
-using Playnite.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 

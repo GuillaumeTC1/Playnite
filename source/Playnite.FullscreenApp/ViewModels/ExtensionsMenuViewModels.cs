@@ -1,16 +1,10 @@
-﻿using Playnite.Common;
-using Playnite.FullscreenApp.Windows;
-using Playnite.SDK;
+﻿using Playnite.SDK;
 using Playnite.SDK.Models;
 using Playnite.SDK.Plugins;
-using Playnite.ViewModels;
-using Playnite.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -162,7 +156,8 @@ namespace Playnite.FullscreenApp.ViewModels
                 }
                 else
                 {
-                    newItem = new MenuItem()                        {
+                    newItem = new MenuItem()
+                    {
                         Header = item.Description,
                         Icon = MenuHelpers.GetIcon(item.Icon)
                     };

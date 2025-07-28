@@ -1,18 +1,6 @@
-﻿using Playnite.API;
-using Playnite.Common;
-using Playnite.Controllers;
-using Playnite.Database;
-using Playnite.FullscreenApp.Markup;
-using Playnite.Plugins;
-using Playnite.SDK;
+﻿using Playnite.SDK;
 using Playnite.SDK.Models;
-using Playnite.ViewModels;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 
 namespace Playnite.FullscreenApp.ViewModels
 {
@@ -69,7 +57,7 @@ namespace Playnite.FullscreenApp.ViewModels
         public DesignMainViewModel() : base(new InMemoryGameDatabase(), null, null, new ResourceProvider(), null)
         {
             GameListVisible = true;
-            GameDetailsVisible  = false;
+            GameDetailsVisible = false;
             FilterPanelVisible = true;
             ProgressStatus = "Status example in progress...";
             ProgressValue = 50;

@@ -6,14 +6,11 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Interop;
 using static SDL2.SDL;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Playnite.Input
 {

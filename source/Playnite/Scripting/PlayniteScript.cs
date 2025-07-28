@@ -1,14 +1,9 @@
 ﻿using Playnite.Scripting.PowerShell;
 using Playnite.SDK;
 using Playnite.SDK.Events;
-using Playnite.SDK.Models;
 using Playnite.SDK.Plugins;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Playnite.Scripting
 {
@@ -30,7 +25,7 @@ namespace Playnite.Scripting
             get; set;
         }
 
-        public ScriptFunctionExport(string name, string functionName, PlayniteScript script) : base (name)
+        public ScriptFunctionExport(string name, string functionName, PlayniteScript script) : base(name)
         {
             Name = name;
             FunctionName = functionName;
@@ -48,7 +43,7 @@ namespace Playnite.Scripting
         }
     }
 
-    public abstract class PlayniteScript: IDisposable
+    public abstract class PlayniteScript : IDisposable
     {
         private static ILogger logger = LogManager.GetLogger();
         public List<ApplicationEvent> SupportedEvents { get; internal set; }

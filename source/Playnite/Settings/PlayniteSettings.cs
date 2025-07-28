@@ -1,29 +1,22 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using NLog;
 using NLog.Config;
 using NLog.Targets;
-using System.Configuration;
 using Playnite.Common;
-using System.Runtime.CompilerServices;
-using System.Windows.Controls;
-using System.Windows.Media;
-using System.Windows;
-using Newtonsoft.Json.Serialization;
-using System.Runtime.Serialization;
 using Playnite.Metadata;
 using Playnite.SDK;
-using Microsoft.Win32;
 using Playnite.SDK.Models;
-using System.Collections.ObjectModel;
 using Playnite.SDK.Plugins;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Configuration;
+using System.IO;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace Playnite
 {
@@ -2616,7 +2609,7 @@ namespace Playnite
 
         private Thickness GetItemSpacingMargin()
         {
-            return new Thickness(GridItemSpacing / 2, GridItemSpacing / 2, GridItemSpacing / 2, GridItemSpacing / 2);;
+            return new Thickness(GridItemSpacing / 2, GridItemSpacing / 2, GridItemSpacing / 2, GridItemSpacing / 2); ;
         }
 
         private Thickness GetFullscreenItemSpacingMargin()

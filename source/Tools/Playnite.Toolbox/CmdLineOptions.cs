@@ -1,9 +1,4 @@
 ﻿using CommandLine;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Playnite.Toolbox
 {
@@ -57,6 +52,6 @@ namespace Playnite.Toolbox
         [Value(0, Required = true, HelpText = "Manifest type.")]
         public ManifestType Type { get; set; }
         [Value(1, Required = true, HelpText = "Full manifest file path.")]
-        public string ManifestPath { get; set;}
+        public string ManifestPath { get; set; }
     }
 }

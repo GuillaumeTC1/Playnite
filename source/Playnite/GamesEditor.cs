@@ -1,33 +1,24 @@
-﻿using Playnite;
-using Playnite.API;
-using Playnite.Common;
+﻿using Playnite.Common;
+using Playnite.Controllers;
 using Playnite.Database;
 using Playnite.Plugins;
-using Playnite.Controllers;
+using Playnite.Scripting.PowerShell;
 using Playnite.SDK;
+using Playnite.SDK.Exceptions;
 using Playnite.SDK.Models;
-using Playnite.Settings;
-using Playnite.ViewModels;
+using Playnite.SDK.Plugins;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Diagnostics;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
-using System.Windows;
-using System.Windows.Shell;
-using Playnite.Scripting;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Collections.Concurrent;
-using Playnite.SDK.Exceptions;
-using System.Drawing.Imaging;
-using Playnite.SDK.Plugins;
-using System.Collections.ObjectModel;
-using Playnite.Scripting.PowerShell;
-using Playnite.Windows;
-using System.Windows.Input;
-using System.Security.Cryptography;
+using System.Windows;
+using System.Windows.Shell;
 
 namespace Playnite
 {
@@ -454,7 +445,7 @@ namespace Playnite
                             }
                             else
                             {
-                                controller.Start(action, false,  new SDK.Events.OnGameStartingEventArgs
+                                controller.Start(action, false, new SDK.Events.OnGameStartingEventArgs
                                 {
                                     Game = game,
                                     SourceAction = action

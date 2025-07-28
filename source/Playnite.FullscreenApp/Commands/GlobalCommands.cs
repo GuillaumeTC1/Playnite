@@ -1,13 +1,4 @@
-﻿using Playnite.Commands;
-using Playnite.Common;
-using Playnite.SDK;
-using Playnite.SDK.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using Playnite.SDK;
 using System.Windows;
 
 namespace Playnite.FullscreenApp

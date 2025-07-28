@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using Playnite.Input;
 
 namespace Playnite.FullscreenApp.Controls
 {
@@ -43,7 +37,7 @@ namespace Playnite.FullscreenApp.Controls
             if (e.Key == Key.Left ||
                 e.Key == Key.Right ||
                 e.Key == Key.Up ||
-                e.Key == Key.Down  ||
+                e.Key == Key.Down ||
                 e.Key == Key.PageDown ||
                 e.Key == Key.PageUp)
             {

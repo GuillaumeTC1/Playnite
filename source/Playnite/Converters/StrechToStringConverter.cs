@@ -1,11 +1,5 @@
-﻿using Playnite;
-using Playnite.SDK;
-using Playnite.Settings;
+﻿using Playnite.SDK;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Markup;
 using System.Windows.Media;

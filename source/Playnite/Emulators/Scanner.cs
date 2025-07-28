@@ -9,7 +9,6 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
@@ -1316,15 +1315,15 @@ namespace Playnite.Emulators
         private Emulator sourceEmulator;
         #endregion backing fields
 
-        public bool Import                              { get => import; set => SetValue(ref import, value); }
-        public ObservableCollection<ScannedRom> Roms    { get => roms; set => SetValue(ref roms, value); }
-        public List<Platform> Platforms                 { get => platforms; set => SetValue(ref platforms, value); }
-        public List<Region> Regions                     { get => regions; set => SetValue(ref regions, value); }
-        public string Name                              { get => name; set => SetValue(ref name, value); }
-        public GameScannerConfig SourceConfig           { get => sourceConfig; set => SetValue(ref sourceConfig, value); }
-        public ReleaseDate? ReleaseDate                 { get => releaseDate; set => SetValue(ref releaseDate, value); }
-        public ScriptScannedGame ScriptSource           { get => scriptSource; set => SetValue(ref scriptSource, value); }
-        public Emulator SourceEmulator                  { get => sourceEmulator; set => SetValue(ref sourceEmulator, value); }
+        public bool Import { get => import; set => SetValue(ref import, value); }
+        public ObservableCollection<ScannedRom> Roms { get => roms; set => SetValue(ref roms, value); }
+        public List<Platform> Platforms { get => platforms; set => SetValue(ref platforms, value); }
+        public List<Region> Regions { get => regions; set => SetValue(ref regions, value); }
+        public string Name { get => name; set => SetValue(ref name, value); }
+        public GameScannerConfig SourceConfig { get => sourceConfig; set => SetValue(ref sourceConfig, value); }
+        public ReleaseDate? ReleaseDate { get => releaseDate; set => SetValue(ref releaseDate, value); }
+        public ScriptScannedGame ScriptSource { get => scriptSource; set => SetValue(ref scriptSource, value); }
+        public Emulator SourceEmulator { get => sourceEmulator; set => SetValue(ref sourceEmulator, value); }
 
         public Game ToGame()
         {

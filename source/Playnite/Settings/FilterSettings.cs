@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Playnite.Common;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using SdkModels = Playnite.SDK.Models;
 
 namespace Playnite

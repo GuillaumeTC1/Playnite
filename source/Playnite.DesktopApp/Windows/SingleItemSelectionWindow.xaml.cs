@@ -1,7 +1,4 @@
-﻿using Playnite.Controls;
-using Playnite.Windows;
-
-namespace Playnite.DesktopApp.Windows
+﻿namespace Playnite.DesktopApp.Windows
 {
     /// <summary>
     /// Interaction logic for AboutWindow.xaml

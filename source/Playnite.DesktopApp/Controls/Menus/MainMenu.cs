@@ -1,25 +1,13 @@
-﻿using Playnite.Commands;
-using Playnite.Common;
-using Playnite.DesktopApp.ViewModels;
-using Playnite.Extensions.Markup;
-using Playnite.Plugins;
+﻿using Playnite.DesktopApp.ViewModels;
 using Playnite.SDK;
 using Playnite.SDK.Plugins;
-using Playnite.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing.Imaging;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 
 namespace Playnite.DesktopApp.Controls
 {

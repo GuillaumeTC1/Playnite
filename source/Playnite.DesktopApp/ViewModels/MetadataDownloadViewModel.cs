@@ -1,6 +1,4 @@
-﻿using Playnite.Metadata;
-using Playnite.SDK;
-using Playnite.Windows;
+﻿using Playnite.SDK;
 using System.Collections.Generic;
 using System.Linq;
 

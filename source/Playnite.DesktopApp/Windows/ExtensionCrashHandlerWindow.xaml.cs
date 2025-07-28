@@ -1,6 +1,4 @@
-﻿using Playnite.Controls;
-
-namespace Playnite.DesktopApp.Windows
+﻿namespace Playnite.DesktopApp.Windows
 {
     /// <summary>
     /// Interaction logic for CrashHandlerWindow.xaml

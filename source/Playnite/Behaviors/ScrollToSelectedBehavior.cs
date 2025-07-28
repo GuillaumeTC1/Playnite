@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
-using System.Windows.Documents;
-using System.Windows.Input;
 
 namespace Playnite.Behaviors
 {
@@ -57,7 +49,7 @@ namespace Playnite.Behaviors
             if (sender is ListView listView)
             {
                 if (listView.SelectedItems?.Count == 1)
-                {                    
+                {
                     listView.ScrollIntoView(listView.SelectedItem);
                     return;
                 }

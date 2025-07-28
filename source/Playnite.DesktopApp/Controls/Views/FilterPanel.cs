@@ -1,21 +1,12 @@
-﻿using Playnite.Common;
-using Playnite.Converters;
-using Playnite.Database;
-using Playnite.DesktopApp.ViewModels;
+﻿using Playnite.DesktopApp.ViewModels;
 using Playnite.SDK;
 using Playnite.SDK.Models;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Data;
-using System.Windows.Markup;
 
 namespace Playnite.DesktopApp.Controls.Views
 {

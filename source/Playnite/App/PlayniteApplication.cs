@@ -1,33 +1,26 @@
-﻿using Playnite.Controllers;
-using Playnite.Input;
-using Playnite.SDK;
+﻿using Playnite.API;
+using Playnite.Common;
+using Playnite.Common.Web;
+using Playnite.Controllers;
+using Playnite.Database;
 using Playnite.Plugins;
+using Playnite.SDK;
+using Playnite.SDK.Events;
+using Playnite.Services;
 using Playnite.ViewModels;
+using Playnite.Windows;
+using Polly;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Diagnostics;
-using Playnite.Database;
-using Playnite.API;
-using TheArtOfDev.HtmlRenderer;
-using Playnite.Services;
-using System.Windows.Input;
-using System.Windows.Interop;
-using System.Reflection;
-using System.IO;
-using Playnite.Common;
-using System.ComponentModel;
-using Playnite.Windows;
-using Polly;
 using System.Windows.Media;
-using Playnite.SDK.Events;
 using System.Windows.Threading;
-using System.Net;
-using Playnite.Common.Web;
-using System.ServiceProcess;
 
 namespace Playnite
 {
@@ -1148,7 +1141,7 @@ namespace Playnite
             {
                 action();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 logger.Error(e, "Failed to execute app quit action.");
             }
@@ -1490,7 +1483,8 @@ namespace Playnite
                     MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 {
                     Restart(new CmdLineOptions { SkipLibUpdate = true });
-                };
+                }
+                ;
             }
             catch (Exception e) when (!PlayniteEnvironment.ThrowAllErrors)
             {
@@ -1536,7 +1530,8 @@ namespace Playnite
                         {
                             SkipLibUpdate = true,
                         });
-                    };
+                    }
+                    ;
                 }
             }
             catch (Exception e) when (!PlayniteEnvironment.ThrowAllErrors)
@@ -1580,7 +1575,8 @@ namespace Playnite
                         {
                             SkipLibUpdate = true,
                         });
-                    };
+                    }
+                    ;
                 }
             }
             catch (Exception e) when (!PlayniteEnvironment.ThrowAllErrors)

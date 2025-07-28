@@ -1,13 +1,9 @@
 ﻿using Newtonsoft.Json;
-using Playnite.Audio;
 using Playnite.Common;
 using Playnite.SDK;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Playnite
 {

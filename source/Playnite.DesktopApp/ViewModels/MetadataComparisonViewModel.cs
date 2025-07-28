@@ -1,18 +1,9 @@
-﻿using Playnite.Common;
-using Playnite.Common.Media.Icons;
-using Playnite.Database;
-using Playnite.SDK;
+﻿using Playnite.SDK;
 using Playnite.SDK.Models;
-using Playnite.Windows;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Drawing.Imaging;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Playnite.DesktopApp.ViewModels
 {

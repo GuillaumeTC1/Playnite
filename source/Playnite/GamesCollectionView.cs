@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Data;
-using Playnite.Database;
-using Playnite.SDK.Models;
-using Playnite.SDK;
-using Playnite.Settings;
+﻿using Playnite.Database;
 using Playnite.Plugins;
+using Playnite.SDK;
+using Playnite.SDK.Models;
 using Playnite.SDK.Plugins;
+using System;
+using System.Collections.Generic;
+using System.Windows.Data;
 
 namespace Playnite
 {

@@ -1,17 +1,8 @@
-﻿using Playnite.Behaviors;
-using Playnite.Common;
-using Playnite.Controls;
-using Playnite.Converters;
-using Playnite.DesktopApp.ViewModels;
+﻿using Playnite.DesktopApp.ViewModels;
 using Playnite.SDK;
 using Playnite.SDK.Models;
-using Playnite.ViewModels;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -69,7 +60,7 @@ namespace Playnite.DesktopApp.Controls.Views
             if (e.PropertyName == nameof(ViewSettings.GroupingOrder))
             {
                 ListGames.ItemsPanel = GetItemsPanelTemplateCache();
-                var scrollViewer = ElementTreeHelper.FindVisualChildren< ScrollViewer>(ListGames).FirstOrDefault();
+                var scrollViewer = ElementTreeHelper.FindVisualChildren<ScrollViewer>(ListGames).FirstOrDefault();
                 scrollViewer?.ScrollToTop();
             }
         }

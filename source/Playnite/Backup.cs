@@ -7,10 +7,8 @@ using System.ComponentModel;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Playnite
 {
@@ -37,7 +35,7 @@ namespace Playnite
         public string OutputFile { get; set; }
         public string OutputDir { get; set; }
         public List<BackupDataItem> BackupItems { get; set; }
-        public bool ClosedWhenDone  { get; set; }
+        public bool ClosedWhenDone { get; set; }
         public bool CancelIfGameRunning { get; set; }
         public int RotatingBackups { get; set; } = 0;
     }
@@ -101,7 +99,8 @@ namespace Playnite
                     {
                         archive.CreateEntryFromFile(fullPath, config);
                     }
-                };
+                }
+                ;
 
                 if (Directory.Exists(options.LibraryDir))
                 {

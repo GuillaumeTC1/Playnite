@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Playnite.Native;
+using System;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using Playnite.Native;
 
 namespace Playnite.Common
 {

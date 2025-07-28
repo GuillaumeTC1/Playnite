@@ -1,28 +1,15 @@
-﻿using Playnite.API;
-using Playnite.Audio;
-using Playnite.Common;
-using Playnite.Controllers;
-using Playnite.Database;
-using Playnite.FullscreenApp.API;
+﻿using Playnite.FullscreenApp.API;
 using Playnite.FullscreenApp.Markup;
 using Playnite.FullscreenApp.ViewModels;
 using Playnite.FullscreenApp.Windows;
-using Playnite.Input;
-using Playnite.Plugins;
 using Playnite.SDK;
 using Playnite.SDK.Events;
 using Playnite.SDK.Models;
-using Playnite.WebView;
-using Playnite.Windows;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using static SDL2.SDL;
 
 namespace Playnite.FullscreenApp
 {

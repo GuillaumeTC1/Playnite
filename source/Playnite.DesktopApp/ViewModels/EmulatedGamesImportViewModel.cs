@@ -1,24 +1,12 @@
-﻿using Playnite;
-using Playnite.Database;
+﻿using Playnite.SDK;
 using Playnite.SDK.Models;
-using Playnite.SDK;
-using Playnite.Commands;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using Playnite.Common;
-using Playnite.Windows;
-using Playnite.DesktopApp.Windows;
-using Playnite.ViewModels;
-using Playnite.Emulators;
-using System.IO;
 
 namespace Playnite.DesktopApp.ViewModels
 {
@@ -65,7 +53,7 @@ namespace Playnite.DesktopApp.ViewModels
         public List<Emulator> Emulators { get; set; }
         public List<Platform> Platforms { get => platforms; set => SetValue(ref platforms, value); }
         public List<Platform> OverridePlatforms { get; set; }
-        public List<Region> Regions     { get => regions; set => SetValue(ref regions, value); }
+        public List<Region> Regions { get => regions; set => SetValue(ref regions, value); }
         public List<GameScannerConfig> SavedConfigs { get; set; }
         public List<Game> ImportedGames { get; } = new List<Game>();
 

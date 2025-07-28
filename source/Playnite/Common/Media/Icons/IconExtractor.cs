@@ -25,8 +25,8 @@
  *  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-using Playnite.SDK;
 using Playnite.Native;
+using Playnite.SDK;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

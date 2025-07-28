@@ -1,10 +1,5 @@
 ﻿using Playnite.SDK.Models;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Data;
 
 namespace System.Collections.Generic
 {
@@ -56,7 +51,7 @@ namespace System.Collections.Generic
     /// Highly unoptimized, should not be used anywhere anymore in new code.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class ComparableList<T>: List<T>, IComparable
+    public class ComparableList<T> : List<T>, IComparable
     {
         /// <summary>
         ///

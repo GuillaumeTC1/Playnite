@@ -1,16 +1,10 @@
-﻿using Playnite.Common;
-using Playnite.Plugins;
-using Playnite.SDK;
+﻿using Playnite.SDK;
 using Playnite.SDK.Plugins;
-using Playnite.Services;
-using Playnite.Windows;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 

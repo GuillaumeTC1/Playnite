@@ -1,12 +1,7 @@
-﻿using Playnite.Common;
-using Playnite.Controls;
-using Playnite.SDK;
+﻿using Playnite.SDK;
 using Playnite.SDK.Plugins;
-using Playnite.ViewModels;
-using Playnite.Windows;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
 using System.Windows.Media;
 
 namespace Playnite.DesktopApp.Windows
