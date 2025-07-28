@@ -39,7 +39,7 @@ namespace Playnite.WebView
 
         public IWebView CreateView(WebViewSettings settings)
         {
-            return new WebView(settings.WindowWidth, settings.WindowHeight, settings.WindowBackground, settings.UserAgent, appSettings.UseCompositionWebViewRenderer);
+            return new WebView(settings.WindowWidth, settings.WindowHeight, settings.WindowBackground, settings.Headers["User-Agent"].ToString(), appSettings.UseCompositionWebViewRenderer);
         }
     }
 }

@@ -70,6 +70,7 @@ namespace Playnite
     public class PipeServer
     {
         private string endpoint;
+        // TODO Les API serveur WCF ne sont pas prises en charge sur .NET Core. Réécriture pour utiliser gRPC (https://docs.microsoft.com/dotnet/architecture/grpc-for-wcf-developers), ASP.NET Core ou CoreWCF (https://github.com/CoreWCF/CoreWCF) à la place.
         private ServiceHost serviceHost;
 
         public PipeServer(string endpoint)
@@ -79,6 +80,7 @@ namespace Playnite
 
         public void StartServer(IPipeService service)
         {
+            // TODO Les API serveur WCF ne sont pas prises en charge sur .NET Core. Réécriture pour utiliser gRPC (https://docs.microsoft.com/dotnet/architecture/grpc-for-wcf-developers), ASP.NET Core ou CoreWCF (https://github.com/CoreWCF/CoreWCF) à la place.
             serviceHost = new ServiceHost(service, new Uri[] { new Uri(endpoint) });
             serviceHost.AddServiceEndpoint(typeof(IPipeService), new NetNamedPipeBinding(), "PlayniteService");
             serviceHost.Open();

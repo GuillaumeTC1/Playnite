@@ -13,6 +13,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Interop;
 using static SDL2.SDL;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Playnite.Input
 {
