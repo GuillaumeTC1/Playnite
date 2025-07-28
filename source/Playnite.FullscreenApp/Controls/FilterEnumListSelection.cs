@@ -1,5 +1,6 @@
 ﻿using Playnite.FullscreenApp.ViewModels;
 using Playnite.SDK;
+using Playnite.SDK.Extensions;
 using Playnite.SDK.Models;
 using System;
 using System.Collections.Generic;

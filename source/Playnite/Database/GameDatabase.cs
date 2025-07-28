@@ -1,9 +1,16 @@
-﻿using Playnite.Common;
+﻿using Playnite.App;
+using Playnite.Common;
 using Playnite.Common.Web;
+using Playnite.Database.Collections;
 using Playnite.Emulators;
+using Playnite.Extensions;
+using Playnite.Metadata;
 using Playnite.SDK;
+using Playnite.SDK.Database;
+using Playnite.SDK.Extensions;
 using Playnite.SDK.Models;
 using Playnite.SDK.Plugins;
+using Playnite.Settings;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;

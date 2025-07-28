@@ -1,10 +1,11 @@
 ﻿using Playnite.Native;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace System.Diagnostics
+namespace Playnite.Common.Extensions
 {
     public static class ProcessExtensions
     {
@@ -12,7 +13,7 @@ namespace System.Diagnostics
         {
             fileName = null;
             var handle = Kernel32.OpenProcess(ProcessAccessFlags.QueryLimitedInformation, false, process.Id);
-            if (handle == IntPtr.Zero)
+            if (handle == nint.Zero)
             {
                 return false;
             }
@@ -35,7 +36,7 @@ namespace System.Diagnostics
         {
             processId = 0;
             var handle = Kernel32.OpenProcess(ProcessAccessFlags.QueryLimitedInformation, false, process.Id);
-            if (handle == IntPtr.Zero)
+            if (handle == nint.Zero)
             {
                 return false;
             }

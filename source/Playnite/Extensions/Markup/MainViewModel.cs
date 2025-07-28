@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Playnite.App;
+using Playnite.Common.Extensions;
+using System;
 using System.ComponentModel;
 using System.Windows;
 

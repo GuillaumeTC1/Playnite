@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace Playnite
+namespace Playnite.ThirdPartyClients
 {
     public class ThirdPartyTool
     {

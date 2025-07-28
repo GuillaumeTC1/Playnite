@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using Playnite.Common;
+using Playnite.Settings;
 using System;
 using System.IO;
 

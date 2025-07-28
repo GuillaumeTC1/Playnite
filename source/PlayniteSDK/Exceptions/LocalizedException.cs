@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Playnite.SDK
+namespace Playnite.SDK.Exceptions
 {
     /// <summary>
     /// Represents exception supporting localized message strings.

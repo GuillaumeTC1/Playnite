@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace System
+namespace Playnite.Common.Extensions
 {
     public static class ObjectExtensions
     {
@@ -66,7 +67,7 @@ namespace System
 
         public static bool IsGenericList(this Type type, out Type itemType)
         {
-            var isGeneric = type.IsGenericType && (type.GetGenericTypeDefinition() == typeof(List<>));
+            var isGeneric = type.IsGenericType && type.GetGenericTypeDefinition() == typeof(List<>);
             if (isGeneric)
             {
                 itemType = type.GenericTypeArguments.First();

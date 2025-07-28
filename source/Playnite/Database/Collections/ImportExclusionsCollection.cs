@@ -1,6 +1,7 @@
-﻿using Playnite.SDK;
+﻿using Playnite.SDK.Database;
+using Playnite.SDK.Models;
 
-namespace Playnite.Database
+namespace Playnite.Database.Collections
 {
     public class ImportExclusionsCollection : ItemCollection<ImportExclusionItem>
     {

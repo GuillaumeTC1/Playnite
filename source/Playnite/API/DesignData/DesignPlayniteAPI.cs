@@ -1,4 +1,5 @@
 ﻿using Playnite.SDK;
+using Playnite.SDK.Database;
 using Playnite.SDK.Models;
 using Playnite.SDK.Plugins;
 using System;

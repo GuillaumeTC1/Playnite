@@ -1,4 +1,6 @@
-﻿namespace System
+﻿using System;
+
+namespace Playnite.Common.Extensions
 {
     public static class LongExtensions
     {

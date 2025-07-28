@@ -1,6 +1,7 @@
 ﻿using Playnite.Database;
 using Playnite.SDK;
 using Playnite.SDK.Models;
+using Playnite.Settings;
 using System;
 using System.Windows.Controls;
 

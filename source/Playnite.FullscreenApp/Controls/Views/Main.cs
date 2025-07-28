@@ -1,4 +1,5 @@
 ﻿using Playnite.FullscreenApp.ViewModels;
+using Playnite.FullscreenApp.ViewModels.DesignData;
 using Playnite.SDK;
 using Playnite.SDK.Events;
 using System;

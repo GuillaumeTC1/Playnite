@@ -1,5 +1,6 @@
 ﻿using Playnite.Native;
 using Playnite.SDK;
+using PlayniteInstaller;
 using System;
 using System.Diagnostics;
 using System.IO;

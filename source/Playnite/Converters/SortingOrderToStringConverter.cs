@@ -1,4 +1,5 @@
-﻿using Playnite.SDK.Models;
+﻿using Playnite.Common.Extensions;
+using Playnite.SDK.Models;
 using System;
 using System.Windows.Data;
 using System.Windows.Markup;

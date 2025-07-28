@@ -1,11 +1,12 @@
 ﻿using LiteDB;
-using Playnite.SDK;
+using Playnite.SDK.Database;
+using Playnite.SDK.Extensions;
 using Playnite.SDK.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Playnite.Database
+namespace Playnite.Database.Collections
 {
     public class CompletionStatusSettings
     {
@@ -33,7 +34,7 @@ namespace Playnite.Database
             }
         }
 
-        public CompletionStatusesCollection(GameDatabase database, LiteDB.BsonMapper mapper) : base(mapper, type: GameDatabaseCollection.CompletionStatuses)
+        public CompletionStatusesCollection(GameDatabase database, BsonMapper mapper) : base(mapper, type: GameDatabaseCollection.CompletionStatuses)
         {
             db = database;
         }
@@ -58,7 +59,7 @@ namespace Playnite.Database
             SettingsCollection.Upsert(settings);
         }
 
-        public static void MapLiteDbEntities(LiteDB.BsonMapper mapper)
+        public static void MapLiteDbEntities(BsonMapper mapper)
         {
             mapper.Entity<CompletionStatus>().Id(a => a.Id, false);
         }

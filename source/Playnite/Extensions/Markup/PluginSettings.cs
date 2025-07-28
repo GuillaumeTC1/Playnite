@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Playnite.App;
+using System;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows;

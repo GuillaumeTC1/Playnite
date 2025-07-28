@@ -1,11 +1,12 @@
 ﻿using Newtonsoft.Json;
 using Playnite.Common;
+using Playnite.Manifests;
 using Playnite.SDK;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Playnite
+namespace Playnite.Settings
 {
     public enum FullscreenButtonPrompts
     {

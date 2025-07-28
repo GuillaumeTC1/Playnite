@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Playnite.Common.Extensions;
+using Playnite.SDK.Extensions;
+using System;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;

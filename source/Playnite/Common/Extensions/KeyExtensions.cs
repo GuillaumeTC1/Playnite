@@ -1,12 +1,12 @@
 ﻿using System.Windows.Input;
 
-namespace Playnite.Common
+namespace Playnite.Common.Extensions
 {
     public static class KeyExtensions
     {
         public static bool IsNumericKey(this Key key)
         {
-            return (
+            return 
                 key == Key.D0 ||
                 key == Key.D1 ||
                 key == Key.D2 ||
@@ -26,7 +26,7 @@ namespace Playnite.Common
                 key == Key.NumPad6 ||
                 key == Key.NumPad7 ||
                 key == Key.NumPad8 ||
-                key == Key.NumPad9);
+                key == Key.NumPad9;
         }
     }
 }

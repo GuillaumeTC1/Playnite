@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Playnite.SDK.Extensions;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 

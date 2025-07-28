@@ -1,10 +1,16 @@
-﻿using Playnite.Common;
+﻿using Playnite.App;
+using Playnite.Common;
+using Playnite.Common.Extensions;
 using Playnite.Controllers;
+using Playnite.Manifests;
 using Playnite.Scripting;
 using Playnite.SDK;
+using Playnite.SDK.Database;
 using Playnite.SDK.Events;
+using Playnite.SDK.Extensions;
 using Playnite.SDK.Models;
 using Playnite.SDK.Plugins;
+using Playnite.Settings;
 using System;
 using System.Collections.Generic;
 using System.IO;

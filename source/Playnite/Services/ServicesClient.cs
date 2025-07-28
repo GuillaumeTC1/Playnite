@@ -1,5 +1,7 @@
 ﻿using Newtonsoft.Json;
+using Playnite.App;
 using Playnite.Common;
+using Playnite.Manifests;
 using Playnite.SDK;
 using System;
 using System.Collections.Generic;

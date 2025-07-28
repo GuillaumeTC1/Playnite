@@ -1,11 +1,15 @@
 ﻿using Playnite.Common;
+using Playnite.Common.Extensions;
 using Playnite.Database;
 using Playnite.Emulators;
+using Playnite.Extensions;
 using Playnite.Scripting.PowerShell;
 using Playnite.SDK;
 using Playnite.SDK.Events;
+using Playnite.SDK.Extensions;
 using Playnite.SDK.Models;
 using Playnite.SDK.Plugins;
+using Playnite.Settings;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

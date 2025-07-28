@@ -1,4 +1,5 @@
 ﻿using Playnite.API.DesignData;
+using Playnite.App;
 using System;
 using System.ComponentModel;
 using System.Windows;

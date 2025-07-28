@@ -1,9 +1,12 @@
 ﻿using Playnite.Common;
 using Playnite.Database;
+using Playnite.Extensions;
 using Playnite.Native;
 using Playnite.Scripting.PowerShell;
 using Playnite.SDK;
+using Playnite.SDK.Extensions;
 using Playnite.SDK.Models;
+using Playnite.Settings;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

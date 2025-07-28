@@ -1,8 +1,8 @@
 ﻿using Playnite.SDK;
 using System;
-using static SDL2.SDL_mixer;
+using static Playnite.SDL_mixer;
 
-namespace Playnite.Audio
+namespace Playnite
 {
     public class AudioEngine : IDisposable
     {
@@ -39,13 +39,13 @@ namespace Playnite.Audio
         {
             floatVolume *= floatVolume;
             // lerp settings float 0 -> 1 range to SDL's 0 -> 128 range
-            var res = (int)Math.Ceiling((0f * (1f - floatVolume)) + (128f * floatVolume));
+            var res = (int)Math.Ceiling(0f * (1f - floatVolume) + 128f * floatVolume);
             return res;
         }
 
-        public void PlaySound(IntPtr sound)
+        public void PlaySound(nint sound)
         {
-            if (sound == IntPtr.Zero)
+            if (sound == nint.Zero)
                 return;
 
             if (!AudioInitialized)
@@ -65,7 +65,7 @@ namespace Playnite.Audio
             }
         }
 
-        public void SetSoundVolume(IntPtr sounds, float volume)
+        public void SetSoundVolume(nint sounds, float volume)
         {
             if (!AudioInitialized)
                 return;
@@ -73,10 +73,10 @@ namespace Playnite.Audio
             Mix_VolumeChunk(sounds, GetVolume(volume));
         }
 
-        public IntPtr LoadSound(string path)
+        public nint LoadSound(string path)
         {
             if (!AudioInitialized)
-                return IntPtr.Zero;
+                return nint.Zero;
 
             return Mix_LoadWAV(path);
         }
@@ -89,17 +89,17 @@ namespace Playnite.Audio
             Mix_VolumeMusic(GetVolume(volume));
         }
 
-        public IntPtr LoadMusic(string path)
+        public nint LoadMusic(string path)
         {
             if (!AudioInitialized)
-                return IntPtr.Zero;
+                return nint.Zero;
 
             return Mix_LoadMUS(path);
         }
 
-        public void PlayMusic(IntPtr music)
+        public void PlayMusic(nint music)
         {
-            if (music == IntPtr.Zero)
+            if (music == nint.Zero)
                 return;
 
             if (!AudioInitialized)
@@ -174,12 +174,12 @@ namespace Playnite.Audio
             AudioClosed = true;
         }
 
-        public void DisposeSound(IntPtr sound)
+        public void DisposeSound(nint sound)
         {
             Mix_FreeChunk(sound);
         }
 
-        public void DisposeMusic(IntPtr music)
+        public void DisposeMusic(nint music)
         {
             Mix_FreeMusic(music);
         }

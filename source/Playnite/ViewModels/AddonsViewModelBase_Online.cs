@@ -1,7 +1,10 @@
-﻿using Playnite.Common;
+﻿using Playnite.Addons;
+using Playnite.Common;
 using Playnite.Common.Web;
+using Playnite.Manifests;
 using Playnite.Plugins;
 using Playnite.SDK;
+using Playnite.SDK.Extensions;
 using System;
 using System.Collections.Generic;
 using System.IO;

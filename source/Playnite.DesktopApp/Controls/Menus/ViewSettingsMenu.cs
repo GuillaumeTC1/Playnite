@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 
-namespace Playnite.DesktopApp.Controls
+namespace Playnite.DesktopApp.Controls.Menus
 {
     public class ViewSettingsMenu : ContextMenu
     {

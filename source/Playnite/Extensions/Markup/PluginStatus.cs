@@ -1,4 +1,5 @@
-﻿using Playnite.Plugins;
+﻿using Playnite.App;
+using Playnite.Plugins;
 using System;
 
 namespace Playnite.Extensions.Markup

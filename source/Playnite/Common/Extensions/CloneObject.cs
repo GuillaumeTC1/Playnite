@@ -2,11 +2,12 @@
 using Playnite.Common;
 using Playnite.SDK.Data;
 using Playnite.SDK.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace System
+namespace Playnite.Common.Extensions
 {
     public static class CloneObject
     {
@@ -25,9 +26,9 @@ namespace System
         /// <returns>The copied object.</returns>
         public static T GetClone<T>(this T source)
         {
-            if (Object.ReferenceEquals(source, null))
+            if (ReferenceEquals(source, null))
             {
-                return default(T);
+                return default;
             }
 
             return JsonConvert.DeserializeObject<T>(JsonConvert.SerializeObject(source, jsonSerializerSettings));
@@ -85,9 +86,9 @@ namespace System
 
         public static U GetClone<T, U>(this T source)
         {
-            if (Object.ReferenceEquals(source, null))
+            if (ReferenceEquals(source, null))
             {
-                return default(U);
+                return default;
             }
 
             return JsonConvert.DeserializeObject<U>(JsonConvert.SerializeObject(source, jsonSerializerSettings));

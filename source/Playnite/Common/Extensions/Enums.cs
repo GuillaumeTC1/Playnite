@@ -1,9 +1,10 @@
 ﻿using Playnite.SDK;
+using System;
 using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 
-namespace System
+namespace Playnite.Common.Extensions
 {
     public static class EnumExtensions
     {

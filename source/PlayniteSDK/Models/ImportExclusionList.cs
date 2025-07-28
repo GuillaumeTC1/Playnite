@@ -1,8 +1,7 @@
-﻿using Playnite.SDK.Models;
-using System;
+﻿using System;
 using System.Text;
 
-namespace Playnite
+namespace Playnite.SDK.Models
 {
     /// <summary>
     /// Represents import exclusion item.

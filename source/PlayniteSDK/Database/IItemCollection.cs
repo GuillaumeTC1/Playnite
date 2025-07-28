@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Playnite.SDK
+namespace Playnite.SDK.Database
 {
     /// <summary>
     /// Represents event occuring when database are permanetly updated in database.

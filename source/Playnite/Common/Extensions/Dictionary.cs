@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace System
+namespace Playnite.Common.Extensions
 {
     public static class DictionaryExtensions
     {

@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using Playnite.Common.Extensions;
+using System.Diagnostics;
 
 namespace Playnite
 {

@@ -1,4 +1,6 @@
 ﻿using Playnite.Common;
+using Playnite.Common.Extensions;
+using Playnite.Manifests;
 using Playnite.SDK;
 using System;
 using System.ComponentModel;

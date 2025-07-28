@@ -1,6 +1,7 @@
 ﻿using Playnite.Native;
 using Playnite.SDK;
 using Playnite.SDK.Events;
+using Playnite.Settings;
 using Playnite.Windows;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Interop;
-using static SDL2.SDL;
+using static Playnite.SDL;
 
 namespace Playnite.Input
 {

@@ -1,7 +1,9 @@
 ﻿using Playnite.SDK.Models;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 
-namespace System.Collections.Generic
+namespace Playnite.SDK.Collections
 {
     /// <summary>
     /// Represents comparable database item collection.

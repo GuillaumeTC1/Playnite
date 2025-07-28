@@ -1,4 +1,5 @@
 ﻿using Playnite.DesktopApp.ViewModels;
+using Playnite.DesktopApp.ViewModels.DesignData;
 using Playnite.SDK;
 using Playnite.SDK.Plugins;
 using System;
@@ -9,7 +10,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 
-namespace Playnite.DesktopApp.Controls
+namespace Playnite.DesktopApp.Controls.Menus
 {
     public class MainMenu : ContextMenu
     {
@@ -63,7 +64,7 @@ namespace Playnite.DesktopApp.Controls
 
             if (locString?.StartsWith("LOC", StringComparison.Ordinal) == true)
             {
-                item.SetResourceReference(MenuItem.HeaderProperty, locString);
+                item.SetResourceReference(HeaderedItemsControl.HeaderProperty, locString);
             }
             else
             {

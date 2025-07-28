@@ -6,6 +6,7 @@ using NLog.Targets;
 using Playnite.Common;
 using Playnite.Metadata;
 using Playnite.SDK;
+using Playnite.SDK.Extensions;
 using Playnite.SDK.Models;
 using Playnite.SDK.Plugins;
 using System;
@@ -18,7 +19,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace Playnite
+namespace Playnite.Settings
 {
     public enum DesktopSettingsPage
     {
@@ -334,7 +335,7 @@ namespace Playnite
         {
             get
             {
-                return IndentGameDetails ? GameDetailsIndentation : Double.NaN;
+                return IndentGameDetails ? GameDetailsIndentation : double.NaN;
             }
         }
 
@@ -1019,7 +1020,7 @@ namespace Playnite
         }
 
         [JsonIgnore]
-        public bool ShowMainMenuOnTopPanel => !ShowSidebar || (ShowSidebar && !MainMenuButtonSidebarMove);
+        public bool ShowMainMenuOnTopPanel => !ShowSidebar || ShowSidebar && !MainMenuButtonSidebarMove;
 
         private bool minimizeToTray = false;
         public bool MinimizeToTray

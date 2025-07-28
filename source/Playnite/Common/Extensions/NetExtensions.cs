@@ -1,4 +1,6 @@
-﻿namespace System.Net
+﻿using System.Net;
+
+namespace Playnite.Common.Extensions
 {
     public static class NetExtensions
     {

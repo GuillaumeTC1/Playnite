@@ -1,12 +1,16 @@
 ﻿using Playnite.API;
 using Playnite.Common;
+using Playnite.Common.Extensions;
 using Playnite.Common.Web;
 using Playnite.Controllers;
 using Playnite.Database;
+using Playnite.Manifests;
 using Playnite.Plugins;
 using Playnite.SDK;
 using Playnite.SDK.Events;
+using Playnite.SDK.Extensions;
 using Playnite.Services;
+using Playnite.Settings;
 using Playnite.ViewModels;
 using Playnite.Windows;
 using Polly;
@@ -22,7 +26,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Threading;
 
-namespace Playnite
+namespace Playnite.App
 {
     public abstract class PlayniteApplication : ObservableObject, IPlayniteApplication
     {
@@ -932,7 +936,7 @@ namespace Playnite
             if (AppSettings.DisableHwAcceleration || CmdLine.ForceSoftwareRender)
             {
                 logger.Info("Enabling software rendering.");
-                System.Windows.Media.RenderOptions.ProcessRenderMode = System.Windows.Interop.RenderMode.SoftwareOnly;
+                RenderOptions.ProcessRenderMode = System.Windows.Interop.RenderMode.SoftwareOnly;
             }
 
             if (CmdLine.ClearWebCache)
@@ -1590,7 +1594,7 @@ namespace Playnite
         public void OnExtensionsLoaded()
         {
             ExtensionsLoaded?.Invoke(this, EventArgs.Empty);
-            OnPropertyChanged(nameof(this.ExtensionsStatusBinder));
+            OnPropertyChanged(nameof(ExtensionsStatusBinder));
         }
 
         private void WaitForOtherInstacesToExit(bool throwOnTimetout)

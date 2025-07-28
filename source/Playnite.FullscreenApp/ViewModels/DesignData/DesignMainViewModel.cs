@@ -2,7 +2,7 @@
 using Playnite.SDK.Models;
 using System.Linq;
 
-namespace Playnite.FullscreenApp.ViewModels
+namespace Playnite.FullscreenApp.ViewModels.DesignData
 {
     public class DesignMainViewModel : FullscreenAppViewModel
     {

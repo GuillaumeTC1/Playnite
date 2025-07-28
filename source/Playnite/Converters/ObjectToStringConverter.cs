@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Playnite.Common.Extensions;
+using System;
 using System.Windows.Data;
 using System.Windows.Markup;
 

@@ -1,6 +1,7 @@
 ﻿using Playnite.Common;
 using Playnite.Common.Web;
 using Playnite.SDK;
+using Playnite.Settings;
 using System;
 using System.IO;
 using System.Net;

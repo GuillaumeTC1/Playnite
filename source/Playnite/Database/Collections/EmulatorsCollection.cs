@@ -1,9 +1,10 @@
-﻿using Playnite.SDK;
+﻿using Playnite.SDK.Database;
+using Playnite.SDK.Extensions;
 using Playnite.SDK.Models;
 using System;
 using System.Collections.Generic;
 
-namespace Playnite.Database
+namespace Playnite.Database.Collections
 {
     public class EmulatorsCollection : ItemCollection<Emulator>
     {

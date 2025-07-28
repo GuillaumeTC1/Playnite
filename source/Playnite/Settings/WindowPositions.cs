@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Playnite
+namespace Playnite.Settings
 {
     public class WindowPosition
     {

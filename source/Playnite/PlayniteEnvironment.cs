@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using Playnite.Settings;
+using System.Diagnostics;
 using System.Security.Principal;
 
 namespace Playnite

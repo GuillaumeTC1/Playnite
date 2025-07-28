@@ -1,6 +1,6 @@
 ﻿using Playnite.SDK;
+using Playnite.SDK.Extensions;
 using Playnite.Windows;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 

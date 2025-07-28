@@ -1,4 +1,4 @@
-﻿namespace Playnite.SDK
+﻿namespace Playnite.SDK.Exceptions
 {
     /// <summary>
     /// Represents errors related to object references.

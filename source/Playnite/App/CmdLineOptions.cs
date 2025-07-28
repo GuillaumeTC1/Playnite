@@ -1,6 +1,6 @@
 ﻿using CommandLine;
 
-namespace Playnite
+namespace Playnite.App
 {
     public class CmdLineOptions
     {

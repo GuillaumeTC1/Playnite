@@ -1,12 +1,14 @@
-﻿using Playnite.Plugins;
+﻿using Playnite.Manifests;
+using Playnite.Plugins;
 using Playnite.SDK;
+using Playnite.SDK.Extensions;
 using Playnite.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 
-namespace Playnite
+namespace Playnite.Addons
 {
     public enum AddonUpdateStatus
     {

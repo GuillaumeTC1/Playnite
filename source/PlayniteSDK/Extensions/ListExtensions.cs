@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace System.Collections.Generic
+namespace Playnite.SDK.Extensions
 {
     /// <summary>
     /// Represents class with various extension methods for IEnumerable lists.
@@ -85,7 +86,7 @@ namespace System.Collections.Generic
             var anyAdded = false;
             foreach (var item in items)
             {
-                if (AddMissing(source, item))
+                if (source.AddMissing(item))
                 {
                     anyAdded = true;
                 }
@@ -118,7 +119,7 @@ namespace System.Collections.Generic
                 return false;
             }
 
-            if ((source == null && target != null) || (source != null && target == null))
+            if (source == null && target != null || source != null && target == null)
             {
                 return false;
             }
@@ -149,7 +150,7 @@ namespace System.Collections.Generic
                 return false;
             }
 
-            if ((source == null && target != null) || (source != null && target == null))
+            if (source == null && target != null || source != null && target == null)
             {
                 return false;
             }
@@ -200,7 +201,7 @@ namespace System.Collections.Generic
                 return true;
             }
 
-            if ((source == null && target != null) || (source != null && target == null))
+            if (source == null && target != null || source != null && target == null)
             {
                 return false;
             }
@@ -233,7 +234,7 @@ namespace System.Collections.Generic
                 return true;
             }
 
-            if ((source == null && target != null) || (source != null && target == null))
+            if (source == null && target != null || source != null && target == null)
             {
                 return false;
             }
@@ -266,7 +267,7 @@ namespace System.Collections.Generic
                 return true;
             }
 
-            if ((source == null && target != null) || (source != null && target == null))
+            if (source == null && target != null || source != null && target == null)
             {
                 return false;
             }
@@ -289,7 +290,7 @@ namespace System.Collections.Generic
                 return true;
             }
 
-            if ((source == null && target != null) || (source != null && target == null))
+            if (source == null && target != null || source != null && target == null)
             {
                 return false;
             }

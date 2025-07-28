@@ -1,9 +1,10 @@
 ﻿using Playnite.DesktopApp.ViewModels;
+using Playnite.DesktopApp.ViewModels.DesignData;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Playnite.DesktopApp.Controls
+namespace Playnite.DesktopApp.Controls.Menus
 {
     public class FilterPresetsMenu : ContextMenu
     {

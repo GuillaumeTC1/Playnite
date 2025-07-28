@@ -6,13 +6,15 @@
 //
 //--------------------------------------------------------------------------
 
+using System.Collections;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Threading;
 
-namespace System.Collections.Concurrent
+namespace Playnite.SDK.Collections
 {
     /// <summary>
     /// Provides a thread-safe dictionary for use with data binding.

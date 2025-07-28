@@ -1,9 +1,13 @@
 ﻿using LiteDB;
 using Newtonsoft.Json.Linq;
 using Playnite.Common;
+using Playnite.Common.Extensions;
+using Playnite.Database.Collections;
 using Playnite.Database.OldModels;
 using Playnite.Emulators;
+using Playnite.SDK.Extensions;
 using Playnite.SDK.Models;
+using Playnite.Settings;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

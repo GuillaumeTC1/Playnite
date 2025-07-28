@@ -1,15 +1,15 @@
-﻿using Playnite.SDK;
+﻿using Playnite.SDK.Database;
 using Playnite.SDK.Models;
 using System;
 using System.Collections.Generic;
 
-namespace Playnite.Database
+namespace Playnite.Database.Collections
 {
     public class GamesCollection : ItemCollection<Game>
     {
         private readonly GameDatabase db;
 
-        public GamesCollection(GameDatabase database, LiteDB.BsonMapper mapper) : base((Game game) =>
+        public GamesCollection(GameDatabase database, LiteDB.BsonMapper mapper) : base((game) =>
         {
             game.IsInstalling = false;
             game.IsUninstalling = false;
@@ -22,7 +22,7 @@ namespace Playnite.Database
 
         public static void MapLiteDbEntities(LiteDB.BsonMapper mapper)
         {
-            mapper.RegisterType<ReleaseDate>
+            mapper.RegisterType
             (
                 (date) => date.Serialize(),
                 (bson) => ReleaseDate.Deserialize(bson.AsString)

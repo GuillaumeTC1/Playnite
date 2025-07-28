@@ -1,9 +1,9 @@
-﻿using Playnite.Common;
+﻿using Playnite.Common.Extensions;
 using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace Playnite
+namespace Playnite.Common
 {
     public class M3U
     {

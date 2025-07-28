@@ -1,10 +1,10 @@
 ﻿using LiteDB;
-using Playnite.SDK;
+using Playnite.SDK.Database;
 using Playnite.SDK.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Playnite.Database
+namespace Playnite.Database.Collections
 {
     public class GameScannersSettings
     {
@@ -31,12 +31,12 @@ namespace Playnite.Database
             }
         }
 
-        public GameScannersCollection(GameDatabase database, LiteDB.BsonMapper mapper) : base(mapper, type: GameDatabaseCollection.GameScanners)
+        public GameScannersCollection(GameDatabase database, BsonMapper mapper) : base(mapper, type: GameDatabaseCollection.GameScanners)
         {
             db = database;
         }
 
-        public static void MapLiteDbEntities(LiteDB.BsonMapper mapper)
+        public static void MapLiteDbEntities(BsonMapper mapper)
         {
             mapper.Entity<GameScannerConfig>().Id(a => a.Id, false);
         }

@@ -1,4 +1,4 @@
-﻿namespace Playnite
+﻿namespace Playnite.App
 {
     public interface IPlayniteApplication
     {

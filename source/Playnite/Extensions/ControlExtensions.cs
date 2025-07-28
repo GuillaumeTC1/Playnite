@@ -1,4 +1,6 @@
-﻿namespace System.Windows.Controls
+﻿using System.Windows.Controls;
+
+namespace Playnite.Extensions
 {
     public static class ControlExtensions
     {

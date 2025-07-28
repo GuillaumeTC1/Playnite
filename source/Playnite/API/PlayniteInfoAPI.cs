@@ -1,4 +1,6 @@
-﻿using Playnite.SDK;
+﻿using Playnite.App;
+using Playnite.SDK;
+using Playnite.Settings;
 
 namespace Playnite.API
 {

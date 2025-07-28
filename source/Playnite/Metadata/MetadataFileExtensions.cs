@@ -1,11 +1,12 @@
 ﻿using Playnite.Common;
 using Playnite.Common.Web;
 using Playnite.SDK.Models;
+using Playnite.Settings;
 using System;
 using System.IO;
 using System.Threading;
 
-namespace Playnite
+namespace Playnite.Metadata
 {
     public static class MetadataFileExtensions
     {

@@ -2,6 +2,8 @@
 using Newtonsoft.Json;
 using Playnite.Common;
 using Playnite.SDK;
+using Playnite.SDK.Extensions;
+using Playnite.Settings;
 using Playnite.WebView;
 using System;
 using System.Collections.Generic;

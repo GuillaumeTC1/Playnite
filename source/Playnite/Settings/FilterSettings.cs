@@ -1,11 +1,12 @@
 ﻿using Newtonsoft.Json;
 using Playnite.Common;
+using Playnite.SDK.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using SdkModels = Playnite.SDK.Models;
 
-namespace Playnite
+namespace Playnite.Settings
 {
     public class FilterChangedEventArgs : EventArgs
     {

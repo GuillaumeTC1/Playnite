@@ -1,10 +1,11 @@
-﻿using Playnite.SDK;
+﻿using Playnite.SDK.Database;
+using Playnite.SDK.Extensions;
 using Playnite.SDK.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Playnite.Database
+namespace Playnite.Database.Collections
 {
     public class CategoriesCollection : ItemCollection<Category>
     {

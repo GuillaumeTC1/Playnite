@@ -1,4 +1,5 @@
 ﻿using Playnite.Common;
+using Playnite.Common.Extensions;
 using Playnite.Converters;
 using Playnite.Extensions.Markup;
 using Playnite.SDK;

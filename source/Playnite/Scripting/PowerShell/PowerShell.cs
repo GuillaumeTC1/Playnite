@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using Playnite.SDK;
 using Playnite.SDK.Exceptions;
+using Playnite.SDK.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

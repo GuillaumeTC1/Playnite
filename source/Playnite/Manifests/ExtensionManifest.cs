@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using YamlDotNet.Serialization;
 
-namespace Playnite
+namespace Playnite.Manifests
 {
     public enum ExtensionType
     {

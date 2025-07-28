@@ -2,6 +2,7 @@
 using Playnite.Common;
 using Playnite.SDK;
 using Playnite.SDK.Models;
+using Playnite.Settings;
 using System;
 using System.Diagnostics;
 using System.Text.RegularExpressions;

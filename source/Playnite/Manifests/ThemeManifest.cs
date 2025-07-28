@@ -1,4 +1,5 @@
 ﻿using Playnite.Common;
+using Playnite.Common.Extensions;
 using Playnite.SDK;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.IO;
 using System.Linq;
 using YamlDotNet.Serialization;
 
-namespace Playnite
+namespace Playnite.Manifests
 {
     public class ThemeManifest : BaseExtensionManifest
     {

@@ -3,16 +3,17 @@ using Playnite.Common;
 using Playnite.Common.Web;
 using Playnite.Plugins;
 using Playnite.SDK;
+using Playnite.SDK.Extensions;
+using Playnite.Settings;
 using Playnite.ViewModels;
 using Playnite.Windows;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using YamlDotNet.Serialization;
 
-namespace Playnite
+namespace Playnite.Manifests
 {
     public class AddonInstallerManifest : AddonInstallerManifestBase
     {

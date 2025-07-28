@@ -3,7 +3,7 @@ using Playnite.SDK.Plugins;
 using System;
 using System.Collections.Generic;
 
-namespace Playnite.SDK
+namespace Playnite.SDK.Database
 {
     /// <summary>
     /// Represents type of game database collection.

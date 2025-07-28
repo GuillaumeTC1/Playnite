@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Playnite.SDK.Extensions;
+using System;
 using System.Globalization;
 using System.IO;
 using System.IO.Compression;

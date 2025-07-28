@@ -1,4 +1,6 @@
-﻿using Playnite.SDK.Models;
+﻿using Playnite.SDK.Extensions;
+using Playnite.SDK.Models;
+using Playnite.Settings;
 using System;
 
 namespace Playnite

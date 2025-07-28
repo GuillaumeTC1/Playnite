@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
+using System.Windows;
 
-namespace System.Windows
+namespace Playnite.Common
 {
     public class DesignerTools
     {
@@ -12,7 +13,7 @@ namespace System.Windows
             {
                 if (inDesignMode == null)
                 {
-                    inDesignMode = DesignerProperties.GetIsInDesignMode(new System.Windows.DependencyObject());
+                    inDesignMode = DesignerProperties.GetIsInDesignMode(new DependencyObject());
                 }
 
                 return inDesignMode.Value;

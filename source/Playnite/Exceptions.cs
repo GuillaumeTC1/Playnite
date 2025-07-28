@@ -1,6 +1,8 @@
 ﻿using Playnite.Common;
+using Playnite.Manifests;
 using Playnite.Plugins;
 using Playnite.SDK;
+using Playnite.SDK.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

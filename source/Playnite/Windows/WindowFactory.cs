@@ -1,4 +1,5 @@
-﻿using Playnite.Controls;
+﻿using Playnite.App;
+using Playnite.Controls;
 using Playnite.Native;
 using Playnite.SDK;
 using System;

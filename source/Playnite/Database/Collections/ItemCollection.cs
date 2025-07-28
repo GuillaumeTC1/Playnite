@@ -1,5 +1,7 @@
 ﻿using LiteDB;
+using Playnite.Common.Extensions;
 using Playnite.SDK;
+using Playnite.SDK.Database;
 using Playnite.SDK.Models;
 using System;
 using System.Collections;
@@ -9,7 +11,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Playnite.Database
+namespace Playnite.Database.Collections
 {
     // We currently use LiteDB for permanent storage.
     // We don't use latest LiteDB 5, but instead latest LiteDB 4, because V5 has some issues:
@@ -85,7 +87,7 @@ namespace Playnite.Database
 
         public ItemCollection(string path, BsonMapper mapper, GameDatabaseCollection type = GameDatabaseCollection.Uknown)
         {
-            this.isPersistent = true;
+            isPersistent = true;
             this.mapper = mapper;
             Items = new ConcurrentDictionary<Guid, TItem>();
             InitializeCollection(path);

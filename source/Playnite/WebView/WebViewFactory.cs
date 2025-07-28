@@ -1,4 +1,5 @@
 ﻿using Playnite.SDK;
+using Playnite.Settings;
 using System.Windows.Media;
 
 namespace Playnite.WebView

@@ -9,7 +9,7 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Playnite.DesktopApp.Controls
+namespace Playnite.DesktopApp.Controls.Menus
 {
     public class GameMenu : ContextMenu
     {

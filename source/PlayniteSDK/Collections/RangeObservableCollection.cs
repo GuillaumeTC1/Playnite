@@ -1,7 +1,8 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 
-namespace System.Collections.Generic
+namespace Playnite.SDK.Collections
 {
     /// <summary>
     ///

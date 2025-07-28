@@ -1,4 +1,5 @@
-﻿using Playnite.SDK;
+﻿using Playnite.FullscreenApp.Commands;
+using Playnite.SDK;
 using System.Collections.Generic;
 
 namespace Playnite.FullscreenApp.ViewModels

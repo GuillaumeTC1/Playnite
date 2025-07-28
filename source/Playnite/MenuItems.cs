@@ -1,5 +1,8 @@
-﻿using Playnite.Commands;
+﻿using Playnite.App;
+using Playnite.Commands;
+using Playnite.Extensions;
 using Playnite.SDK;
+using Playnite.SDK.Extensions;
 using Playnite.SDK.Models;
 using Playnite.SDK.Plugins;
 using Playnite.ViewModels;

@@ -1,10 +1,9 @@
-﻿using Playnite.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace Playnite
+namespace Playnite.Common
 {
     public class CueSheet
     {

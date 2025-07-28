@@ -1,9 +1,12 @@
-﻿using Playnite.Converters;
+﻿using Playnite.Common.Extensions;
+using Playnite.Converters;
 using Playnite.Database;
 using Playnite.Plugins;
 using Playnite.SDK;
+using Playnite.SDK.Extensions;
 using Playnite.SDK.Models;
 using Playnite.SDK.Plugins;
+using Playnite.Settings;
 using Playnite.Windows;
 using System;
 using System.Collections.Generic;

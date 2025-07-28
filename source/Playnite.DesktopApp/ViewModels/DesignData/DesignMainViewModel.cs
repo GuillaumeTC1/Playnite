@@ -3,7 +3,7 @@ using Playnite.SDK.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Playnite.DesktopApp.ViewModels
+namespace Playnite.DesktopApp.ViewModels.DesignData
 {
     public class DesignMainViewModel : DesktopAppViewModel
     {

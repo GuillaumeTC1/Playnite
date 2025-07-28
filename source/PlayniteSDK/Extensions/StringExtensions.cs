@@ -1,6 +1,7 @@
 ﻿using Playnite.SDK;
+using System;
 
-namespace System
+namespace Playnite.SDK.Extensions
 {
     /// <summary>
     /// <see cref="string"/> extension methods.

@@ -1,11 +1,12 @@
 ﻿using Playnite.Database;
 using Playnite.SDK;
+using Playnite.SDK.Extensions;
 using Playnite.SDK.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Playnite
+namespace Playnite.Settings
 {
     public class ListViewColumnProperty : ObservableObject
     {

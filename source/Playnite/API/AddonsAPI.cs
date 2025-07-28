@@ -1,6 +1,7 @@
 ﻿using Playnite.Plugins;
 using Playnite.SDK;
 using Playnite.SDK.Plugins;
+using Playnite.Settings;
 using System.Collections.Generic;
 using System.Linq;
 

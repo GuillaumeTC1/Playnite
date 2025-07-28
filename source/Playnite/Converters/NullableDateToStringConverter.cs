@@ -1,4 +1,5 @@
 ﻿using Playnite.SDK.Models;
+using Playnite.Settings;
 using System;
 using System.Globalization;
 using System.Windows;

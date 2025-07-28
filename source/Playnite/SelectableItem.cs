@@ -1,6 +1,8 @@
 ﻿using Playnite.SDK;
+using Playnite.SDK.Extensions;
 using Playnite.SDK.Models;
 using Playnite.SDK.Plugins;
+using Playnite.Settings;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,7 +11,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows.Data;
 
-namespace System
+namespace Playnite
 {
     public class NamedObject<TItem> : ObservableObject
     {
@@ -55,7 +57,7 @@ namespace System
 
         public static bool operator ==(NamedObject<TItem> l, NamedObject<TItem> r)
         {
-            if ((l is null && !(r is null)) || (!(l is null) && r is null))
+            if (l is null && !(r is null) || !(l is null) && r is null)
             {
                 return false;
             }
@@ -315,7 +317,7 @@ namespace System
             this.includeNoneItem = includeNoneItem;
             if (includeNoneItem)
             {
-                var newItem = new SelectableItem<string>(Playnite.FilterSettings.MissingFieldString);
+                var newItem = new SelectableItem<string>(FilterSettings.MissingFieldString);
                 newItem.PropertyChanged += NewItem_PropertyChanged;
                 Items.Insert(0, newItem);
             }
@@ -334,7 +336,7 @@ namespace System
 
             if (includeNoneItem)
             {
-                var newItem = new SelectableItem<string>(Playnite.FilterSettings.MissingFieldString);
+                var newItem = new SelectableItem<string>(FilterSettings.MissingFieldString);
                 newItem.PropertyChanged += NewItem_PropertyChanged;
                 Items.Add(newItem);
             }

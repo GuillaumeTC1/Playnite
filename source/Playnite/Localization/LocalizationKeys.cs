@@ -1,7 +1,7 @@
 ///
 /// DO NOT MODIFY! Automatically generated via buildLocConstants.ps1 script.
 /// 
-namespace Playnite
+namespace Playnite.Localization
 {
     public static class LOC
     {

@@ -1,5 +1,7 @@
 ﻿using Playnite.FullscreenApp.Windows;
 using Playnite.SDK;
+using Playnite.SDK.Database;
+using Playnite.SDK.Extensions;
 using Playnite.SDK.Models;
 using System;
 using System.Collections.Generic;

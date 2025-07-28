@@ -10,7 +10,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
-namespace Playnite.DesktopApp.Controls
+namespace Playnite.DesktopApp.Controls.Menus
 {
     public class TrayContextMenu : ContextMenu
     {
@@ -56,7 +56,7 @@ namespace Playnite.DesktopApp.Controls
             }
             else if (locString.StartsWith("LOC", StringComparison.Ordinal))
             {
-                item.SetResourceReference(MenuItem.HeaderProperty, locString);
+                item.SetResourceReference(HeaderedItemsControl.HeaderProperty, locString);
             }
             else
             {

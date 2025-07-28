@@ -1,7 +1,9 @@
 ﻿using Playnite.FullscreenApp.Controls;
+using Playnite.FullscreenApp.ViewModels.DesignData;
 using Playnite.FullscreenApp.Windows;
 using Playnite.SDK;
 using Playnite.SDK.Events;
+using Playnite.SDK.Extensions;
 using Playnite.SDK.Models;
 using Playnite.SDK.Plugins;
 using System;

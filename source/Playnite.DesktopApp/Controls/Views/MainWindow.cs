@@ -1,4 +1,5 @@
 ﻿using Playnite.DesktopApp.ViewModels;
+using Playnite.DesktopApp.ViewModels.DesignData;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;

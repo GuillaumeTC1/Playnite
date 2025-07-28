@@ -1,6 +1,9 @@
-﻿using Playnite.DesktopApp.Windows;
+﻿using Playnite.DesktopApp.ViewModels.DesignData;
+using Playnite.DesktopApp.Windows;
 using Playnite.SDK;
+using Playnite.SDK.Database;
 using Playnite.SDK.Events;
+using Playnite.SDK.Extensions;
 using Playnite.SDK.Models;
 using Playnite.SDK.Plugins;
 using System;

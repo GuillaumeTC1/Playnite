@@ -1,6 +1,11 @@
-﻿using Playnite.Plugins;
+﻿using Playnite.Common.Extensions;
+using Playnite.Database.Collections;
+using Playnite.Plugins;
 using Playnite.SDK;
+using Playnite.SDK.Database;
+using Playnite.SDK.Extensions;
 using Playnite.SDK.Models;
+using Playnite.Settings;
 using Playnite.ViewModels;
 using System;
 using System.Collections.Generic;

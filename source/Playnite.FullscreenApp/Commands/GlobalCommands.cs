@@ -1,7 +1,7 @@
 ﻿using Playnite.SDK;
 using System.Windows;
 
-namespace Playnite.FullscreenApp
+namespace Playnite.FullscreenApp.Commands
 {
     public class NavigateUrlCommand : RelayCommand<object>
     {

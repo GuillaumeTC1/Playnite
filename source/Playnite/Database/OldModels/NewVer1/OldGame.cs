@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
+using Playnite.SDK.Collections;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace Playnite.Database.OldModels.NewVer1

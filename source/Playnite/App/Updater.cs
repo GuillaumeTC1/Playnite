@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using Playnite.Common;
 using Playnite.Common.Web;
 using Playnite.SDK;
+using Playnite.Settings;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -10,7 +11,7 @@ using System.IO;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace Playnite
+namespace Playnite.App
 {
     public class Updater
     {

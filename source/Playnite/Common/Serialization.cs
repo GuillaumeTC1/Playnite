@@ -1,6 +1,7 @@
 ﻿using Nett;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using Playnite.Common.Extensions;
 using Playnite.SDK;
 using Playnite.SDK.Data;
 using System;

@@ -3,7 +3,7 @@ using Playnite.SDK;
 using System;
 using System.IO;
 
-namespace Playnite
+namespace Playnite.Settings
 {
     public class PlaynitePaths
     {

@@ -1,6 +1,5 @@
 ﻿using Playnite.ViewModels;
 using Playnite.Windows;
-using System;
 using System.Collections.Generic;
 
 namespace Playnite

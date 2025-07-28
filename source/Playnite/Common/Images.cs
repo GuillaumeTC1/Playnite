@@ -1,7 +1,7 @@
 ﻿using Playnite.Common.Media.Icons;
 using Playnite.SDK;
+using Playnite.SDK.Extensions;
 using System;
-using System.Collections.Generic;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;

@@ -1,8 +1,11 @@
 ﻿using Playnite.Common;
+using Playnite.Common.Extensions;
 using Playnite.Database;
 using Playnite.Emulators;
 using Playnite.SDK;
+using Playnite.SDK.Extensions;
 using Playnite.SDK.Models;
+using Playnite.Settings;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,14 +14,14 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace Playnite
+namespace Playnite.Extensions
 {
     public static class EmulatorProfileExtensions
     {
         public static CustomEmulatorProfile ExpandVariables(this CustomEmulatorProfile profile, Game game, string emulatorDir, string romPath)
         {
             var g = game.GetCopy();
-            g.Roms = new System.Collections.ObjectModel.ObservableCollection<GameRom> { new GameRom("", romPath) };
+            g.Roms = new ObservableCollection<GameRom> { new GameRom("", romPath) };
             var expaded = profile.GetCopy();
             expaded.Arguments = g.ExpandVariables(expaded.Arguments, false, emulatorDir);
             expaded.WorkingDirectory = g.ExpandVariables(expaded.WorkingDirectory, true, emulatorDir);
@@ -78,7 +81,7 @@ namespace Playnite
                 game.GameId = path.MD5();
                 game.Name = Path.GetFileNameWithoutExtension(path);
                 game.InstallDirectory = prog.WorkDir.IsNullOrEmpty() ? fileInfo.Directory.FullName : prog.WorkDir;
-                game.GameActions = new System.Collections.ObjectModel.ObservableCollection<GameAction>
+                game.GameActions = new ObservableCollection<GameAction>
                 {
                     new GameAction()
                     {
@@ -119,7 +122,7 @@ namespace Playnite
 
                 game.Name = Path.GetFileNameWithoutExtension(path);
                 game.Icon = shortcut["IconFile"];
-                game.GameActions = new System.Collections.ObjectModel.ObservableCollection<GameAction>
+                game.GameActions = new ObservableCollection<GameAction>
                 {
                     new GameAction()
                     {
@@ -137,7 +140,7 @@ namespace Playnite
                 var programName = !string.IsNullOrEmpty(versionInfo.ProductName?.Trim()) ? versionInfo.ProductName : new DirectoryInfo(file.DirectoryName).Name;
                 game.Name = programName;
                 game.InstallDirectory = file.DirectoryName;
-                game.GameActions = new System.Collections.ObjectModel.ObservableCollection<GameAction>
+                game.GameActions = new ObservableCollection<GameAction>
                 {
                     new GameAction()
                     {
@@ -174,7 +177,7 @@ namespace Playnite
         public static string ExpandVariables(this Game game, string inputString, bool fixSeparators = false, string emulatorDir = null, string romPath = null)
         {
             var g = game.ExpandGame(fixSeparators, emulatorDir, romPath);
-            return StringExpand(g, inputString, fixSeparators, emulatorDir, romPath);
+            return g.StringExpand(inputString, fixSeparators, emulatorDir, romPath);
         }
 
         // TODO rework this whole mess into something better and more maintainable :|
@@ -228,7 +231,7 @@ namespace Playnite
         public static string ExpandVariables(this GameMetadata game, string inputString, bool fixSeparators = false)
         {
             var g = game.ExpandGame();
-            return StringExpand(g, inputString, fixSeparators);
+            return g.StringExpand(inputString, fixSeparators);
         }
 
         private static string StringExpand(this GameMetadata game, string inputString, bool fixSeparators = false)

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Playnite.SDK
+namespace Playnite.SDK.Database
 {
     /// <summary>
     /// Describes object providing game database API.

@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Playnite.SDK;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.CompilerServices;
 
-namespace Playnite.SDK
+namespace PlayniteInstaller
 {
     public class Logger : ILogger
     {
@@ -110,7 +111,7 @@ namespace Playnite.SDK
         [MethodImpl(MethodImplOptions.NoInlining)]
         public static ILogger GetLogger()
         {
-            var className = (new StackFrame(1)).GetMethod().DeclaringType.Name;
+            var className = new StackFrame(1).GetMethod().DeclaringType.Name;
             return GetLogger(className);
         }
 

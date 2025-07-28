@@ -1,7 +1,8 @@
 ﻿using Playnite.Common;
+using System.Windows;
 using System.Windows.Forms;
 
-namespace System.Windows
+namespace Playnite.Common.Extensions
 {
     public static class WindowExtensions
     {

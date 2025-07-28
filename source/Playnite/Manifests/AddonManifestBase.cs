@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Playnite
+namespace Playnite.Manifests
 {
     public enum AddonType
     {

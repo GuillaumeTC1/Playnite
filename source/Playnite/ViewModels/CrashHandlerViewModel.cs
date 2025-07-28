@@ -1,6 +1,9 @@
-﻿using Playnite.Common;
+﻿using Playnite.App;
+using Playnite.Common;
 using Playnite.SDK;
+using Playnite.SDK.Extensions;
 using Playnite.Services;
+using Playnite.Settings;
 using Playnite.Windows;
 using System;
 using System.Collections.Generic;

@@ -1,4 +1,5 @@
 ﻿using Playnite.SDK;
+using Playnite.Settings;
 
 namespace Playnite.API
 {

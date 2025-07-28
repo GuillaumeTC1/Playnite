@@ -1,10 +1,11 @@
 ﻿using Playnite.Native;
 using System.ComponentModel;
+using System.Drawing;
 using System.IO;
 using System.Windows;
 using System.Windows.Media.Imaging;
 
-namespace System.Drawing
+namespace Playnite.Common.Extensions
 {
     public static class IconExtension
     {
@@ -24,10 +25,10 @@ namespace System.Drawing
         {
             using (Bitmap bitmap = icon.ToBitmap())
             {
-                IntPtr hBitmap = bitmap.GetHbitmap();
+                nint hBitmap = bitmap.GetHbitmap();
                 BitmapSource wpfBitmap = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(
                     hBitmap,
-                    IntPtr.Zero,
+                    nint.Zero,
                     Int32Rect.Empty,
                     BitmapSizeOptions.FromEmptyOptions());
 

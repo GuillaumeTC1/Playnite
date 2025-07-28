@@ -1,4 +1,5 @@
-﻿using Playnite.FullscreenApp.Windows;
+﻿using Playnite.FullscreenApp.Commands;
+using Playnite.FullscreenApp.Windows;
 using Playnite.SDK;
 using System;
 using System.Collections.Generic;
