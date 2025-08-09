@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Playnite.FullscreenApp.Windows
+namespace Playnite.Legacy.FullscreenApp.Windows
 {
     public class RandomGameSelectWindowFactory : WindowFactory
     {

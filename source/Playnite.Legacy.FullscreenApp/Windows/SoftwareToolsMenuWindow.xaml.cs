@@ -1,4 +1,4 @@
-﻿namespace Playnite.FullscreenApp.Windows
+﻿namespace Playnite.Legacy.FullscreenApp.Windows
 {
     public class SoftwareToolsMenuWindowFactory : WindowFactory
     {

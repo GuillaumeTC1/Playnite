@@ -4,7 +4,7 @@ using Playnite.SDK.Plugins;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Playnite.FullscreenApp
+namespace Playnite.Legacy.FullscreenApp
 {
     public class FullscreenActionSelector : IActionSelector
     {

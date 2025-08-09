@@ -7,7 +7,7 @@ using System.Windows.Data;
 using System.Windows.Input;
 using System.Xml.Linq;
 
-namespace Playnite.DesktopApp.Controls
+namespace Playnite.Legacy.DesktopApp.Controls
 {
     [TemplatePart(Name = "PART_ToggleSelectedOnly", Type = typeof(ToggleButton))]
     [TemplatePart(Name = "PART_SearchBox", Type = typeof(SearchBox))]
@@ -131,7 +131,7 @@ namespace Playnite.DesktopApp.Controls
                             new XAttribute(nameof(CheckBox.IsChecked), "{Binding Selected}"),
                             new XAttribute(nameof(CheckBox.Content), "{Binding Item.Name}"),
                             new XAttribute(nameof(CheckBox.IsThreeState), "{Binding IsThreeState, Mode=OneWay, RelativeSource={RelativeSource AncestorType=DdItemListSelectionBox}}"),
-                            new XAttribute(nameof(CheckBox.Style), $"{{DynamicResource ComboBoxListItemStyle}}")))
+                            new XAttribute(nameof(Style), $"{{DynamicResource ComboBoxListItemStyle}}")))
                 ).ToString());
             }
 
@@ -151,7 +151,7 @@ namespace Playnite.DesktopApp.Controls
             {
                 BindingTools.SetBinding(
                     ElemSearchHost,
-                    FrameworkElement.VisibilityProperty,
+                    VisibilityProperty,
                     this,
                     nameof(ShowSearchBox),
                     converter: new Converters.BooleanToVisibilityConverter());

@@ -1,9 +1,11 @@
-﻿using Playnite.SDK;
+﻿using Playnite.DesktopApp;
+using Playnite.DesktopApp.ViewModels;
+using Playnite.SDK;
 using Playnite.SDK.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Playnite.DesktopApp.ViewModels.DesignData
+namespace Playnite.Legacy.DesktopApp.ViewModels.DesignData
 {
     public class DesignMainViewModel : DesktopAppViewModel
     {

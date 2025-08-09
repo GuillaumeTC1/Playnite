@@ -1,6 +1,7 @@
-﻿using Playnite.FullscreenApp.Markup;
-using Playnite.FullscreenApp.ViewModels;
-using Playnite.FullscreenApp.ViewModels.DesignData;
+﻿using Playnite.FullscreenApp.ViewModels;
+using Playnite.Legacy.FullscreenApp.Markup;
+using Playnite.Legacy.FullscreenApp.ViewModels;
+using Playnite.Legacy.FullscreenApp.ViewModels.DesignData;
 using Playnite.SDK;
 using Playnite.SDK.Events;
 using System;
@@ -12,7 +13,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Input;
 
-namespace Playnite.FullscreenApp.Controls.Views
+namespace Playnite.Legacy.FullscreenApp.Controls.Views
 {
     [TemplatePart(Name = "PART_ViewHost", Type = typeof(FrameworkElement))]
     [TemplatePart(Name = "PART_ButtonContext", Type = typeof(ButtonBase))]
@@ -128,7 +129,7 @@ namespace Playnite.FullscreenApp.Controls.Views
                         $"{nameof(mainModel.SelectedGameDetails)}.{nameof(mainModel.SelectedGameDetails.ContextActionCommand)}");
                     BindingTools.SetBinding(
                         ButtonContext,
-                        ButtonBase.ContentProperty,
+                        ContentControl.ContentProperty,
                         mainModel,
                         $"{nameof(mainModel.SelectedGameDetails)}.{nameof(mainModel.SelectedGameDetails.ContextActionDescription)}");
                 }

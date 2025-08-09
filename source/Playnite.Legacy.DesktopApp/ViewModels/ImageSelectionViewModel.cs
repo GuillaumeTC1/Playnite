@@ -1,7 +1,7 @@
 ﻿using Playnite.SDK;
 using System.Collections.Generic;
 
-namespace Playnite.DesktopApp.ViewModels
+namespace Playnite.Legacy.DesktopApp.ViewModels
 {
     public class ImageSelectionViewModel : ObservableObject
     {

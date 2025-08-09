@@ -7,7 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 
-namespace Playnite.FullscreenApp.Controls.SettingsSections
+namespace Playnite.Legacy.FullscreenApp.Controls.SettingsSections
 {
     /// <summary>
     /// Interaction logic for Visuals.xaml
@@ -95,7 +95,7 @@ namespace Playnite.FullscreenApp.Controls.SettingsSections
 
                 BindingTools.SetBinding(
                     check,
-                    CheckBox.IsCheckedProperty,
+                    ToggleButton.IsCheckedProperty,
                     controller,
                     nameof(LoadedGameController.Enabled),
                     BindingMode.TwoWay,

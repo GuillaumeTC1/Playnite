@@ -1,5 +1,6 @@
 ﻿using Playnite.DesktopApp.ViewModels;
-using Playnite.DesktopApp.ViewModels.DesignData;
+using Playnite.Legacy.DesktopApp;
+using Playnite.Legacy.DesktopApp.ViewModels.DesignData;
 using Playnite.SDK;
 using Playnite.SDK.Plugins;
 using System;
@@ -10,7 +11,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 
-namespace Playnite.DesktopApp.Controls.Menus
+namespace Playnite.Legacy.DesktopApp.Controls.Menus
 {
     public class MainMenu : ContextMenu
     {

@@ -1,4 +1,5 @@
 ﻿using CommandLine;
+using Playnite.DesktopApp;
 using Playnite.SDK;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Runtime;
 using System.Windows;
 
-namespace Playnite.DesktopApp
+namespace Playnite.Legacy.DesktopApp
 {
     public class ProgramEntry
     {

@@ -1,4 +1,5 @@
-﻿using Playnite.SDK;
+﻿using Playnite.DesktopApp.ViewModels;
+using Playnite.SDK;
 using Playnite.SDK.Extensions;
 using Playnite.SDK.Models;
 using System;
@@ -6,7 +7,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace Playnite.DesktopApp.ViewModels
+namespace Playnite.Legacy.DesktopApp.ViewModels
 {
     public enum MetadataChangeDataSource
     {

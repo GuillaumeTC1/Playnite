@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Data;
 
-namespace Playnite.FullscreenApp.Controls.SettingsSections
+namespace Playnite.Legacy.FullscreenApp.Controls.SettingsSections
 {
     /// <summary>
     /// Interaction logic for Visuals.xaml
@@ -24,14 +24,14 @@ namespace Playnite.FullscreenApp.Controls.SettingsSections
             SliderColumns.IsSnapToTickEnabled = true;
             BindingTools.SetBinding(
                 SliderColumns,
-                Slider.ValueProperty,
+                System.Windows.Controls.Primitives.RangeBase.ValueProperty,
                 mainModel.AppSettings.Fullscreen,
                 nameof(FullscreenSettings.Columns),
                 BindingMode.TwoWay,
                 UpdateSourceTrigger.PropertyChanged);
             BindingTools.SetBinding(
                     SliderColumns,
-                    Slider.IsEnabledProperty,
+                    IsEnabledProperty,
                     mainModel.AppSettings.Fullscreen,
                     nameof(FullscreenSettings.HorizontalLayout),
                     BindingMode.OneWay,
@@ -43,14 +43,14 @@ namespace Playnite.FullscreenApp.Controls.SettingsSections
             SliderRows.IsSnapToTickEnabled = true;
             BindingTools.SetBinding(
                 SliderRows,
-                Slider.ValueProperty,
+                System.Windows.Controls.Primitives.RangeBase.ValueProperty,
                 mainModel.AppSettings.Fullscreen,
                 nameof(FullscreenSettings.Rows),
                 BindingMode.TwoWay,
                 UpdateSourceTrigger.PropertyChanged);
             BindingTools.SetBinding(
                     SliderRows,
-                    Slider.IsEnabledProperty,
+                    IsEnabledProperty,
                     mainModel.AppSettings.Fullscreen,
                     nameof(FullscreenSettings.HorizontalLayout),
                     BindingMode.OneWay,
@@ -63,7 +63,7 @@ namespace Playnite.FullscreenApp.Controls.SettingsSections
             SliderItemSpacing.IsSnapToTickEnabled = true;
             BindingTools.SetBinding(
                 SliderItemSpacing,
-                Slider.ValueProperty,
+                System.Windows.Controls.Primitives.RangeBase.ValueProperty,
                 mainModel.AppSettings,
                 nameof(PlayniteSettings.FullscreenItemSpacing),
                 BindingMode.TwoWay,
@@ -71,7 +71,7 @@ namespace Playnite.FullscreenApp.Controls.SettingsSections
 
             BindingTools.SetBinding(
                 ToggleHorizontalLayout,
-                CheckBox.IsCheckedProperty,
+                System.Windows.Controls.Primitives.ToggleButton.IsCheckedProperty,
                 mainModel.AppSettings.Fullscreen,
                 nameof(FullscreenSettings.HorizontalLayout),
                 BindingMode.TwoWay,
@@ -79,7 +79,7 @@ namespace Playnite.FullscreenApp.Controls.SettingsSections
 
             BindingTools.SetBinding(
                 ToggleSmoothScrolling,
-                CheckBox.IsCheckedProperty,
+                System.Windows.Controls.Primitives.ToggleButton.IsCheckedProperty,
                 mainModel.AppSettings.Fullscreen,
                 nameof(FullscreenSettings.SmoothScrolling),
                 BindingMode.TwoWay,

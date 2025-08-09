@@ -1,6 +1,9 @@
-﻿using Playnite.FullscreenApp.Controls;
-using Playnite.FullscreenApp.ViewModels.DesignData;
-using Playnite.FullscreenApp.Windows;
+﻿using Playnite.FullscreenApp.Windows;
+using Playnite.Legacy.FullscreenApp;
+using Playnite.Legacy.FullscreenApp.Controls;
+using Playnite.Legacy.FullscreenApp.ViewModels;
+using Playnite.Legacy.FullscreenApp.ViewModels.DesignData;
+using Playnite.Legacy.FullscreenApp.Windows;
 using Playnite.SDK;
 using Playnite.SDK.Events;
 using Playnite.SDK.Extensions;
@@ -719,9 +722,9 @@ namespace Playnite.FullscreenApp.ViewModels
 
         private void SearchText_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == nameof(Windows.TextInputWindow.InputText))
+            if (e.PropertyName == nameof(TextInputWindow.InputText))
             {
-                var input = sender as Windows.TextInputWindow;
+                var input = sender as TextInputWindow;
                 if (AppSettings.Fullscreen.FilterSettings.Name != input.InputText)
                 {
                     if (AppSettings.Fullscreen.FilterSettings.Name.IsNullOrEmpty() && input.InputText.IsNullOrEmpty())

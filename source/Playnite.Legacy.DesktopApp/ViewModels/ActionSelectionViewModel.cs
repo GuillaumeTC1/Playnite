@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Playnite.DesktopApp.ViewModels
+namespace Playnite.Legacy.DesktopApp.ViewModels
 {
     public class ActionSelectionViewModel : ObservableObject
     {

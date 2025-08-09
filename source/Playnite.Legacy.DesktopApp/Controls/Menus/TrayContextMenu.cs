@@ -10,7 +10,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
-namespace Playnite.DesktopApp.Controls.Menus
+namespace Playnite.Legacy.DesktopApp.Controls.Menus
 {
     public class TrayContextMenu : ContextMenu
     {

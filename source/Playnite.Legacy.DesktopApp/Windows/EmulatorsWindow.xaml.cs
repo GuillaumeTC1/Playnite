@@ -1,4 +1,4 @@
-﻿namespace Playnite.DesktopApp.Windows
+﻿namespace Playnite.Legacy.DesktopApp.Windows
 {
     public class EmulatorsWindowFactory : WindowFactory
     {

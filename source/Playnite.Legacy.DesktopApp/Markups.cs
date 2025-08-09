@@ -1,8 +1,8 @@
 ﻿using Playnite.DesktopApp.ViewModels;
-using Playnite.DesktopApp.ViewModels.DesignData;
+using Playnite.Legacy.DesktopApp.ViewModels.DesignData;
 using Playnite.SDK;
 
-namespace Playnite.DesktopApp
+namespace Playnite.Legacy.DesktopApp
 {
     public class Api : Extensions.Markup.Api
     {

@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace Playnite.DesktopApp.Controls
+namespace Playnite.Legacy.DesktopApp.Controls
 {
     [TemplatePart(Name = "PART_SeachIcon", Type = typeof(FrameworkElement))]
     [TemplatePart(Name = "PART_ClearTextIcon", Type = typeof(FrameworkElement))]

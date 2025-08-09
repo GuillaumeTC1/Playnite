@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Data;
 
-namespace Playnite.DesktopApp.Controls
+namespace Playnite.Legacy.DesktopApp.Controls
 {
     public class UlongNumericBox : TextBox
     {

@@ -1,4 +1,5 @@
 ﻿using Playnite.DesktopApp.ViewModels;
+using Playnite.Legacy.DesktopApp;
 using Playnite.SDK;
 using Playnite.SDK.Models;
 using Playnite.SDK.Plugins;
@@ -9,7 +10,7 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Playnite.DesktopApp.Controls.Menus
+namespace Playnite.Legacy.DesktopApp.Controls.Menus
 {
     public class GameMenu : ContextMenu
     {

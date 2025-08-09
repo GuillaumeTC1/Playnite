@@ -7,7 +7,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 
-namespace Playnite.FullscreenApp.Controls
+namespace Playnite.Legacy.FullscreenApp.Controls
 {
     public class InternalChildrenGeneratedArgs
     {
@@ -42,7 +42,7 @@ namespace Playnite.FullscreenApp.Controls
                     /* Because of a bug in the framework the ItemContainerGenerator
                      * is null until InternalChildren accessed at least one time. */
                     var children = InternalChildren;
-                    itemContainerGenerator = (IRecyclingItemContainerGenerator)base.ItemContainerGenerator;
+                    itemContainerGenerator = (IRecyclingItemContainerGenerator)ItemContainerGenerator;
                 }
                 return itemContainerGenerator;
             }
@@ -246,7 +246,7 @@ namespace Playnite.FullscreenApp.Controls
             }
 
             var startPos = generator.GeneratorPositionFromIndex(firstItemIndex);
-            var childIndex = (startPos.Offset == 0) ? startPos.Index : startPos.Index + 1;
+            var childIndex = startPos.Offset == 0 ? startPos.Index : startPos.Index + 1;
             var anyItemsGenerated = false;
             using (generator.StartAt(startPos, GeneratorDirection.Forward, true))
             {
@@ -332,8 +332,8 @@ namespace Playnite.FullscreenApp.Controls
                 var row = itemIndex % computedRows;
                 var column = itemIndex < row ? 0 : (int)Math.Floor(itemIndex / (double)computedRows);
                 return new Rect(
-                    (column * itemWidth) + (itemWidth * 0.25),
-                    centerMargin + (row * itemHeight),
+                    column * itemWidth + itemWidth * 0.25,
+                    centerMargin + row * itemHeight,
                     itemWidth,
                     itemHeight);
             }
@@ -342,15 +342,15 @@ namespace Playnite.FullscreenApp.Controls
                 if (computedColumns == 0)
                     return new Rect(
                         centerMargin,
-                        (marginOffset / 2) * itemHeight,
+                        marginOffset / 2 * itemHeight,
                         itemWidth,
                         itemHeight);
 
                 var column = itemIndex % computedColumns;
                 var row = itemIndex < column ? 0 : (int)Math.Floor(itemIndex / (double)computedColumns);
                 return new Rect(
-                    centerMargin + (column * itemWidth),
-                    (row * itemHeight) + ((marginOffset / 2) * itemHeight),
+                    centerMargin + column * itemWidth,
+                    row * itemHeight + marginOffset / 2 * itemHeight,
                     itemWidth,
                     itemHeight);
             }
@@ -367,14 +367,14 @@ namespace Playnite.FullscreenApp.Controls
 
             if (UseHorizontalLayout)
             {
-                var previousColumns = (int)Math.Ceiling((offset.X - (itemWidth * (marginOffset / 2))) / itemWidth);
+                var previousColumns = (int)Math.Ceiling((offset.X - itemWidth * (marginOffset / 2)) / itemWidth);
                 firstIndex = (int)Math.Ceiling((double)previousColumns * computedRows) - computedRows;
                 if (firstIndex < 0)
                 {
                     firstIndex = 0;
                 }
 
-                lastIndex = (previousColumns * computedRows) + (computedRows * (Columns + 1)) - 1;
+                lastIndex = previousColumns * computedRows + computedRows * (Columns + 1) - 1;
                 if (lastIndex >= itemCount)
                 {
                     lastIndex = itemCount;
@@ -382,14 +382,14 @@ namespace Playnite.FullscreenApp.Controls
             }
             else
             {
-                var previousRows = (int)Math.Ceiling((offset.Y - (itemHeight * (marginOffset / 2))) / itemHeight);
+                var previousRows = (int)Math.Ceiling((offset.Y - itemHeight * (marginOffset / 2)) / itemHeight);
                 firstIndex = (int)Math.Ceiling((double)previousRows * computedColumns) - computedColumns;
                 if (firstIndex < 0)
                 {
                     firstIndex = 0;
                 }
 
-                lastIndex = (previousRows * computedColumns) + (computedColumns * (Rows + 1)) - 1;
+                lastIndex = previousRows * computedColumns + computedColumns * (Rows + 1) - 1;
                 if (lastIndex >= itemCount)
                 {
                     lastIndex = itemCount;
@@ -455,7 +455,7 @@ namespace Playnite.FullscreenApp.Controls
 
                 var totalColumns = (int)Math.Ceiling(itemCount / (double)computedRows);
                 return new Size(
-                    (totalColumns * itemWidth) + (centerMargin * 2),
+                    totalColumns * itemWidth + centerMargin * 2,
                     viewport.Height);
             }
             else
@@ -498,11 +498,11 @@ namespace Playnite.FullscreenApp.Controls
         {
             if (UseHorizontalLayout)
             {
-                return (viewport.Height - (computedRows * itemHeight)) / 2;
+                return (viewport.Height - computedRows * itemHeight) / 2;
             }
             else
             {
-                return (viewport.Width - (computedColumns * itemWidth)) / 2;
+                return (viewport.Width - computedColumns * itemWidth) / 2;
             }
         }
 
@@ -763,12 +763,12 @@ namespace Playnite.FullscreenApp.Controls
 
         public void PageLeft()
         {
-            SetHorizontalOffset(HorizontalOffset - (itemWidth * Columns));
+            SetHorizontalOffset(HorizontalOffset - itemWidth * Columns);
         }
 
         public void PageRight()
         {
-            SetHorizontalOffset(HorizontalOffset + (itemWidth * Columns));
+            SetHorizontalOffset(HorizontalOffset + itemWidth * Columns);
         }
 
         public void PageUp()
@@ -779,7 +779,7 @@ namespace Playnite.FullscreenApp.Controls
             }
             else
             {
-                SetVerticalOffset(VerticalOffset - (itemHeight * Rows));
+                SetVerticalOffset(VerticalOffset - itemHeight * Rows);
             }
         }
 
@@ -791,7 +791,7 @@ namespace Playnite.FullscreenApp.Controls
             }
             else
             {
-                SetVerticalOffset(VerticalOffset + (itemHeight * Rows));
+                SetVerticalOffset(VerticalOffset + itemHeight * Rows);
             }
         }
 

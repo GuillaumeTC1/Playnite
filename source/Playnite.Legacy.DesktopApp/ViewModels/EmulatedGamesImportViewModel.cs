@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Controls;
 
-namespace Playnite.DesktopApp.ViewModels
+namespace Playnite.Legacy.DesktopApp.ViewModels
 {
     public class EmulatedGamesImportViewModel : ObservableObject
     {

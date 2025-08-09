@@ -1,5 +1,5 @@
 ﻿using Playnite.FullscreenApp.ViewModels;
-using Playnite.FullscreenApp.ViewModels.DesignData;
+using Playnite.Legacy.FullscreenApp.ViewModels.DesignData;
 using Playnite.SDK;
 using System.ComponentModel;
 using System.Windows;
@@ -7,7 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
 
-namespace Playnite.FullscreenApp.Controls
+namespace Playnite.Legacy.FullscreenApp.Controls
 {
     [TemplatePart(Name = "PART_ImageCover", Type = typeof(Image))]
     public class GameListItem : Control

@@ -1,12 +1,13 @@
 ﻿using Playnite.DesktopApp.ViewModels;
-using Playnite.DesktopApp.ViewModels.DesignData;
+using Playnite.Legacy.DesktopApp;
+using Playnite.Legacy.DesktopApp.ViewModels.DesignData;
 using Playnite.SDK;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 
-namespace Playnite.DesktopApp.Controls.Views
+namespace Playnite.Legacy.DesktopApp.Controls.Views
 {
     [TemplatePart(Name = "PART_ButtonClose", Type = typeof(ButtonBase))]
     [TemplatePart(Name = "PART_ButtonDismissAll", Type = typeof(ButtonBase))]

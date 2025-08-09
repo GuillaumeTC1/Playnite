@@ -1,10 +1,11 @@
-﻿using Playnite.SDK;
+﻿using Playnite.FullscreenApp.ViewModels;
+using Playnite.SDK;
 using Playnite.SDK.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Playnite.FullscreenApp.ViewModels
+namespace Playnite.Legacy.FullscreenApp.ViewModels
 {
     public class SoftwareToolsMenuViewModel : ObservableObject
     {
@@ -27,7 +28,7 @@ namespace Playnite.FullscreenApp.ViewModels
             FullscreenAppViewModel mainModel)
         {
             this.window = window;
-            this.MainModel = mainModel;
+            MainModel = mainModel;
             Tools = mainModel.Database.SoftwareApps.OrderBy(a => a.Name).ToList();
             if (Tools.Count == 0)
                 Tools = new List<AppSoftware> { noApp };

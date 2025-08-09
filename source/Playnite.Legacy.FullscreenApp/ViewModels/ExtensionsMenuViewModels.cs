@@ -1,4 +1,5 @@
-﻿using Playnite.SDK;
+﻿using Playnite.FullscreenApp.ViewModels;
+using Playnite.SDK;
 using Playnite.SDK.Models;
 using Playnite.SDK.Plugins;
 using System;
@@ -8,7 +9,7 @@ using System.Text;
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace Playnite.FullscreenApp.ViewModels
+namespace Playnite.Legacy.FullscreenApp.ViewModels
 {
     public class ExtensionsMenuViewModels : ObservableObject
     {
@@ -80,7 +81,7 @@ namespace Playnite.FullscreenApp.ViewModels
             Game game)
         {
             this.window = window;
-            this.MainModel = mainModel;
+            MainModel = mainModel;
             CloseCommand = new RelayCommand(Close);
             SwitchListCommand = new RelayCommand<MainMenuItemWrapper>(SwitchList);
 
@@ -219,7 +220,7 @@ namespace Playnite.FullscreenApp.ViewModels
             FullscreenAppViewModel mainModel)
         {
             this.window = window;
-            this.MainModel = mainModel;
+            MainModel = mainModel;
             CloseCommand = new RelayCommand(Close);
             SwitchListCommand = new RelayCommand<MainMenuItemWrapper>(SwitchList);
 

@@ -6,7 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Xml.Linq;
 
-namespace Playnite.DesktopApp.Controls
+namespace Playnite.Legacy.DesktopApp.Controls
 {
     public class ComboBoxList : ComboBoxListBase
     {
@@ -133,7 +133,7 @@ namespace Playnite.DesktopApp.Controls
                             new XAttribute(nameof(CheckBox.IsChecked), "{Binding Selected}"),
                             new XAttribute(nameof(CheckBox.Content), "{Binding Item}"),
                             new XAttribute(nameof(CheckBox.IsThreeState), "{Binding IsThreeState, Mode=OneWay, RelativeSource={RelativeSource AncestorType=ComboBoxList}}"),
-                            new XAttribute(nameof(CheckBox.Style), $"{{DynamicResource ComboBoxListItemStyle}}")))
+                            new XAttribute(nameof(Style), $"{{DynamicResource ComboBoxListItemStyle}}")))
                 ).ToString());
             }
 

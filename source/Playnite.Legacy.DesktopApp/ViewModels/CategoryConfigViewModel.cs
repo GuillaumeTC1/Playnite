@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
-namespace Playnite.DesktopApp.ViewModels
+namespace Playnite.Legacy.DesktopApp.ViewModels
 {
     public class CategoryConfigViewModel : ObservableObject
     {

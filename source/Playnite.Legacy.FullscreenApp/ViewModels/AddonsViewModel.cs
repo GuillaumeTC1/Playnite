@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 
-namespace Playnite.FullscreenApp.ViewModels
+namespace Playnite.Legacy.FullscreenApp.ViewModels
 {
     public class AddonsViewModel : Playnite.ViewModels.AddonsViewModelBase
     {

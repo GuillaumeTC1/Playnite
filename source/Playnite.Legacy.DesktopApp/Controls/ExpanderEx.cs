@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Playnite.DesktopApp.Controls
+namespace Playnite.Legacy.DesktopApp.Controls
 {
     public class ExpanderEx : Expander
     {

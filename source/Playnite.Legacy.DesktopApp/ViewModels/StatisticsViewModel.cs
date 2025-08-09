@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Playnite.DesktopApp.ViewModels
+namespace Playnite.Legacy.DesktopApp.ViewModels
 {
     public class StatisticsViewModel : ObservableObject
     {
@@ -93,7 +93,7 @@ namespace Playnite.DesktopApp.ViewModels
             {
                 if (total > 0 && value <= total)
                 {
-                    Percentage = Convert.ToInt32(((double)value / (double)total) * 100);
+                    Percentage = Convert.ToInt32(value / (double)total * 100);
                 }
             }
         }
@@ -419,7 +419,7 @@ namespace Playnite.DesktopApp.ViewModels
                 AvaragePlayTime = totalGamesWithPlayTime > 0 ? totalPlaytime / totalGamesWithPlayTime : 0,
                 TopPlayed = database.Games.
                     Where(a => !filtered || PassesFilter(a)).
-                    Where(a => !a.Hidden || (a.Hidden && IncludeHidden)).
+                    Where(a => !a.Hidden || a.Hidden && IncludeHidden).
                     OrderByDescending(a => a.Playtime).
                     Take(50).
                     Select(a => new BaseStatInfo(a.Name, a.Playtime, totalPlaytime) { Game = a }).ToList(),

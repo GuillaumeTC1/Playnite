@@ -1,11 +1,12 @@
-﻿using Playnite.SDK;
+﻿using Playnite.Legacy.DesktopApp;
+using Playnite.SDK;
 using Playnite.SDK.Plugins;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Controls;
 
-namespace Playnite.DesktopApp.ViewModels
+namespace Playnite.Legacy.DesktopApp.ViewModels
 {
     public class LibraryIntegrationsViewModel : ObservableObject
     {

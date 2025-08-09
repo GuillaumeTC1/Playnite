@@ -6,7 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Playnite.FullscreenApp
+namespace Playnite.Legacy.FullscreenApp
 {
     public class FullscreenDialogs : IDialogsFactory
     {
@@ -19,7 +19,7 @@ namespace Playnite.FullscreenApp
 
         private T Invoke<T>(Func<T> action)
         {
-            T result = default(T);
+            T result = default;
             context.Send((a) =>
             {
                 result = action();

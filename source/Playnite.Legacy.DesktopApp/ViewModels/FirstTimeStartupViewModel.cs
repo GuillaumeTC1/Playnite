@@ -1,4 +1,5 @@
-﻿using Playnite.SDK;
+﻿using Playnite.DesktopApp.ViewModels;
+using Playnite.SDK;
 using Playnite.SDK.Extensions;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Controls;
 
-namespace Playnite.DesktopApp.ViewModels
+namespace Playnite.Legacy.DesktopApp.ViewModels
 {
     public class FirstTimeStartupViewModel : ObservableObject
     {
@@ -274,7 +275,7 @@ namespace Playnite.DesktopApp.ViewModels
                     return;
                 }
 
-                if ((selectedPluginIndex + 1) < selectedPlugins.Count)
+                if (selectedPluginIndex + 1 < selectedPlugins.Count)
                 {
                     selectedPluginIndex++;
                     SetPluginConfiguration(selectedPlugins[selectedPluginIndex]);

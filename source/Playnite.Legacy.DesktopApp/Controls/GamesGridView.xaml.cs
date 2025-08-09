@@ -1,4 +1,5 @@
-﻿using Playnite.SDK.Extensions;
+﻿using Playnite.Legacy.DesktopApp;
+using Playnite.SDK.Extensions;
 using Playnite.SDK.Models;
 using System;
 using System.Collections;
@@ -10,7 +11,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
 
-namespace Playnite.DesktopApp.Controls
+namespace Playnite.Legacy.DesktopApp.Controls
 {
     public class GamesGridViewColumn : GridViewColumn
     {

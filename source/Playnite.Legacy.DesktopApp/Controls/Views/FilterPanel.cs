@@ -1,5 +1,6 @@
 ﻿using Playnite.DesktopApp.ViewModels;
-using Playnite.DesktopApp.ViewModels.DesignData;
+using Playnite.Legacy.DesktopApp;
+using Playnite.Legacy.DesktopApp.ViewModels.DesignData;
 using Playnite.SDK;
 using Playnite.SDK.Models;
 using System;
@@ -9,7 +10,7 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 
-namespace Playnite.DesktopApp.Controls.Views
+namespace Playnite.Legacy.DesktopApp.Controls.Views
 {
     [TemplatePart(Name = "PART_ButtonClear", Type = typeof(ButtonBase))]
     [TemplatePart(Name = "PART_ButtonClose", Type = typeof(ButtonBase))]
@@ -106,11 +107,11 @@ namespace Playnite.DesktopApp.Controls.Views
             if (ComboFilterPresets != null)
             {
                 BindingTools.SetBinding(ComboFilterPresets,
-                    ComboBox.ItemsSourceProperty,
+                    ItemsControl.ItemsSourceProperty,
                     mainModel,
                     nameof(mainModel.SortedFilterPresets));
                 BindingTools.SetBinding(ComboFilterPresets,
-                    ComboBox.SelectedItemProperty,
+                    Selector.SelectedItemProperty,
                     mainModel,
                     nameof(mainModel.ActiveFilterPreset),
                     mode: BindingMode.TwoWay);
@@ -202,7 +203,7 @@ namespace Playnite.DesktopApp.Controls.Views
         private void SetToggleFilterWithTooltip(string binding, string text, string tooltip)
         {
             var elem = new CheckBox();
-            elem.SetResourceReference(CheckBox.StyleProperty, "FilterPanelCheckBox");
+            elem.SetResourceReference(StyleProperty, "FilterPanelCheckBox");
             BindingTools.SetBinding(elem,
                 ToggleButton.IsCheckedProperty,
                 mainModel.AppSettings.FilterSettings,
@@ -216,7 +217,7 @@ namespace Playnite.DesktopApp.Controls.Views
         private void SetToggleFilter(string binding, string countBinding, string text)
         {
             var elem = new CheckBox();
-            elem.SetResourceReference(CheckBox.StyleProperty, "FilterPanelCheckBox");
+            elem.SetResourceReference(StyleProperty, "FilterPanelCheckBox");
             BindingTools.SetBinding(elem,
                 ToggleButton.IsCheckedProperty,
                 mainModel.AppSettings.FilterSettings,
@@ -238,9 +239,9 @@ namespace Playnite.DesktopApp.Controls.Views
             }
 
             var elem = new Label();
-            elem.SetResourceReference(Label.StyleProperty, "FilterPanelLabel");
+            elem.SetResourceReference(StyleProperty, "FilterPanelLabel");
             BindingTools.SetBinding(elem,
-                FrameworkElement.TagProperty,
+                TagProperty,
                 mainModel.AppSettings.FilterSettings,
                 bindingName ?? $"{binding}.{nameof(IdItemFilterItemProperties.IsSet)}",
                 fallBackValue: false,
@@ -257,7 +258,7 @@ namespace Playnite.DesktopApp.Controls.Views
             }
 
             var elem = new SearchBox();
-            elem.SetResourceReference(SearchBox.StyleProperty, "FilterPanelFilterSearchBox");
+            elem.SetResourceReference(StyleProperty, "FilterPanelFilterSearchBox");
             BindingTools.SetBinding(elem,
                 SearchBox.TextProperty,
                 mainModel.AppSettings.FilterSettings,
@@ -275,7 +276,7 @@ namespace Playnite.DesktopApp.Controls.Views
             }
 
             var elem = new FilterSelectionBox();
-            elem.SetResourceReference(FilterSelectionBox.StyleProperty, "FilterPanelFilterSelectionBox");
+            elem.SetResourceReference(StyleProperty, "FilterPanelFilterSelectionBox");
             BindingTools.SetBinding(elem,
                 FilterSelectionBox.ItemsListProperty,
                 mainModel.DatabaseFilters,
@@ -297,7 +298,7 @@ namespace Playnite.DesktopApp.Controls.Views
             }
 
             var elem = new FilterEnumSelectionBox();
-            elem.SetResourceReference(FilterEnumSelectionBox.StyleProperty, "FilterPanelFilterEnumSelectionBox");
+            elem.SetResourceReference(StyleProperty, "FilterPanelFilterEnumSelectionBox");
             elem.EnumType = enumType;
             BindingTools.SetBinding(elem,
                 FilterEnumSelectionBox.FilterPropertiesProperty,
@@ -315,7 +316,7 @@ namespace Playnite.DesktopApp.Controls.Views
             }
 
             var elem = new FilterStringSelectionBox();
-            elem.SetResourceReference(FilterStringSelectionBox.StyleProperty, "FilterPanelFilterStringSelectionBox");
+            elem.SetResourceReference(StyleProperty, "FilterPanelFilterStringSelectionBox");
             BindingTools.SetBinding(elem,
                 FilterStringSelectionBox.ItemsListProperty,
                 mainModel.DatabaseFilters,

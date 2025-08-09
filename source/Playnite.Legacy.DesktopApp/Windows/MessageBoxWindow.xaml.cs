@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Playnite.DesktopApp.Windows
+namespace Playnite.Legacy.DesktopApp.Windows
 {
     /// <summary>
     /// Interaction logic for MessageBoxWindow.xaml

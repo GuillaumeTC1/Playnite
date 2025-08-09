@@ -1,5 +1,6 @@
-﻿using Playnite.FullscreenApp.ViewModels;
-using Playnite.FullscreenApp.ViewModels.DesignData;
+﻿using Playnite.FullscreenApp.Controls;
+using Playnite.FullscreenApp.ViewModels;
+using Playnite.Legacy.FullscreenApp.ViewModels.DesignData;
 using Playnite.SDK.Models;
 using System;
 using System.ComponentModel;
@@ -10,7 +11,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Xml.Linq;
 
-namespace Playnite.FullscreenApp.Controls.Views
+namespace Playnite.Legacy.FullscreenApp.Controls.Views
 {
     [TemplatePart(Name = "PART_MenuHost", Type = typeof(FrameworkElement))]
     [TemplatePart(Name = "PART_ButtonBack", Type = typeof(ButtonBase))]
@@ -89,7 +90,7 @@ namespace Playnite.FullscreenApp.Controls.Views
                     ItemsHost.Template = Xaml.FromString<ControlTemplate>(new XDocument(
                          new XElement(pns + nameof(ControlTemplate),
                             new XElement(pns + nameof(ScrollViewer),
-                                new XAttribute(nameof(ScrollViewer.Focusable), false),
+                                new XAttribute(nameof(Focusable), false),
                                 new XAttribute(nameof(ScrollViewer.HorizontalScrollBarVisibility), ScrollBarVisibility.Disabled),
                                 new XAttribute(nameof(ScrollViewer.VerticalScrollBarVisibility), ScrollBarVisibility.Auto),
                                 new XAttribute(nameof(ScrollViewer.CanContentScroll), true),
@@ -123,13 +124,13 @@ namespace Playnite.FullscreenApp.Controls.Views
         private void AssignFilter(string title, string partId, GameField field, string bindBased)
         {
             var button = new ButtonEx();
-            button.SetResourceReference(ButtonBase.ContentProperty, title);
-            button.SetResourceReference(ButtonBase.StyleProperty, "FilterPanelNagivationButton");
+            button.SetResourceReference(ContentControl.ContentProperty, title);
+            button.SetResourceReference(StyleProperty, "FilterPanelNagivationButton");
             button.Command = mainModel.LoadSubFilterCommand;
             button.CommandParameter = field;
             BindingTools.SetBinding(
                 button,
-                ButtonBase.TagProperty,
+                TagProperty,
                 mainModel.AppSettings.Fullscreen.FilterSettings,
                 $"{bindBased}.{nameof(IdItemFilterItemProperties.IsSet)}");
 

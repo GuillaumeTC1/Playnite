@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace Playnite.DesktopApp.Controls.AddonsSections
+namespace Playnite.Legacy.DesktopApp.Controls.AddonsSections
 {
     /// <summary>
     /// Interaction logic for Extensions.xaml

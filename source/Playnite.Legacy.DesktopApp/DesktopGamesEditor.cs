@@ -4,7 +4,7 @@ using Playnite.SDK;
 using Playnite.SDK.Models;
 using System.Collections.Generic;
 
-namespace Playnite.DesktopApp
+namespace Playnite.Legacy.DesktopApp
 {
     public class DesktopGamesEditor : GamesEditor
     {

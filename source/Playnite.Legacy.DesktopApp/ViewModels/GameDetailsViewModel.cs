@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 
-namespace Playnite.DesktopApp.ViewModels
+namespace Playnite.Legacy.DesktopApp.ViewModels
 {
     public class GameDetailsViewModel : ObservableObject, IDisposable
     {
@@ -114,152 +114,152 @@ namespace Playnite.DesktopApp.ViewModels
 
         public Visibility SourceLibraryVisibility
         {
-            get => (settings.DetailsVisibility.Library & Game.LibraryPlugin != null) ? Visibility.Visible : Visibility.Collapsed;
+            get => settings.DetailsVisibility.Library & Game.LibraryPlugin != null ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public Visibility PlayTimeVisibility
         {
-            get => (settings.DetailsVisibility.PlayTime) ? Visibility.Visible : Visibility.Collapsed;
+            get => settings.DetailsVisibility.PlayTime ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public Visibility InstallSizeVisibility
         {
-            get => (settings.DetailsVisibility.InstallSize && game.InstallSize != null) ? Visibility.Visible : Visibility.Collapsed;
+            get => settings.DetailsVisibility.InstallSize && game.InstallSize != null ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public Visibility InstallDirectoryVisibility
         {
-            get => (settings.DetailsVisibility.InstallDirectory && game.IsInstalled && !string.IsNullOrWhiteSpace(game.InstallDirectory)) ? Visibility.Visible : Visibility.Collapsed;
+            get => settings.DetailsVisibility.InstallDirectory && game.IsInstalled && !string.IsNullOrWhiteSpace(game.InstallDirectory) ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public Visibility LastPlayedVisibility
         {
-            get => (settings.DetailsVisibility.LastPlayed) ? Visibility.Visible : Visibility.Collapsed;
+            get => settings.DetailsVisibility.LastPlayed ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public Visibility AddedVisibility
         {
-            get => (settings.DetailsVisibility.Added && game.Added != null) ? Visibility.Visible : Visibility.Collapsed;
+            get => settings.DetailsVisibility.Added && game.Added != null ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public Visibility RecentActivityVisibility
         {
-            get => (settings.DetailsVisibility.RecentActivity && (game.LastActivity != null || game.Added != null)) ? Visibility.Visible : Visibility.Collapsed;
+            get => settings.DetailsVisibility.RecentActivity && (game.LastActivity != null || game.Added != null) ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public Visibility CompletionStatusVisibility
         {
-            get => (settings.DetailsVisibility.CompletionStatus && game.CompletionStatus.Id != Guid.Empty) ? Visibility.Visible : Visibility.Collapsed;
+            get => settings.DetailsVisibility.CompletionStatus && game.CompletionStatus.Id != Guid.Empty ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public Visibility PlatformVisibility
         {
-            get => (settings.DetailsVisibility.Platform && game.Platforms.HasItems()) ? Visibility.Visible : Visibility.Collapsed;
+            get => settings.DetailsVisibility.Platform && game.Platforms.HasItems() ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public Visibility GenreVisibility
         {
-            get => (settings.DetailsVisibility.Genres && game.GenreIds.HasItems()) ? Visibility.Visible : Visibility.Collapsed;
+            get => settings.DetailsVisibility.Genres && game.GenreIds.HasItems() ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public Visibility DeveloperVisibility
         {
-            get => (settings.DetailsVisibility.Developers && game.DeveloperIds.HasItems()) ? Visibility.Visible : Visibility.Collapsed;
+            get => settings.DetailsVisibility.Developers && game.DeveloperIds.HasItems() ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public Visibility PublisherVisibility
         {
-            get => (settings.DetailsVisibility.Publishers && game.PublisherIds.HasItems()) ? Visibility.Visible : Visibility.Collapsed;
+            get => settings.DetailsVisibility.Publishers && game.PublisherIds.HasItems() ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public Visibility ReleaseDateVisibility
         {
-            get => (settings.DetailsVisibility.ReleaseDate && game.ReleaseDate != null) ? Visibility.Visible : Visibility.Collapsed;
+            get => settings.DetailsVisibility.ReleaseDate && game.ReleaseDate != null ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public Visibility CategoryVisibility
         {
-            get => (settings.DetailsVisibility.Categories && game.CategoryIds.HasItems()) ? Visibility.Visible : Visibility.Collapsed;
+            get => settings.DetailsVisibility.Categories && game.CategoryIds.HasItems() ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public Visibility TagVisibility
         {
-            get => (settings.DetailsVisibility.Tags && game.TagIds.HasItems()) ? Visibility.Visible : Visibility.Collapsed;
+            get => settings.DetailsVisibility.Tags && game.TagIds.HasItems() ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public Visibility FeatureVisibility
         {
-            get => (settings.DetailsVisibility.Features && game.FeatureIds.HasItems()) ? Visibility.Visible : Visibility.Collapsed;
+            get => settings.DetailsVisibility.Features && game.FeatureIds.HasItems() ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public Visibility LinkVisibility
         {
-            get => (settings.DetailsVisibility.Links && game.Links.HasItems()) ? Visibility.Visible : Visibility.Collapsed;
+            get => settings.DetailsVisibility.Links && game.Links.HasItems() ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public Visibility DescriptionVisibility
         {
-            get => (settings.DetailsVisibility.Description && !game.Description.IsNullOrEmpty()) ? Visibility.Visible : Visibility.Collapsed;
+            get => settings.DetailsVisibility.Description && !game.Description.IsNullOrEmpty() ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public Visibility NotesVisibility
         {
-            get => (settings.DetailsVisibility.Notes && !game.Notes.IsNullOrEmpty()) ? Visibility.Visible : Visibility.Collapsed;
+            get => settings.DetailsVisibility.Notes && !game.Notes.IsNullOrEmpty() ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public Visibility CoverVisibility
         {
-            get => (settings.DetailsVisibility.CoverImage) ? Visibility.Visible : Visibility.Collapsed;
+            get => settings.DetailsVisibility.CoverImage ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public Visibility BackgroundVisibility
         {
-            get => (settings.DetailsVisibility.BackgroundImage) ? Visibility.Visible : Visibility.Collapsed;
+            get => settings.DetailsVisibility.BackgroundImage ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public Visibility IconVisibility
         {
-            get => (settings.DetailsVisibility.Icon) ? Visibility.Visible : Visibility.Collapsed;
+            get => settings.DetailsVisibility.Icon ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public Visibility AgeRatingVisibility
         {
-            get => (settings.DetailsVisibility.AgeRating && game.AgeRatings.HasItems()) ? Visibility.Visible : Visibility.Collapsed;
+            get => settings.DetailsVisibility.AgeRating && game.AgeRatings.HasItems() ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public Visibility SeriesVisibility
         {
-            get => (settings.DetailsVisibility.Series && game.Series.HasItems()) ? Visibility.Visible : Visibility.Collapsed;
+            get => settings.DetailsVisibility.Series && game.Series.HasItems() ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public Visibility SourceVisibility
         {
-            get => (settings.DetailsVisibility.Source && game.Source.Id != Guid.Empty) ? Visibility.Visible : Visibility.Collapsed;
+            get => settings.DetailsVisibility.Source && game.Source.Id != Guid.Empty ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public Visibility RegionVisibility
         {
-            get => (settings.DetailsVisibility.Region && game.Regions.HasItems()) ? Visibility.Visible : Visibility.Collapsed;
+            get => settings.DetailsVisibility.Region && game.Regions.HasItems() ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public Visibility VersionVisibility
         {
-            get => (settings.DetailsVisibility.Version && !game.Version.IsNullOrEmpty()) ? Visibility.Visible : Visibility.Collapsed;
+            get => settings.DetailsVisibility.Version && !game.Version.IsNullOrEmpty() ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public Visibility CommunityScoreVisibility
         {
-            get => (settings.DetailsVisibility.CommunityScore && game.CommunityScore != null) ? Visibility.Visible : Visibility.Collapsed;
+            get => settings.DetailsVisibility.CommunityScore && game.CommunityScore != null ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public Visibility CriticScoreVisibility
         {
-            get => (settings.DetailsVisibility.CriticScore && game.CriticScore != null) ? Visibility.Visible : Visibility.Collapsed;
+            get => settings.DetailsVisibility.CriticScore && game.CriticScore != null ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public Visibility UserScoreVisibility
         {
-            get => (settings.DetailsVisibility.UserScore && game.UserScore != null) ? Visibility.Visible : Visibility.Collapsed;
+            get => settings.DetailsVisibility.UserScore && game.UserScore != null ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public Visibility NameVisibility
@@ -304,7 +304,7 @@ namespace Playnite.DesktopApp.ViewModels
 
         public GameDetailsViewModel(GamesCollectionViewEntry game, PlayniteSettings settings)
         {
-            this.resources = new ResourceProvider();
+            resources = new ResourceProvider();
             this.settings = settings;
             Game = game;
         }

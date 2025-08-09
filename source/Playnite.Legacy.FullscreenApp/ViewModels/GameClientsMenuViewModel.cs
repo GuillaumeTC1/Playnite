@@ -1,8 +1,9 @@
-﻿using Playnite.SDK;
+﻿using Playnite.FullscreenApp.ViewModels;
+using Playnite.SDK;
 using System;
 using System.Collections.Generic;
 
-namespace Playnite.FullscreenApp.ViewModels
+namespace Playnite.Legacy.FullscreenApp.ViewModels
 {
     public class GameClientsMenuViewModel : ObservableObject
     {
@@ -25,7 +26,7 @@ namespace Playnite.FullscreenApp.ViewModels
             FullscreenAppViewModel mainModel)
         {
             this.window = window;
-            this.MainModel = mainModel;
+            MainModel = mainModel;
             Clients = mainModel.ThirdPartyTools;
             if (Clients.Count == 0)
                 Clients = new List<ThirdPartyTool> { noClient };

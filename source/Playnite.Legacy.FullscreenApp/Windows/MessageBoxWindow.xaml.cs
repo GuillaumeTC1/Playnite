@@ -1,10 +1,10 @@
-﻿using Playnite.FullscreenApp.Controls;
+﻿using Playnite.Legacy.FullscreenApp.Controls;
 using Playnite.SDK;
 using System;
 using System.Collections.Generic;
 using System.Windows;
 
-namespace Playnite.FullscreenApp.Windows
+namespace Playnite.Legacy.FullscreenApp.Windows
 {
     public partial class MessageBoxWindow : WindowBase
     {

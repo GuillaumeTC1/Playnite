@@ -1,4 +1,5 @@
-﻿using Playnite.FullscreenApp.Controls.SettingsSections;
+﻿using Playnite.FullscreenApp.ViewModels;
+using Playnite.Legacy.FullscreenApp.Controls.SettingsSections;
 using Playnite.SDK;
 using Playnite.SDK.Extensions;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace Playnite.FullscreenApp.ViewModels
+namespace Playnite.Legacy.FullscreenApp.ViewModels
 {
     public class SettingsViewModel : ObservableObject
     {
@@ -82,12 +83,12 @@ namespace Playnite.FullscreenApp.ViewModels
             mainModel.AppSettings.Fullscreen.PropertyChanged += (_, e) => editedFields.AddMissing(e.PropertyName);
             sectionViews = new Dictionary<int, SettingsSectionControl>()
             {
-                { 0, new Controls.SettingsSections.General(mainModel) { DataContext = this } },
-                { 1, new Controls.SettingsSections.Visuals(mainModel) { DataContext = this } },
-                { 2, new Controls.SettingsSections.Layout(mainModel) { DataContext = this } },
-                { 3, new Controls.SettingsSections.Menus(mainModel) { DataContext = this } },
-                { 4, new Controls.SettingsSections.Input(mainModel) { DataContext = this } },
-                { 5, new Controls.SettingsSections.Audio(mainModel) { DataContext = this } },
+                { 0, new General(mainModel) { DataContext = this } },
+                { 1, new Visuals(mainModel) { DataContext = this } },
+                { 2, new Layout(mainModel) { DataContext = this } },
+                { 3, new Menus(mainModel) { DataContext = this } },
+                { 4, new Input(mainModel) { DataContext = this } },
+                { 5, new Audio(mainModel) { DataContext = this } },
             };
         }
 

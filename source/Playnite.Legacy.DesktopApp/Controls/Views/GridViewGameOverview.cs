@@ -2,7 +2,7 @@
 using Playnite.SDK;
 using System.Windows;
 
-namespace Playnite.DesktopApp.Controls.Views
+namespace Playnite.Legacy.DesktopApp.Controls.Views
 {
     public class GridViewGameOverview : GameOverview
     {

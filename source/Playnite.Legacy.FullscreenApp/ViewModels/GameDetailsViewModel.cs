@@ -1,9 +1,10 @@
-﻿using Playnite.SDK;
+﻿using Playnite.FullscreenApp.ViewModels;
+using Playnite.SDK;
 using System;
 using System.Collections.Generic;
 using System.Windows;
 
-namespace Playnite.FullscreenApp.ViewModels
+namespace Playnite.Legacy.FullscreenApp.ViewModels
 {
     public class GameDetailsViewModel : ObservableObject, IDisposable
     {

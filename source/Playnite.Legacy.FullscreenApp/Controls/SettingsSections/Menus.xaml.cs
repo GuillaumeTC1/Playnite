@@ -2,7 +2,7 @@
 using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 
-namespace Playnite.FullscreenApp.Controls.SettingsSections
+namespace Playnite.Legacy.FullscreenApp.Controls.SettingsSections
 {
     /// <summary>
     /// Interaction logic for Visuals.xaml

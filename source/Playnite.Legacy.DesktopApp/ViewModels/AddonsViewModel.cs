@@ -1,4 +1,5 @@
-﻿using Playnite.SDK;
+﻿using Playnite.Legacy.DesktopApp;
+using Playnite.SDK;
 using Playnite.SDK.Extensions;
 using Playnite.SDK.Plugins;
 using System;

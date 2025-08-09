@@ -1,8 +1,10 @@
 ﻿using Hardcodet.Wpf.TaskbarNotification;
+using Playnite.DesktopApp;
 using Playnite.DesktopApp.API;
 using Playnite.DesktopApp.Controls;
 using Playnite.DesktopApp.ViewModels;
 using Playnite.DesktopApp.Windows;
+using Playnite.Legacy.DesktopApp.Windows;
 using Playnite.SDK;
 using Playnite.SDK.Models;
 using System;
@@ -12,7 +14,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Media.Imaging;
 
-namespace Playnite.DesktopApp
+namespace Playnite.Legacy.DesktopApp
 {
     public class DesktopApplication : PlayniteApplication
     {
@@ -136,7 +138,7 @@ namespace Playnite.DesktopApp
                 Extensions,
                 this);
             PlayniteApiGlobal = GetApiInstance();
-            SDK.API.Instance = PlayniteApiGlobal;
+            API.Instance = PlayniteApiGlobal;
         }
 
         private void LoadTrayIcon()

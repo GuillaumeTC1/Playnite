@@ -1,8 +1,8 @@
-﻿using Playnite.FullscreenApp.Controls;
+﻿using Playnite.Legacy.FullscreenApp.Controls;
 using System;
 using System.Linq;
 
-namespace Playnite.FullscreenApp.Windows
+namespace Playnite.Legacy.FullscreenApp.Windows
 {
     public class ExtensionsMenuWindowFactory : WindowFactory
     {

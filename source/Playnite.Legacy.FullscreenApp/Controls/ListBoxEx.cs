@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace Playnite.FullscreenApp.Controls
+namespace Playnite.Legacy.FullscreenApp.Controls
 {
     public class ListBoxEx : ListBox
     {

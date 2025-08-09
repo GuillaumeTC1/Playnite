@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Threading;
 
-namespace Playnite.DesktopApp.API
+namespace Playnite.Legacy.DesktopApp.Api
 {
     public class MainViewAPI : IMainViewAPI
     {

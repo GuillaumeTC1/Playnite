@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace Playnite.DesktopApp.ViewModels
+namespace Playnite.Legacy.DesktopApp.ViewModels
 {
     public class AboutViewModel : ObservableObject
     {
@@ -26,7 +26,7 @@ namespace Playnite.DesktopApp.ViewModels
         {
             get
             {
-                return "SDK: " + Playnite.SDK.SdkVersions.SDKVersion.ToString(3);
+                return "SDK: " + SdkVersions.SDKVersion.ToString(3);
             }
         }
 

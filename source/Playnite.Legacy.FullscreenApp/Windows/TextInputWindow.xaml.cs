@@ -1,4 +1,4 @@
-﻿using Playnite.FullscreenApp.Controls;
+﻿using Playnite.Legacy.FullscreenApp.Controls;
 using Playnite.SDK;
 using Playnite.SDK.Extensions;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace Playnite.FullscreenApp.Windows
+namespace Playnite.Legacy.FullscreenApp.Windows
 {
     public partial class TextInputWindow : WindowBase
     {

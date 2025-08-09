@@ -1,5 +1,5 @@
 ﻿using Playnite.FullscreenApp.ViewModels;
-using Playnite.FullscreenApp.ViewModels.DesignData;
+using Playnite.Legacy.FullscreenApp.ViewModels.DesignData;
 using Playnite.SDK;
 using System.ComponentModel;
 using System.Windows;
@@ -7,7 +7,7 @@ using System.Windows.Automation;
 using System.Windows.Controls;
 using System.Windows.Data;
 
-namespace Playnite.FullscreenApp.Controls
+namespace Playnite.Legacy.FullscreenApp.Controls
 {
     [TemplatePart(Name = "PART_ItemsFilterPresets", Type = typeof(ItemsControl))]
     public class FilterPresetSelector : Control
@@ -62,7 +62,7 @@ namespace Playnite.FullscreenApp.Controls
                          preset,
                          nameof(preset.Name));
                     BindingTools.SetBinding(item,
-                       CheckBox.IsCheckedProperty,
+                       System.Windows.Controls.Primitives.ToggleButton.IsCheckedProperty,
                        mainModel,
                        nameof(mainModel.ActiveFilterPreset),
                        converter: new Converters.ObjectEqualityToBoolConverter(),

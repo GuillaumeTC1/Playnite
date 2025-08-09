@@ -1,10 +1,12 @@
 ﻿using Playnite.DesktopApp.ViewModels;
-using Playnite.DesktopApp.ViewModels.DesignData;
+using Playnite.Legacy.DesktopApp;
+using Playnite.Legacy.DesktopApp.ViewModels;
+using Playnite.Legacy.DesktopApp.ViewModels.DesignData;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Playnite.DesktopApp.Controls.Views
+namespace Playnite.Legacy.DesktopApp.Controls.Views
 {
     [TemplatePart(Name = "PART_Sidebar", Type = typeof(Sidebar))]
     [TemplatePart(Name = "PART_ContentView", Type = typeof(ContentControl))]
@@ -45,7 +47,7 @@ namespace Playnite.DesktopApp.Controls.Views
             if (Sidebar != null)
             {
                 BindingTools.SetBinding(Sidebar,
-                    Sidebar.VisibilityProperty,
+                    VisibilityProperty,
                     mainModel.AppSettings,
                     nameof(PlayniteSettings.ShowSidebar),
                     converter: new BooleanToVisibilityConverter());

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Playnite.FullscreenApp.ViewModels
+namespace Playnite.Legacy.FullscreenApp.ViewModels
 {
     public class GameStatusViewModel : ObservableObject
     {

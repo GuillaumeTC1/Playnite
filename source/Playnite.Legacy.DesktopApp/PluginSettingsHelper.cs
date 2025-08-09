@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Controls;
 
-namespace Playnite.DesktopApp
+namespace Playnite.Legacy.DesktopApp
 {
     public class PluginSettingsItem
     {

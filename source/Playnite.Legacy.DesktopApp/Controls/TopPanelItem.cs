@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Playnite.DesktopApp.Controls
+namespace Playnite.Legacy.DesktopApp.Controls
 {
     public class TopPanelItem : Button
     {
@@ -27,17 +27,17 @@ namespace Playnite.DesktopApp.Controls
             base.OnApplyTemplate();
 
             BindingTools.SetBinding(this,
-                Button.CommandProperty,
+                CommandProperty,
                 nameof(TopPanelWrapperItem.Command));
             BindingTools.SetBinding(this,
                 ContentPresenter.ContentProperty,
                 nameof(TopPanelWrapperItem.IconObject));
             BindingTools.SetBinding(this,
-                ContentPresenter.VisibilityProperty,
+                VisibilityProperty,
                 nameof(TopPanelWrapperItem.Visible),
                 converter: new BooleanToVisibilityConverter());
             BindingTools.SetBinding(this,
-                ContentPresenter.ToolTipProperty,
+                ToolTipProperty,
                 nameof(TopPanelWrapperItem.Title));
         }
     }

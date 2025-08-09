@@ -3,7 +3,7 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 
-namespace Playnite.FullscreenApp.Controls.SettingsSections
+namespace Playnite.Legacy.FullscreenApp.Controls.SettingsSections
 {
     /// <summary>
     /// Interaction logic for Visuals.xaml
@@ -27,7 +27,7 @@ namespace Playnite.FullscreenApp.Controls.SettingsSections
             SliderInterfaceVolume.IsSnapToTickEnabled = true;
             BindingTools.SetBinding(
                 SliderInterfaceVolume,
-                Slider.ValueProperty,
+                RangeBase.ValueProperty,
                 mainModel.AppSettings.Fullscreen,
                 nameof(FullscreenSettings.InterfaceVolume),
                 BindingMode.TwoWay,
@@ -41,7 +41,7 @@ namespace Playnite.FullscreenApp.Controls.SettingsSections
             SliderMusicVolume.IsSnapToTickEnabled = true;
             BindingTools.SetBinding(
                 SliderMusicVolume,
-                Slider.ValueProperty,
+                RangeBase.ValueProperty,
                 mainModel.AppSettings.Fullscreen,
                 nameof(FullscreenSettings.BackgroundVolume),
                 BindingMode.TwoWay,

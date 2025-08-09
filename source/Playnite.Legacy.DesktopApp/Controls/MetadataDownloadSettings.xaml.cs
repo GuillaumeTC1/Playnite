@@ -12,7 +12,7 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Playnite.DesktopApp.Controls
+namespace Playnite.Legacy.DesktopApp.Controls
 {
     /// <summary>
     /// Interaction logic for MetadataDownloadSettings.xaml
@@ -62,7 +62,7 @@ namespace Playnite.DesktopApp.Controls
                 get => new RelayCommand<MetadataSource>((a) =>
                 {
                     var index = Sources.IndexOf(a);
-                    if (Sources.Count > 1 && (index - 1) >= 0)
+                    if (Sources.Count > 1 && index - 1 >= 0)
                     {
                         Sources.Remove(a);
                         Sources.Insert(index - 1, a);
@@ -75,7 +75,7 @@ namespace Playnite.DesktopApp.Controls
                 get => new RelayCommand<MetadataSource>((a) =>
                 {
                     var index = Sources.IndexOf(a);
-                    if (Sources.Count > 1 && (index + 1) < Sources.Count)
+                    if (Sources.Count > 1 && index + 1 < Sources.Count)
                     {
                         Sources.Remove(a);
                         Sources.Insert(index + 1, a);

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 
-namespace Playnite.FullscreenApp
+namespace Playnite.Legacy.FullscreenApp
 {
     public class FullscreenCollectionView : BaseCollectionView
     {

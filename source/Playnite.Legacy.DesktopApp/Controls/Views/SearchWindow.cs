@@ -1,10 +1,11 @@
 ﻿using Playnite.DesktopApp.ViewModels;
-using Playnite.DesktopApp.ViewModels.DesignData;
+using Playnite.Legacy.DesktopApp;
+using Playnite.Legacy.DesktopApp.ViewModels.DesignData;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 
-namespace Playnite.DesktopApp.Controls.Views
+namespace Playnite.Legacy.DesktopApp.Controls.Views
 {
     [TemplatePart(Name = "PART_ImageGameIcon", Type = typeof(Image))]
     [TemplatePart(Name = "PART_ImageLibraryIcon", Type = typeof(Image))]
@@ -56,7 +57,7 @@ namespace Playnite.DesktopApp.Controls.Views
             {
                 BindingTools.SetBinding(
                     ImageGameIcon,
-                    Image.VisibilityProperty,
+                    VisibilityProperty,
                     mainModel.AppSettings.SearchWindowVisibility,
                     nameof(SearchWindowVisibilitySettings.GameIcon),
                     converter: Converters.BooleanToVisibilityConverter.Instance);
@@ -103,7 +104,7 @@ namespace Playnite.DesktopApp.Controls.Views
 
                 BindingTools.SetBinding(
                     ImageLibraryIcon,
-                    Image.VisibilityProperty,
+                    VisibilityProperty,
                     visibilityBinding);
             }
 
@@ -122,14 +123,14 @@ namespace Playnite.DesktopApp.Controls.Views
             {
                 BindingTools.SetBinding(
                     ElemHiddenStatus,
-                    FrameworkElement.VisibilityProperty,
+                    VisibilityProperty,
                     mainModel.AppSettings.SearchWindowVisibility,
                     nameof(SearchWindowVisibilitySettings.HiddenStatus),
                     converter: Converters.BooleanToVisibilityConverter.Instance);
 
                 BindingTools.SetBinding(
                     ElemHiddenStatus,
-                    FrameworkElement.VisibilityProperty,
+                    VisibilityProperty,
                     GetBindingPath(nameof(GamesCollectionViewEntry.Hidden)),
                     mode: BindingMode.OneTime,
                     converter: Converters.BooleanToVisibilityConverter.Instance);
@@ -194,7 +195,7 @@ namespace Playnite.DesktopApp.Controls.Views
                     mode: BindingMode.OneTime);
                 BindingTools.SetBinding(
                     TextDescription,
-                    TextBlock.VisibilityProperty,
+                    VisibilityProperty,
                     nameof(SearchItemWrapper.Item.Description),
                     mode: BindingMode.OneTime,
                     converter: StringNullOrEmptyToVisibilityConverter.Instance);

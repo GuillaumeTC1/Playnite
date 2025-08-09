@@ -1,5 +1,7 @@
-﻿using Playnite.FullscreenApp.ViewModels;
-using Playnite.FullscreenApp.ViewModels.DesignData;
+﻿using Playnite.FullscreenApp.Controls;
+using Playnite.FullscreenApp.ViewModels;
+using Playnite.Legacy.FullscreenApp.Controls;
+using Playnite.Legacy.FullscreenApp.ViewModels.DesignData;
 using Playnite.SDK;
 using Playnite.SDK.Models;
 using System;
@@ -12,7 +14,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Input;
 
-namespace Playnite.FullscreenApp.Controls.Views
+namespace Playnite.Legacy.FullscreenApp.Controls.Views
 {
     [TemplatePart(Name = "PART_ItemsHost", Type = typeof(ItemsControl))]
     public class Filters : Control
@@ -71,7 +73,7 @@ namespace Playnite.FullscreenApp.Controls.Views
             var ButtonClear = new ButtonEx();
             ButtonClear.Command = mainModel.ClearFiltersCommand;
             ButtonClear.Content = ResourceProvider.GetString(LOC.ClearLabel);
-            ButtonClear.SetResourceReference(ButtonEx.StyleProperty, "FilterPanelButtonEx");
+            ButtonClear.SetResourceReference(StyleProperty, "FilterPanelButtonEx");
             PanelItemsHost.Items.Add(ButtonClear);
 
             AssignBoolFilter(nameof(FilterSettings.IsInstalled), LOC.GameIsInstalledTitle);
@@ -86,21 +88,21 @@ namespace Playnite.FullscreenApp.Controls.Views
             var ButtonAdditional = new ButtonEx();
             ButtonAdditional.Command = mainModel.OpenAdditionalFiltersCommand;
             ButtonAdditional.Content = ResourceProvider.GetString(LOC.AditionalFilters);
-            ButtonAdditional.SetResourceReference(ButtonEx.StyleProperty, "FilterPanelNagivationButton");
+            ButtonAdditional.SetResourceReference(StyleProperty, "FilterPanelNagivationButton");
             BindingTools.SetBinding(
                 ButtonAdditional,
-                ButtonBase.TagProperty,
+                TagProperty,
                 mainModel.AppSettings.Fullscreen.FilterSettings,
                 nameof(FullscreenFilterSettings.IsSubAdditionalFilterActive));
             PanelItemsHost.Items.Add(ButtonAdditional);
 
             var desc = new TextBlock();
             desc.Text = ResourceProvider.GetString(LOC.MenuSortByTitle);
-            desc.SetResourceReference(ButtonEx.StyleProperty, "FilterPanelText");
+            desc.SetResourceReference(StyleProperty, "FilterPanelText");
             PanelItemsHost.Items.Add(desc);
 
             var SelectSortBy = new ComboBoxEx();
-            SelectSortBy.SetResourceReference(ComboBoxEx.StyleProperty, "FilterPanelComboBoxEx");
+            SelectSortBy.SetResourceReference(StyleProperty, "FilterPanelComboBoxEx");
             SelectSortBy.ItemsSource = ItemsSource.GetEnumSources(typeof(SortOrder));
             SelectSortBy.DisplayMemberPath = nameof(ItemsSource.EnumItem.Name);
             SelectSortBy.SelectedValuePath = nameof(ItemsSource.EnumItem.Value);
@@ -115,7 +117,7 @@ namespace Playnite.FullscreenApp.Controls.Views
             AutomationProperties.SetName(SelectSortBy, LOC.MenuSortByTitle.GetLocalized());
 
             var SelectSortDirection = new ComboBoxEx();
-            SelectSortDirection.SetResourceReference(ComboBoxEx.StyleProperty, "FilterPanelComboBoxEx");
+            SelectSortDirection.SetResourceReference(StyleProperty, "FilterPanelComboBoxEx");
             SelectSortDirection.ItemsSource = ItemsSource.GetEnumSources(typeof(SortOrderDirection));
             SelectSortDirection.DisplayMemberPath = nameof(ItemsSource.EnumItem.Name);
             SelectSortDirection.SelectedValuePath = nameof(ItemsSource.EnumItem.Value);
@@ -131,17 +133,17 @@ namespace Playnite.FullscreenApp.Controls.Views
 
             desc = new TextBlock();
             desc.Text = ResourceProvider.GetString(LOC.SettingsTopPanelFilterPresetsItem);
-            desc.SetResourceReference(ButtonEx.StyleProperty, "FilterPanelText");
+            desc.SetResourceReference(StyleProperty, "FilterPanelText");
             PanelItemsHost.Items.Add(desc);
 
             var ComboFilterPresets = new ComboBoxEx();
-            ComboFilterPresets.SetResourceReference(ComboBoxEx.StyleProperty, "FilterPanelComboBoxEx");
+            ComboFilterPresets.SetResourceReference(StyleProperty, "FilterPanelComboBoxEx");
             BindingTools.SetBinding(ComboFilterPresets,
-                ComboBox.ItemsSourceProperty,
+                ItemsControl.ItemsSourceProperty,
                 mainModel,
                 nameof(mainModel.SortedFilterPresets));
             BindingTools.SetBinding(ComboFilterPresets,
-                ComboBox.SelectedItemProperty,
+                Selector.SelectedItemProperty,
                 mainModel,
                 nameof(mainModel.ActiveFilterPreset),
                 mode: BindingMode.TwoWay);
@@ -154,8 +156,8 @@ namespace Playnite.FullscreenApp.Controls.Views
                 ButtonBase.CommandProperty,
                 mainModel,
                 nameof(mainModel.AddFilterPresetCommand));
-            ButtonSaveFilter.SetResourceReference(ButtonEx.ContentTemplateProperty, "FilterPanelAddPresetTemplate");
-            ButtonSaveFilter.SetResourceReference(ButtonEx.StyleProperty, "FilterPanelFilterPresetActionButton");
+            ButtonSaveFilter.SetResourceReference(ContentControl.ContentTemplateProperty, "FilterPanelAddPresetTemplate");
+            ButtonSaveFilter.SetResourceReference(StyleProperty, "FilterPanelFilterPresetActionButton");
             AutomationProperties.SetName(ButtonSaveFilter, LOC.FilterPresetSave.GetLocalized());
 
             var ButtonRenameFilter = new ButtonEx();
@@ -167,8 +169,8 @@ namespace Playnite.FullscreenApp.Controls.Views
                 ButtonBase.CommandParameterProperty,
                 mainModel,
                 nameof(mainModel.ActiveFilterPreset));
-            ButtonRenameFilter.SetResourceReference(ButtonEx.ContentTemplateProperty, "FilterPanelRenamePresetTemplate");
-            ButtonRenameFilter.SetResourceReference(ButtonEx.StyleProperty, "FilterPanelFilterPresetActionButton");
+            ButtonRenameFilter.SetResourceReference(ContentControl.ContentTemplateProperty, "FilterPanelRenamePresetTemplate");
+            ButtonRenameFilter.SetResourceReference(StyleProperty, "FilterPanelFilterPresetActionButton");
             AutomationProperties.SetName(ButtonRenameFilter, LOC.RenameTitle.GetLocalized());
 
             var ButtonDeleteFilter = new ButtonEx();
@@ -180,8 +182,8 @@ namespace Playnite.FullscreenApp.Controls.Views
                 ButtonBase.CommandParameterProperty,
                 mainModel,
                 nameof(mainModel.ActiveFilterPreset));
-            ButtonDeleteFilter.SetResourceReference(ButtonEx.ContentTemplateProperty, "FilterPanelRemovePresetTemplate");
-            ButtonDeleteFilter.SetResourceReference(ButtonEx.StyleProperty, "FilterPanelFilterPresetActionButton");
+            ButtonDeleteFilter.SetResourceReference(ContentControl.ContentTemplateProperty, "FilterPanelRemovePresetTemplate");
+            ButtonDeleteFilter.SetResourceReference(StyleProperty, "FilterPanelFilterPresetActionButton");
             AutomationProperties.SetName(ButtonDeleteFilter, LOC.DeleteAction.GetLocalized());
 
             var filterButtonGrid = new UniformGrid { Columns = 3 };
@@ -195,7 +197,7 @@ namespace Playnite.FullscreenApp.Controls.Views
         {
             var check = new CheckBoxEx();
             check.Content = ResourceProvider.GetString(text);
-            check.SetResourceReference(CheckBoxEx.StyleProperty, "FilterPanelCheckBoxEx");
+            check.SetResourceReference(StyleProperty, "FilterPanelCheckBoxEx");
             BindingTools.SetBinding(
                 check,
                 ToggleButton.IsCheckedProperty,
@@ -210,12 +212,12 @@ namespace Playnite.FullscreenApp.Controls.Views
         {
             var button = new ButtonEx();
             button.Content = ResourceProvider.GetString(text);
-            button.SetResourceReference(ButtonEx.StyleProperty, "FilterPanelNagivationButton");
+            button.SetResourceReference(StyleProperty, "FilterPanelNagivationButton");
             button.Command = mainModel.LoadSubFilterCommand;
             button.CommandParameter = field;
             BindingTools.SetBinding(
                 button,
-                ButtonBase.TagProperty,
+                TagProperty,
                 mainModel.AppSettings.Fullscreen.FilterSettings,
                 $"{bindBased}.{nameof(IdItemFilterItemProperties.IsSet)}");
             PanelItemsHost.Items.Add(button);

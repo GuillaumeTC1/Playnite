@@ -4,7 +4,7 @@ using Playnite.SDK.Models;
 using Playnite.SDK.Plugins;
 using System.Collections.Generic;
 
-namespace Playnite.DesktopApp
+namespace Playnite.Legacy.DesktopApp
 {
     public class DesktopActionSelector : IActionSelector
     {

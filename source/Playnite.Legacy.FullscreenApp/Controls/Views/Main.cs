@@ -1,5 +1,6 @@
 ﻿using Playnite.FullscreenApp.ViewModels;
-using Playnite.FullscreenApp.ViewModels.DesignData;
+using Playnite.Legacy.FullscreenApp.ViewModels;
+using Playnite.Legacy.FullscreenApp.ViewModels.DesignData;
 using Playnite.SDK;
 using Playnite.SDK.Events;
 using System;
@@ -14,7 +15,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Xml.Linq;
 
-namespace Playnite.FullscreenApp.Controls.Views
+namespace Playnite.Legacy.FullscreenApp.Controls.Views
 {
     [TemplatePart(Name = "PART_ViewHost", Type = typeof(FrameworkElement))]
     [TemplatePart(Name = "PART_MainHost", Type = typeof(FrameworkElement))]
@@ -243,8 +244,8 @@ namespace Playnite.FullscreenApp.Controls.Views
                 MainHost = Template.FindName("PART_MainHost", this) as FrameworkElement;
                 if (MainHost != null)
                 {
-                    BindingTools.SetBinding(MainHost, FrameworkElement.WidthProperty, mainModel, nameof(FullscreenAppViewModel.ViewportWidth));
-                    BindingTools.SetBinding(MainHost, FrameworkElement.HeightProperty, mainModel, nameof(FullscreenAppViewModel.ViewportHeight));
+                    BindingTools.SetBinding(MainHost, WidthProperty, mainModel, nameof(FullscreenAppViewModel.ViewportWidth));
+                    BindingTools.SetBinding(MainHost, HeightProperty, mainModel, nameof(FullscreenAppViewModel.ViewportHeight));
                 }
 
                 AssignButtonWithCommand(ref ButtonProgramUpdate, "PART_ButtonProgramUpdate", mainModel.OpenUpdatesCommand);
@@ -257,7 +258,7 @@ namespace Playnite.FullscreenApp.Controls.Views
                 if (ButtonProgramUpdate != null)
                 {
                     BindingTools.SetBinding(ButtonProgramUpdate,
-                         Button.VisibilityProperty,
+                         VisibilityProperty,
                          mainModel,
                          nameof(mainModel.UpdatesAvailable),
                          converter: new Converters.BooleanToVisibilityConverter());
@@ -277,7 +278,7 @@ namespace Playnite.FullscreenApp.Controls.Views
                     BindingTools.SetBinding(TextClock, TextBlock.TextProperty, mainModel.CurrentTime, nameof(ObservableTime.Time));
                     BindingTools.SetBinding(
                         TextClock,
-                        TextBlock.VisibilityProperty,
+                        VisibilityProperty,
                         mainModel.AppSettings.Fullscreen,
                         nameof(FullscreenSettings.ShowClock),
                         converter: new Converters.BooleanToVisibilityConverter());
@@ -292,7 +293,7 @@ namespace Playnite.FullscreenApp.Controls.Views
                         nameof(ObservablePowerStatus.PercentCharge),
                         stringFormat: "{0}%");
                     BindingTools.SetBinding(TextBatteryPercentage,
-                        TextBlock.VisibilityProperty,
+                        VisibilityProperty,
                         mainModel.AppSettings.Fullscreen,
                         nameof(FullscreenSettings.ShowBatteryPercentage),
                         converter: new Converters.BooleanToVisibilityConverter());
@@ -303,7 +304,7 @@ namespace Playnite.FullscreenApp.Controls.Views
                 {
                     BindingTools.SetBinding(
                         ElemBatteryStatus,
-                        TextBlock.VisibilityProperty,
+                        VisibilityProperty,
                         mainModel.AppSettings.Fullscreen,
                         nameof(FullscreenSettings.ShowBattery),
                         converter: new Converters.BooleanToVisibilityConverter());
@@ -314,7 +315,7 @@ namespace Playnite.FullscreenApp.Controls.Views
                 {
                     BindingTools.SetBinding(TextProgressTooltip, TextBlock.TextProperty, mainModel, nameof(FullscreenAppViewModel.ProgressStatus));
                     BindingTools.SetBinding(TextProgressTooltip,
-                        TextBlock.VisibilityProperty,
+                        VisibilityProperty,
                         mainModel,
                         nameof(FullscreenAppViewModel.ProgressActive),
                         converter: new Converters.BooleanToVisibilityConverter());
@@ -324,7 +325,7 @@ namespace Playnite.FullscreenApp.Controls.Views
                 if (ElemProgressIndicator != null)
                 {
                     BindingTools.SetBinding(ElemProgressIndicator,
-                        ToggleButton.VisibilityProperty,
+                        VisibilityProperty,
                         mainModel,
                         nameof(FullscreenAppViewModel.ProgressActive),
                         converter: new Converters.BooleanToVisibilityConverter());
@@ -334,7 +335,7 @@ namespace Playnite.FullscreenApp.Controls.Views
                 if (ElemExtraFilterActive != null)
                 {
                     BindingTools.SetBinding(ElemExtraFilterActive,
-                        FrameworkElement.VisibilityProperty,
+                        VisibilityProperty,
                         mainModel,
                         nameof(FullscreenAppViewModel.IsExtraFilterActive),
                         converter: new Converters.BooleanToVisibilityConverter());
@@ -344,7 +345,7 @@ namespace Playnite.FullscreenApp.Controls.Views
                 if (ElemSearchActive != null)
                 {
                     BindingTools.SetBinding(ElemSearchActive,
-                        FrameworkElement.VisibilityProperty,
+                        VisibilityProperty,
                         mainModel,
                         nameof(FullscreenAppViewModel.IsSearchActive),
                         converter: new Converters.BooleanToVisibilityConverter());
@@ -368,23 +369,23 @@ namespace Playnite.FullscreenApp.Controls.Views
                     ListGameItems.ItemTemplate = Xaml.FromString<DataTemplate>(new XDocument(
                         new XElement(pns + nameof(DataTemplate),
                             new XElement(pns + nameof(GameListItem),
-                                new XAttribute(nameof(GameListItem.Style), "{StaticResource ListGameItemTemplate}")))
+                                new XAttribute(nameof(Style), "{StaticResource ListGameItemTemplate}")))
                     ).ToString());
 
-                    ListGameItems.SetResourceReference(ListBoxEx.ItemContainerStyleProperty, "ListGameItemStyle");
+                    ListGameItems.SetResourceReference(ItemsControl.ItemContainerStyleProperty, "ListGameItemStyle");
 
                     BindingTools.SetBinding(ListGameItems,
-                        ListBox.VisibilityProperty,
+                        VisibilityProperty,
                         mainModel,
                         nameof(FullscreenAppViewModel.GameListVisible),
                         converter: new Converters.BooleanToVisibilityConverter());
                     BindingTools.SetBinding(ListGameItems,
-                        ListBox.SelectedItemProperty,
+                        Selector.SelectedItemProperty,
                         mainModel,
                         nameof(FullscreenAppViewModel.SelectedGame),
                         BindingMode.TwoWay);
                     BindingTools.SetBinding(ListGameItems,
-                        ListBox.ItemsSourceProperty,
+                        ItemsControl.ItemsSourceProperty,
                         mainModel,
                         $"{nameof(FullscreenAppViewModel.GamesView)}.{nameof(FullscreenCollectionView.CollectionView)}");
                     BindingTools.SetBinding(ListGameItems,
@@ -398,7 +399,7 @@ namespace Playnite.FullscreenApp.Controls.Views
                 {
                     BindingTools.SetBinding(
                         ButtonInstall,
-                        ButtonBase.VisibilityProperty,
+                        VisibilityProperty,
                         mainModel,
                         $"{nameof(FullscreenAppViewModel.SelectedGame)}.{nameof(GamesCollectionViewEntry.IsInstalled)}",
                         converter: new InvertedBooleanToVisibilityConverter(),
@@ -411,7 +412,7 @@ namespace Playnite.FullscreenApp.Controls.Views
                     ButtonPlay.Command = mainModel.ActivateSelectedCommand;
                     BindingTools.SetBinding(
                         ButtonPlay,
-                        ButtonBase.VisibilityProperty,
+                        VisibilityProperty,
                         mainModel,
                         $"{nameof(FullscreenAppViewModel.SelectedGame)}.{nameof(GamesCollectionViewEntry.IsInstalled)}",
                         converter: new Converters.BooleanToVisibilityConverter(),
@@ -423,7 +424,7 @@ namespace Playnite.FullscreenApp.Controls.Views
                 {
                     BindingTools.SetBinding(
                         ButtonDetails,
-                        ButtonBase.VisibilityProperty,
+                        VisibilityProperty,
                         mainModel,
                         nameof(FullscreenAppViewModel.GameDetailsButtonVisible),
                         converter: new Converters.BooleanToVisibilityConverter());
@@ -434,7 +435,7 @@ namespace Playnite.FullscreenApp.Controls.Views
                 {
                     BindingTools.SetBinding(
                         ButtonGameOptions,
-                        ButtonBase.VisibilityProperty,
+                        VisibilityProperty,
                         mainModel,
                         nameof(FullscreenAppViewModel.GameDetailsButtonVisible),
                         converter: new Converters.BooleanToVisibilityConverter());
@@ -450,7 +451,7 @@ namespace Playnite.FullscreenApp.Controls.Views
                 if (ElemFilters != null)
                 {
                     BindingTools.SetBinding(ElemFilters,
-                        FrameworkElement.VisibilityProperty,
+                        VisibilityProperty,
                         mainModel,
                         nameof(FullscreenAppViewModel.FilterPanelVisible),
                         converter: new Converters.BooleanToVisibilityConverter());
@@ -460,7 +461,7 @@ namespace Playnite.FullscreenApp.Controls.Views
                 if (ElemFiltersAdditional != null)
                 {
                     BindingTools.SetBinding(ElemFiltersAdditional,
-                        FrameworkElement.VisibilityProperty,
+                        VisibilityProperty,
                         mainModel,
                         nameof(FullscreenAppViewModel.FilterAdditionalPanelVisible),
                         converter: new Converters.BooleanToVisibilityConverter());
@@ -470,7 +471,7 @@ namespace Playnite.FullscreenApp.Controls.Views
                 if (ContentFilterItems != null)
                 {
                     BindingTools.SetBinding(ContentFilterItems,
-                        ContentControl.VisibilityProperty,
+                        VisibilityProperty,
                         mainModel,
                         nameof(FullscreenAppViewModel.SubFilterVisible),
                         converter: new Converters.BooleanToVisibilityConverter());
@@ -484,7 +485,7 @@ namespace Playnite.FullscreenApp.Controls.Views
                 if (ElemGameDetails != null)
                 {
                     BindingTools.SetBinding(ElemGameDetails,
-                        FrameworkElement.VisibilityProperty,
+                        VisibilityProperty,
                         mainModel,
                         nameof(FullscreenAppViewModel.GameDetailsVisible),
                         converter: new Converters.BooleanToVisibilityConverter());
@@ -495,12 +496,12 @@ namespace Playnite.FullscreenApp.Controls.Views
                 if (ElemGameStatus != null)
                 {
                     BindingTools.SetBinding(ElemGameStatus,
-                        FrameworkElement.VisibilityProperty,
+                        VisibilityProperty,
                         mainModel,
                         nameof(FullscreenAppViewModel.GameStatusVisible),
                         converter: new Converters.BooleanToVisibilityConverter());
                     BindingTools.SetBinding(ElemGameStatus,
-                        FrameworkElement.DataContextProperty,
+                        DataContextProperty,
                         mainModel,
                         nameof(FullscreenAppViewModel.GameStatusView));
                 }
@@ -527,7 +528,7 @@ namespace Playnite.FullscreenApp.Controls.Views
             if (mainModel.GameDetailsVisible)
             {
                 BindingTools.SetBinding(ElemGameDetails,
-                    FrameworkElement.DataContextProperty,
+                    DataContextProperty,
                     mainModel,
                     nameof(FullscreenAppViewModel.SelectedGame));
             }

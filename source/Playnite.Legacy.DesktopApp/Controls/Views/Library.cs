@@ -1,5 +1,6 @@
 ﻿using Playnite.DesktopApp.ViewModels;
-using Playnite.DesktopApp.ViewModels.DesignData;
+using Playnite.Legacy.DesktopApp.ViewModels;
+using Playnite.Legacy.DesktopApp.ViewModels.DesignData;
 using Playnite.SDK;
 using System;
 using System.ComponentModel;
@@ -9,7 +10,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace Playnite.DesktopApp.Controls.Views
+namespace Playnite.Legacy.DesktopApp.Controls.Views
 {
     [TemplatePart(Name = "PART_ImageBackground", Type = typeof(FadeImage))]
     [TemplatePart(Name = "PART_ViewDetails", Type = typeof(Control))]
@@ -104,7 +105,7 @@ namespace Playnite.DesktopApp.Controls.Views
             if (ElemNoGamesNotif != null)
             {
                 BindingTools.SetBinding(ElemNoGamesNotif,
-                    Control.VisibilityProperty,
+                    VisibilityProperty,
                     mainModel,
                     $"{nameof(mainModel.GamesView)}.{nameof(mainModel.GamesView.CollectionView)}.{nameof(mainModel.GamesView.Items.Count)}",
                     converter: new IntToVisibilityConverter(),
@@ -122,7 +123,7 @@ namespace Playnite.DesktopApp.Controls.Views
                 mainModel.Extensions,
                 Template,
                 this,
-                SDK.ApplicationMode.Desktop,
+                ApplicationMode.Desktop,
                 mainModel,
                 $"{nameof(DesktopAppViewModel.SelectedGameDetails)}.{nameof(GameDetailsViewModel.Game)}.{nameof(GameDetailsViewModel.Game.Game)}");
         }
@@ -133,13 +134,13 @@ namespace Playnite.DesktopApp.Controls.Views
             if (elem != null)
             {
                 BindingTools.SetBinding(elem,
-                    Control.VisibilityProperty,
+                    VisibilityProperty,
                     mainModel.AppSettings.ViewSettings,
                     nameof(ViewSettings.GamesViewType),
                     converter: new EnumToVisibilityConverter(),
                     converterParameter: type);
                 BindingTools.SetBinding(elem,
-                    Control.IsEnabledProperty,
+                    IsEnabledProperty,
                     mainModel.AppSettings.ViewSettings,
                     nameof(ViewSettings.GamesViewType),
                     converter: new EnumToBooleanConverter(),
@@ -155,7 +156,7 @@ namespace Playnite.DesktopApp.Controls.Views
             }
 
             if (mainModel.AppSettings.ShowBackgroundImageOnWindow &&
-                ((mainModel.AppSettings.ShowBackImageOnGridView && mainModel.AppSettings.ViewSettings.GamesViewType == DesktopView.Grid) ||
+                (mainModel.AppSettings.ShowBackImageOnGridView && mainModel.AppSettings.ViewSettings.GamesViewType == DesktopView.Grid ||
                 mainModel.AppSettings.ViewSettings.GamesViewType == DesktopView.Details))
             {
                 ImageBackground.SourceUpdateDelay = 150;

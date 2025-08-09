@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace Playnite.DesktopApp.Controls.Menus
+namespace Playnite.Legacy.DesktopApp.Controls.Menus
 {
     public class GroupSettingsMenu : ContextMenu
     {

@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Threading;
 
-namespace Playnite.FullscreenApp.API
+namespace Playnite.Legacy.FullscreenApp.Api
 {
     public class MainViewAPI : IMainViewAPI
     {

@@ -1,8 +1,10 @@
-﻿using Playnite.SDK;
+﻿using Playnite.FullscreenApp;
+using Playnite.FullscreenApp.ViewModels;
+using Playnite.SDK;
 using Playnite.SDK.Models;
 using System.Linq;
 
-namespace Playnite.FullscreenApp.ViewModels.DesignData
+namespace Playnite.Legacy.FullscreenApp.ViewModels.DesignData
 {
     public class DesignMainViewModel : FullscreenAppViewModel
     {

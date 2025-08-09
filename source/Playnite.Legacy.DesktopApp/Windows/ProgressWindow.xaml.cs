@@ -1,6 +1,6 @@
 ﻿using System.Windows.Interop;
 
-namespace Playnite.DesktopApp.Windows
+namespace Playnite.Legacy.DesktopApp.Windows
 {
     /// <summary>
     /// Interaction logic for AboutWindow.xaml

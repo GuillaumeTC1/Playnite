@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Playnite.FullscreenApp.Windows
+namespace Playnite.Legacy.FullscreenApp.Windows
 {
     /// <summary>
     /// Interaction logic for CrashWindow.xaml

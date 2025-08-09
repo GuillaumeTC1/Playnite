@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace Playnite.DesktopApp.Controls.SettingsSections
+namespace Playnite.Legacy.DesktopApp.Controls.SettingsSections
 {
     /// <summary>
     /// Interaction logic for AppearanceLayout.xaml

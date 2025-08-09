@@ -1,7 +1,8 @@
-﻿using Playnite.FullscreenApp.API;
-using Playnite.FullscreenApp.Markup;
+﻿using Playnite.FullscreenApp;
+using Playnite.FullscreenApp.API;
 using Playnite.FullscreenApp.ViewModels;
-using Playnite.FullscreenApp.Windows;
+using Playnite.Legacy.FullscreenApp.Markup;
+using Playnite.Legacy.FullscreenApp.Windows;
 using Playnite.SDK;
 using Playnite.SDK.Events;
 using Playnite.SDK.Models;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
-namespace Playnite.FullscreenApp
+namespace Playnite.Legacy.FullscreenApp
 {
     public class FullscreenApplication : PlayniteApplication
     {
@@ -32,9 +33,9 @@ namespace Playnite.FullscreenApp
         private bool sdlInitialized = false;
         private TimeSpan audioSleepTimeout = new TimeSpan(0, 0, 45);
         public static AudioEngine Audio { get; private set; }
-        public static IntPtr NavigateSound { get; private set; }
-        public static IntPtr ActivateSound { get; private set; }
-        public static IntPtr BackgroundMusic { get; private set; }
+        public static nint NavigateSound { get; private set; }
+        public static nint ActivateSound { get; private set; }
+        public static nint BackgroundMusic { get; private set; }
         public GameControllerManager GameController { get; private set; }
         private bool exitSDLEventLoop = false;
 
@@ -120,7 +121,7 @@ namespace Playnite.FullscreenApp
                 Extensions,
                 this);
             PlayniteApiGlobal = GetApiInstance();
-            SDK.API.Instance = PlayniteApiGlobal;
+            API.Instance = PlayniteApiGlobal;
         }
 
         private void FullscreenApplication_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)

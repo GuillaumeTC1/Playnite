@@ -6,7 +6,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Playnite.DesktopApp.Controls
+namespace Playnite.Legacy.DesktopApp.Controls
 {
     /// <summary>
     /// Interaction logic for GameTaskView.xaml
@@ -229,7 +229,7 @@ namespace Playnite.DesktopApp.Controls
                 }
                 else
                 {
-                    return ((GameAction)DataContext);
+                    return (GameAction)DataContext;
                 }
             }
         }

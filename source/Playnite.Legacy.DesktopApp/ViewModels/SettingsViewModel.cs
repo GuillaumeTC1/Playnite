@@ -13,7 +13,7 @@ using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Playnite.DesktopApp.ViewModels
+namespace Playnite.Legacy.DesktopApp.ViewModels
 {
     public class SelectableTrayIcon
     {
@@ -367,7 +367,7 @@ namespace Playnite.DesktopApp.ViewModels
             this.window = window;
             this.dialogs = dialogs;
             this.resources = resources;
-            this.application = app;
+            application = app;
             originalSettings = settings;
 
             Settings = settings.GetClone();
@@ -634,7 +634,7 @@ namespace Playnite.DesktopApp.ViewModels
         {
             try
             {
-                var game = application.PlayniteApiGlobal.MainView.SelectedGames.FirstOrDefault() ?? new SDK.Models.Game("Test game");
+                var game = application.PlayniteApiGlobal.MainView.SelectedGames.FirstOrDefault() ?? new Game("Test game");
                 var expandedScript = game.ExpandVariables(script);
                 var startingArgs = new SDK.Events.OnGameStartingEventArgs
                 {

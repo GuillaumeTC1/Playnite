@@ -7,7 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 
-namespace Playnite.DesktopApp.Controls
+namespace Playnite.Legacy.DesktopApp.Controls
 {
     public class GridViewPanel : VirtualizingPanel, IScrollInfo
     {
@@ -165,7 +165,7 @@ namespace Playnite.DesktopApp.Controls
             }
 
             var startPos = ItemContainerGenerator.GeneratorPositionFromIndex(firstItemIndex);
-            var childIndex = (startPos.Offset == 0) ? startPos.Index : startPos.Index + 1;
+            var childIndex = startPos.Offset == 0 ? startPos.Index : startPos.Index + 1;
             using (ItemContainerGenerator.StartAt(startPos, GeneratorDirection.Forward, true))
             {
                 for (int itemIndex = firstItemIndex; itemIndex <= lastItemIndex; ++itemIndex, ++childIndex)
@@ -230,8 +230,8 @@ namespace Playnite.DesktopApp.Controls
             var row = itemIndex < column ? 0 : (int)Math.Floor(itemIndex / (double)computedColumns);
             var offset = ItemsOwner is IHierarchicalVirtualizationAndScrollInfo ? 0 : Offset.Y;
             return new Rect(
-                centerMargin + (column * ItemWidth),
-                (row * ItemHeight) - offset,
+                centerMargin + column * ItemWidth,
+                row * ItemHeight - offset,
                 ItemWidth,
                 ItemHeight);
         }
@@ -262,7 +262,7 @@ namespace Playnite.DesktopApp.Controls
 
             firstIndex = startRow * computedColumns;
             var newRows = (int)Math.Ceiling(Viewport.Height / ItemHeight) + 1;
-            lastIndex = firstIndex + (newRows * computedColumns);
+            lastIndex = firstIndex + newRows * computedColumns;
             if (lastIndex >= itemCount)
             {
                 lastIndex = itemCount - 1;
@@ -363,7 +363,7 @@ namespace Playnite.DesktopApp.Controls
             if (ItemWidth > 0)
             {
                 computedColumns = (int)Math.Floor(Viewport.Width / itemWidth);
-                centerMargin = (Viewport.Width - (computedColumns * itemWidth)) / 2;
+                centerMargin = (Viewport.Width - computedColumns * itemWidth) / 2;
             }
             else
             {
@@ -490,7 +490,7 @@ namespace Playnite.DesktopApp.Controls
 
         public void MouseWheelDown()
         {
-            SetVerticalOffset(VerticalOffset + (ItemHeight / 2));
+            SetVerticalOffset(VerticalOffset + ItemHeight / 2);
         }
 
         public void MouseWheelLeft()
@@ -505,7 +505,7 @@ namespace Playnite.DesktopApp.Controls
 
         public void MouseWheelUp()
         {
-            SetVerticalOffset(VerticalOffset - (ItemHeight / 2));
+            SetVerticalOffset(VerticalOffset - ItemHeight / 2);
         }
 
         public void PageLeft()

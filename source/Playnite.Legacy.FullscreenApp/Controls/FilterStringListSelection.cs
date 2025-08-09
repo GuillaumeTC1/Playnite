@@ -10,7 +10,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Input;
 
-namespace Playnite.FullscreenApp.Controls
+namespace Playnite.Legacy.FullscreenApp.Controls
 {
     [TemplatePart(Name = "PART_MenuHost", Type = typeof(FrameworkElement))]
     [TemplatePart(Name = "PART_ButtonBack", Type = typeof(ButtonBase))]

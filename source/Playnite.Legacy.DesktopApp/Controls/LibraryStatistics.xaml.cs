@@ -1,7 +1,7 @@
-﻿using Playnite.DesktopApp.ViewModels;
+﻿using Playnite.Legacy.DesktopApp.ViewModels;
 using System.Windows.Controls;
 
-namespace Playnite.DesktopApp.Controls
+namespace Playnite.Legacy.DesktopApp.Controls
 {
     /// <summary>
     /// Interaction logic for LibraryStatistics.xaml

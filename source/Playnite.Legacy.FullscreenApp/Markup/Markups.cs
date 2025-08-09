@@ -1,8 +1,8 @@
 ﻿using Playnite.FullscreenApp.ViewModels;
-using Playnite.FullscreenApp.ViewModels.DesignData;
+using Playnite.Legacy.FullscreenApp.ViewModels.DesignData;
 using Playnite.SDK;
 
-namespace Playnite.FullscreenApp.Markup
+namespace Playnite.Legacy.FullscreenApp.Markup
 {
     public class Api : Extensions.Markup.Api
     {

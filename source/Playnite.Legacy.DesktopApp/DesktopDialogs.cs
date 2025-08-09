@@ -7,7 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Playnite.DesktopApp
+namespace Playnite.Legacy.DesktopApp
 {
     public class DesktopDialogs : IDialogsFactory
     {
@@ -20,7 +20,7 @@ namespace Playnite.DesktopApp
 
         private T Invoke<T>(Func<T> action)
         {
-            T result = default(T);
+            T result = default;
             context.Send((a) =>
             {
                 result = action();

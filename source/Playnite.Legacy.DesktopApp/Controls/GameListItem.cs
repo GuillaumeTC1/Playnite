@@ -1,5 +1,6 @@
 ﻿using Playnite.DesktopApp.ViewModels;
-using Playnite.DesktopApp.ViewModels.DesignData;
+using Playnite.Legacy.DesktopApp;
+using Playnite.Legacy.DesktopApp.ViewModels.DesignData;
 using Playnite.SDK;
 using System.ComponentModel;
 using System.Windows;
@@ -8,7 +9,7 @@ using System.Windows.Data;
 using System.Windows.Input;
 using BooleanToVisibilityConverter = Playnite.Converters.BooleanToVisibilityConverter;
 
-namespace Playnite.DesktopApp.Controls
+namespace Playnite.Legacy.DesktopApp.Controls
 {
     [TemplatePart(Name = "PART_PanelHost", Type = typeof(FrameworkElement))]
     [TemplatePart(Name = "PART_ImageIcon", Type = typeof(Image))]
@@ -56,13 +57,13 @@ namespace Playnite.DesktopApp.Controls
                 {
                     var mBinding = new MouseBinding(mainModel.StartGameCommand, new MouseGesture(MouseAction.LeftDoubleClick));
                     BindingTools.SetBinding(mBinding,
-                        MouseBinding.CommandParameterProperty,
+                        InputBinding.CommandParameterProperty,
                         nameof(GamesCollectionViewEntry.Game));
                     PanelHost.InputBindings.Add(mBinding);
 
                     PanelHost.ContextMenu = new GameMenu(mainModel) { ShowStartSection = true };
                     BindingTools.SetBinding(PanelHost.ContextMenu,
-                        Button.DataContextProperty,
+                        DataContextProperty,
                         mainModel,
                         nameof(DesktopAppViewModel.SelectedGames));
                 }
@@ -72,7 +73,7 @@ namespace Playnite.DesktopApp.Controls
             if (ImageIcon != null)
             {
                 BindingTools.SetBinding(ImageIcon,
-                    Image.VisibilityProperty,
+                    VisibilityProperty,
                     mainModel.AppSettings,
                     nameof(PlayniteSettings.ShowIconsOnList),
                     converter: new BooleanToVisibilityConverter());
@@ -121,7 +122,7 @@ namespace Playnite.DesktopApp.Controls
             {
                 ButtonPlay.Command = mainModel.StartGameCommand;
                 BindingTools.SetBinding(ButtonPlay,
-                    Button.CommandParameterProperty,
+                    System.Windows.Controls.Primitives.ButtonBase.CommandParameterProperty,
                     nameof(GamesCollectionViewEntry.Game));
             }
 
@@ -130,7 +131,7 @@ namespace Playnite.DesktopApp.Controls
             {
                 ButtonInfo.Command = mainModel.ShowGameSideBarCommand;
                 BindingTools.SetBinding(ButtonInfo,
-                    Button.CommandParameterProperty,
+                    System.Windows.Controls.Primitives.ButtonBase.CommandParameterProperty,
                     string.Empty);
             }
 

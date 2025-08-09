@@ -7,7 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 
-namespace Playnite.DesktopApp.ViewModels
+namespace Playnite.Legacy.DesktopApp.ViewModels
 {
     public class ToolsConfigViewModel : ObservableObject
     {

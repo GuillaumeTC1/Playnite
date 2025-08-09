@@ -4,7 +4,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Xml.Linq;
 
-namespace Playnite.DesktopApp.Controls
+namespace Playnite.Legacy.DesktopApp.Controls
 {
     [TemplatePart(Name = "PART_TextFilterInput", Type = typeof(TextBox))]
     public abstract class FilterSelectionBoxBase : ComboBoxListBase
@@ -36,7 +36,7 @@ namespace Playnite.DesktopApp.Controls
                         new XElement(pns + nameof(CheckBox),
                             new XAttribute(nameof(CheckBox.IsChecked), "{Binding Selected}"),
                             new XAttribute(nameof(CheckBox.Content), "{Binding Item}"),
-                            new XAttribute(nameof(CheckBox.Style), $"{{DynamicResource FilterSelectionBoxItemStyle}}")))
+                            new XAttribute(nameof(Style), $"{{DynamicResource FilterSelectionBoxItemStyle}}")))
                 ).ToString());
             }
 
@@ -44,7 +44,7 @@ namespace Playnite.DesktopApp.Controls
             {
                 BindingTools.SetBinding(
                     TextFilterInput,
-                    TextBox.VisibilityProperty,
+                    VisibilityProperty,
                     this,
                     nameof(IsFullTextEnabled),
                     converter: new Converters.BooleanToVisibilityConverter());
@@ -54,7 +54,7 @@ namespace Playnite.DesktopApp.Controls
             {
                 BindingTools.SetBinding(
                     TextFilterString,
-                    TextBox.VisibilityProperty,
+                    VisibilityProperty,
                     this,
                     nameof(IsFullTextEnabled),
                     converter: new InvertedBooleanToVisibilityConverter());
@@ -216,7 +216,7 @@ namespace Playnite.DesktopApp.Controls
                     this,
                     nameof(FullTextText),
                     delay: 200,
-                    trigger: System.Windows.Data.UpdateSourceTrigger.PropertyChanged,
+                    trigger: UpdateSourceTrigger.PropertyChanged,
                     mode: BindingMode.TwoWay);
             }
 

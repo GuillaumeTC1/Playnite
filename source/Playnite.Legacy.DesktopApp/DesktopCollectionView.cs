@@ -7,7 +7,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows.Data;
 
-namespace Playnite.DesktopApp
+namespace Playnite.Legacy.DesktopApp
 {
     public class DesktopCollectionView : BaseCollectionView
     {

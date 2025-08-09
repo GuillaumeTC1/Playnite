@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace Playnite.DesktopApp.Controls
+namespace Playnite.Legacy.DesktopApp.Controls
 {
     [TemplatePart(Name = "PART_ButtonDirectorySelect", Type = typeof(Button))]
     [TemplatePart(Name = "PART_ButtonFileSelect", Type = typeof(Button))]

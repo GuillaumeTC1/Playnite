@@ -1,12 +1,13 @@
 ﻿using Playnite.DesktopApp.ViewModels;
-using Playnite.DesktopApp.ViewModels.DesignData;
+using Playnite.Legacy.DesktopApp;
+using Playnite.Legacy.DesktopApp.ViewModels.DesignData;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 
-namespace Playnite.DesktopApp.Controls.Views
+namespace Playnite.Legacy.DesktopApp.Controls.Views
 {
     [TemplatePart(Name = "PART_SelectFields", Type = typeof(Selector))]
     [TemplatePart(Name = "PART_SelectItems", Type = typeof(Selector))]
@@ -51,7 +52,7 @@ namespace Playnite.DesktopApp.Controls.Views
                     nameof(DatabaseExplorer.SelectedField),
                     BindingMode.TwoWay);
                 BindingTools.SetBinding(SelectFields,
-                    Selector.ItemsSourceProperty,
+                    ItemsControl.ItemsSourceProperty,
                     mainModel.DatabaseExplorer,
                     nameof(DatabaseExplorer.Fields));
             }
@@ -66,7 +67,7 @@ namespace Playnite.DesktopApp.Controls.Views
                     nameof(DatabaseExplorer.SelectedFieldObject),
                     BindingMode.TwoWay);
                 BindingTools.SetBinding(SelectItems,
-                    Selector.ItemsSourceProperty,
+                    ItemsControl.ItemsSourceProperty,
                     mainModel.DatabaseExplorer,
                     nameof(DatabaseExplorer.FieldValues));
             }

@@ -1,4 +1,5 @@
-﻿using Playnite.DesktopApp.ViewModels;
+﻿using Playnite.DesktopApp.Controls;
+using Playnite.DesktopApp.ViewModels;
 using Playnite.SDK;
 using Playnite.SDK.Models;
 using System.ComponentModel;
@@ -9,7 +10,7 @@ using System.Windows.Data;
 using System.Xml.Linq;
 using BooleanToVisibilityConverter = Playnite.Converters.BooleanToVisibilityConverter;
 
-namespace Playnite.DesktopApp.Controls.Views
+namespace Playnite.Legacy.DesktopApp.Controls.Views
 {
     [TemplatePart(Name = "PART_SliderZoom", Type = typeof(SliderWithPopup))]
     public class LibraryGridView : BaseGamesView
@@ -102,7 +103,7 @@ namespace Playnite.DesktopApp.Controls.Views
             if (ControlGameView != null)
             {
                 BindingTools.SetBinding(ControlGameView,
-                    Control.VisibilityProperty,
+                    VisibilityProperty,
                     mainModel.AppSettings,
                     nameof(PlayniteSettings.GridViewSideBarVisible),
                     converter: new BooleanToVisibilityConverter());

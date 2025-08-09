@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace Playnite.FullscreenApp.Windows
+namespace Playnite.Legacy.FullscreenApp.Windows
 {
     public class WindowTools
     {

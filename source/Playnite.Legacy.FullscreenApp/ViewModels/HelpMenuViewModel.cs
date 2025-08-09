@@ -1,8 +1,9 @@
-﻿using Playnite.FullscreenApp.Commands;
+﻿using Playnite.FullscreenApp.ViewModels;
+using Playnite.Legacy.FullscreenApp.Commands;
 using Playnite.SDK;
 using System.Collections.Generic;
 
-namespace Playnite.FullscreenApp.ViewModels
+namespace Playnite.Legacy.FullscreenApp.ViewModels
 {
     public class HelpMenuViewModel : ObservableObject
     {
@@ -20,7 +21,7 @@ namespace Playnite.FullscreenApp.ViewModels
             FullscreenAppViewModel mainModel)
         {
             this.window = window;
-            this.MainModel = mainModel;
+            MainModel = mainModel;
         }
 
         public bool? OpenView()

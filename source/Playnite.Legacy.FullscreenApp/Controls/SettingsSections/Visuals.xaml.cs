@@ -3,7 +3,7 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 
-namespace Playnite.FullscreenApp.Controls.SettingsSections
+namespace Playnite.Legacy.FullscreenApp.Controls.SettingsSections
 {
     /// <summary>
     /// Interaction logic for Visuals.xaml
@@ -71,14 +71,14 @@ namespace Playnite.FullscreenApp.Controls.SettingsSections
             SliderBackgroundDarkenAmount.IsSnapToTickEnabled = true;
             BindingTools.SetBinding(
                 SliderBackgroundDarkenAmount,
-                Slider.ValueProperty,
+                RangeBase.ValueProperty,
                 mainModel.AppSettings.Fullscreen,
                 nameof(FullscreenSettings.MainBackgroundImageDarkAmount),
                 BindingMode.TwoWay,
                 UpdateSourceTrigger.PropertyChanged);
             BindingTools.SetBinding(
                     SliderBackgroundDarkenAmount,
-                    Slider.IsEnabledProperty,
+                    IsEnabledProperty,
                     mainModel.AppSettings.Fullscreen,
                     nameof(FullscreenSettings.EnableMainBackgroundImage),
                     BindingMode.OneWay,
@@ -90,14 +90,14 @@ namespace Playnite.FullscreenApp.Controls.SettingsSections
             SliderBackgroundBlurAmount.IsSnapToTickEnabled = true;
             BindingTools.SetBinding(
                 SliderBackgroundBlurAmount,
-                Slider.ValueProperty,
+                RangeBase.ValueProperty,
                 mainModel.AppSettings.Fullscreen,
                 nameof(FullscreenSettings.MainBackgroundImageBlurAmount),
                 BindingMode.TwoWay,
                 UpdateSourceTrigger.PropertyChanged);
             BindingTools.SetBinding(
                     SliderBackgroundBlurAmount,
-                    Slider.IsEnabledProperty,
+                    IsEnabledProperty,
                     mainModel.AppSettings.Fullscreen,
                     nameof(FullscreenSettings.EnableMainBackgroundImage),
                     BindingMode.OneWay,
@@ -109,7 +109,7 @@ namespace Playnite.FullscreenApp.Controls.SettingsSections
             SliderFontSize.IsSnapToTickEnabled = true;
             BindingTools.SetBinding(
                 SliderFontSize,
-                Slider.ValueProperty,
+                RangeBase.ValueProperty,
                 mainModel.AppSettings.Fullscreen,
                 nameof(FullscreenSettings.FontSize),
                 BindingMode.TwoWay,
@@ -121,7 +121,7 @@ namespace Playnite.FullscreenApp.Controls.SettingsSections
             SliderFontSizeSmall.IsSnapToTickEnabled = true;
             BindingTools.SetBinding(
                 SliderFontSizeSmall,
-                Slider.ValueProperty,
+                RangeBase.ValueProperty,
                 mainModel.AppSettings.Fullscreen,
                 nameof(FullscreenSettings.FontSizeSmall),
                 BindingMode.TwoWay,

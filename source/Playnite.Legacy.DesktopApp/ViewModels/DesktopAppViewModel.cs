@@ -1,5 +1,9 @@
-﻿using Playnite.DesktopApp.ViewModels.DesignData;
-using Playnite.DesktopApp.Windows;
+﻿using Playnite.DesktopApp.Windows;
+using Playnite.Legacy.DesktopApp;
+using Playnite.Legacy.DesktopApp.Controls;
+using Playnite.Legacy.DesktopApp.Controls.Views;
+using Playnite.Legacy.DesktopApp.ViewModels;
+using Playnite.Legacy.DesktopApp.ViewModels.DesignData;
 using Playnite.SDK;
 using Playnite.SDK.Database;
 using Playnite.SDK.Events;
@@ -25,8 +29,8 @@ namespace Playnite.DesktopApp.ViewModels
         protected bool ignoreCloseActions = false;
         protected bool ignoreSelectionChanges = false;
         private readonly SynchronizationContext context;
-        private Controls.LibraryStatistics statsView;
-        private Controls.Views.Library libraryView;
+        private LibraryStatistics statsView;
+        private Library libraryView;
         private SearchViewModel currentGlobalSearch;
 
         public DesktopGamesEditor GamesEditor { get; }

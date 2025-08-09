@@ -1,4 +1,6 @@
-﻿using Playnite.FullscreenApp.ViewModels;
+﻿using Playnite.FullscreenApp.Controls;
+using Playnite.FullscreenApp.ViewModels;
+using Playnite.Legacy.FullscreenApp.ViewModels;
 using Playnite.SDK;
 using System.ComponentModel;
 using System.Text;
@@ -6,7 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 
-namespace Playnite.FullscreenApp.Controls.Views
+namespace Playnite.Legacy.FullscreenApp.Controls.Views
 {
     [TemplatePart(Name = "PART_ViewHost", Type = typeof(FrameworkElement))]
     [TemplatePart(Name = "PART_PanelActionButtons", Type = typeof(Panel))]
@@ -62,7 +64,7 @@ namespace Playnite.FullscreenApp.Controls.Views
             {
                 var buttonClose = new ButtonEx();
                 buttonClose.Content = ResourceProvider.GetString(LOC.CloseLabel);
-                buttonClose.SetResourceReference(ButtonEx.StyleProperty, "ButtonGameStatusAction");
+                buttonClose.SetResourceReference(StyleProperty, "ButtonGameStatusAction");
                 buttonClose.Command = mainModel.CloseGameStatusCommand;
                 PanelActionButtons.Children.Add(buttonClose);
             }

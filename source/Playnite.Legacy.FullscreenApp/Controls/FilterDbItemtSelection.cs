@@ -12,7 +12,7 @@ using System.Windows.Data;
 using System.Windows.Input;
 using System.Xml.Linq;
 
-namespace Playnite.FullscreenApp.Controls
+namespace Playnite.Legacy.FullscreenApp.Controls
 {
     [TemplatePart(Name = "PART_MenuHost", Type = typeof(FrameworkElement))]
     [TemplatePart(Name = "PART_ButtonBack", Type = typeof(ButtonBase))]
@@ -236,7 +236,7 @@ namespace Playnite.FullscreenApp.Controls
             itemsHost.Template = Xaml.FromString<ControlTemplate>(new XDocument(
                  new XElement(pns + nameof(ControlTemplate),
                     new XElement(pns + nameof(ScrollViewer),
-                        new XAttribute(nameof(ScrollViewer.Focusable), false),
+                        new XAttribute(nameof(Focusable), false),
                         new XAttribute(nameof(ScrollViewer.HorizontalScrollBarVisibility), ScrollBarVisibility.Disabled),
                         new XAttribute(nameof(ScrollViewer.VerticalScrollBarVisibility), ScrollBarVisibility.Auto),
                         new XAttribute(nameof(ScrollViewer.CanContentScroll), true),
@@ -248,7 +248,7 @@ namespace Playnite.FullscreenApp.Controls
                     new XElement(pns + nameof(CheckBoxEx),
                         new XAttribute(nameof(CheckBoxEx.IsChecked), "{Binding Selected}"),
                         new XAttribute(nameof(CheckBoxEx.Content), "{Binding Item.Name}"),
-                        new XAttribute(nameof(CheckBoxEx.Style), $"{{DynamicResource FilterItemtSelectionStyle}}")))
+                        new XAttribute(nameof(Style), $"{{DynamicResource FilterItemtSelectionStyle}}")))
             ).ToString());
         }
     }

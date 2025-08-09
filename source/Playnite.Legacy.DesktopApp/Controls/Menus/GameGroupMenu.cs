@@ -1,11 +1,12 @@
 ﻿using Playnite.DesktopApp.ViewModels;
+using Playnite.Legacy.DesktopApp;
 using Playnite.SDK;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 
-namespace Playnite.DesktopApp.Controls.Menus
+namespace Playnite.Legacy.DesktopApp.Controls.Menus
 {
     public class GameGroupMenu : ContextMenu
     {

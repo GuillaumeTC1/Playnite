@@ -1,4 +1,5 @@
-﻿using Playnite.FullscreenApp.Windows;
+﻿using Playnite.FullscreenApp.ViewModels;
+using Playnite.FullscreenApp.Windows;
 using Playnite.SDK;
 using Playnite.SDK.Database;
 using Playnite.SDK.Extensions;
@@ -9,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 
-namespace Playnite.FullscreenApp.ViewModels
+namespace Playnite.Legacy.FullscreenApp.ViewModels
 {
     public class GameActionItem
     {

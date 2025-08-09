@@ -3,7 +3,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Xml.Linq;
 
-namespace Playnite.DesktopApp.Controls
+namespace Playnite.Legacy.DesktopApp.Controls
 {
     [TemplatePart(Name = "PART_ItemsPanel", Type = typeof(ItemsControl))]
     [TemplatePart(Name = "PART_ButtonClearFilter", Type = typeof(Button))]
@@ -58,7 +58,7 @@ namespace Playnite.DesktopApp.Controls
                 ItemsPanel.Template = Xaml.FromString<ControlTemplate>(new XDocument(
                      new XElement(pns + nameof(ControlTemplate),
                         new XElement(pns + nameof(ScrollViewer),
-                            new XAttribute(nameof(ScrollViewer.Focusable), false),
+                            new XAttribute(nameof(Focusable), false),
                             new XElement(pns + nameof(ItemsPresenter))))
                 ).ToString());
 
@@ -67,7 +67,7 @@ namespace Playnite.DesktopApp.Controls
                         new XElement(pns + nameof(CheckBox),
                             new XAttribute(nameof(CheckBox.IsChecked), "{Binding Selected}"),
                             new XAttribute(nameof(CheckBox.Content), "{Binding Item}"),
-                            new XAttribute(nameof(CheckBox.Style), $"{{DynamicResource ComboBoxListItemStyle}}")))
+                            new XAttribute(nameof(Style), $"{{DynamicResource ComboBoxListItemStyle}}")))
                 ).ToString());
 
                 ScrollViewer.SetCanContentScroll(ItemsPanel, true);

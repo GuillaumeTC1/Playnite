@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Windows;
 
-namespace Playnite.DesktopApp.Controls
+namespace Playnite.Legacy.DesktopApp.Controls
 {
     public class FilterStringSelectionBox : FilterSelectionBoxBase
     {

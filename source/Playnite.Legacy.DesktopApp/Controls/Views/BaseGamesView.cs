@@ -1,5 +1,7 @@
 ﻿using Playnite.DesktopApp.ViewModels;
-using Playnite.DesktopApp.ViewModels.DesignData;
+using Playnite.Legacy.DesktopApp;
+using Playnite.Legacy.DesktopApp.ViewModels;
+using Playnite.Legacy.DesktopApp.ViewModels.DesignData;
 using Playnite.SDK;
 using System.ComponentModel;
 using System.Windows;
@@ -7,7 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
 
-namespace Playnite.DesktopApp.Controls.Views
+namespace Playnite.Legacy.DesktopApp.Controls.Views
 {
     [TemplatePart(Name = "PART_ListGames", Type = typeof(ExtendedListBox))]
     [TemplatePart(Name = "PART_ControlGameView", Type = typeof(Control))]
@@ -78,7 +80,7 @@ namespace Playnite.DesktopApp.Controls.Views
                 if (ControlGameView != null)
                 {
                     BindingTools.SetBinding(ControlGameView,
-                        Control.DataContextProperty,
+                        DataContextProperty,
                         mainModel,
                         nameof(DesktopAppViewModel.SelectedGameDetails),
                         mode: BindingMode.OneWay);
@@ -131,7 +133,7 @@ namespace Playnite.DesktopApp.Controls.Views
                 mainModel.Extensions,
                 Template,
                 this,
-                SDK.ApplicationMode.Desktop,
+                ApplicationMode.Desktop,
                 mainModel,
                 $"{nameof(DesktopAppViewModel.SelectedGameDetails)}.{nameof(GameDetailsViewModel.Game)}.{nameof(GameDetailsViewModel.Game.Game)}");
         }
