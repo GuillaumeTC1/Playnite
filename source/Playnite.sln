@@ -32,6 +32,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playnite.DesktopApp", "Play
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Legacy", "Legacy", "{871BE218-8F83-E3CD-0B70-B1CC1745EA7C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playnite.FullscreenApp", "Playnite.FullscreenApp\Playnite.FullscreenApp.csproj", "{42ACB1A8-D229-C0EA-BD8F-29DA3C7ACB48}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -156,6 +158,18 @@ Global
 		{5474DF48-694A-4FE3-BAAD-6DB0867E9C33}.Release|x64.Build.0 = Release|Any CPU
 		{5474DF48-694A-4FE3-BAAD-6DB0867E9C33}.Release|x86.ActiveCfg = Release|Any CPU
 		{5474DF48-694A-4FE3-BAAD-6DB0867E9C33}.Release|x86.Build.0 = Release|Any CPU
+		{42ACB1A8-D229-C0EA-BD8F-29DA3C7ACB48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42ACB1A8-D229-C0EA-BD8F-29DA3C7ACB48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42ACB1A8-D229-C0EA-BD8F-29DA3C7ACB48}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{42ACB1A8-D229-C0EA-BD8F-29DA3C7ACB48}.Debug|x64.Build.0 = Debug|Any CPU
+		{42ACB1A8-D229-C0EA-BD8F-29DA3C7ACB48}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{42ACB1A8-D229-C0EA-BD8F-29DA3C7ACB48}.Debug|x86.Build.0 = Debug|Any CPU
+		{42ACB1A8-D229-C0EA-BD8F-29DA3C7ACB48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42ACB1A8-D229-C0EA-BD8F-29DA3C7ACB48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42ACB1A8-D229-C0EA-BD8F-29DA3C7ACB48}.Release|x64.ActiveCfg = Release|Any CPU
+		{42ACB1A8-D229-C0EA-BD8F-29DA3C7ACB48}.Release|x64.Build.0 = Release|Any CPU
+		{42ACB1A8-D229-C0EA-BD8F-29DA3C7ACB48}.Release|x86.ActiveCfg = Release|Any CPU
+		{42ACB1A8-D229-C0EA-BD8F-29DA3C7ACB48}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
