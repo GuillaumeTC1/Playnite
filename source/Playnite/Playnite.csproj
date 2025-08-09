@@ -113,7 +113,7 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PlayniteSDK\Playnite.SDK.csproj" />
+    <ProjectReference Include="..\PlayniteSDK\Playnite.Legacy.SDK.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\references\CefSharpRedist\*.*">

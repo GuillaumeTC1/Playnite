@@ -65,7 +65,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PlayniteSDK\Playnite.SDK.csproj" />
+    <ProjectReference Include="..\PlayniteSDK\Playnite.Legacy.SDK.csproj" />
     <ProjectReference Include="..\Playnite\Playnite.csproj" />
   </ItemGroup>
   <ItemGroup>
