@@ -1,0 +1,57 @@
+@inherits ComponentBase
+
+<div class="dialog-overlay @(_isVisible ? "visible" : "")" @onclick="HandleOverlayClick">
+    <div class="dialog-container" @onclick:stopPropagation="true">
+        <div class="dialog-header">
+            <h2>@Title</h2>
+            @if (AllowClose)
+            {
+                <button type="button" class="close-button" @onclick="Close">×</button>
+            }
+        </div>
+        <div class="dialog-content">
+            @ChildContent
+        </div>
+        @if (FooterContent != null)
+        {
+            <div class="dialog-footer">
+                @FooterContent
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    private bool _isVisible;
+
+    [Parameter] public string Title { get; set; }
+    [Parameter] public RenderFragment ChildContent { get; set; }
+    [Parameter] public RenderFragment FooterContent { get; set; }
+    [Parameter] public bool AllowClose { get; set; } = true;
+    [Parameter] public EventCallback OnClose { get; set; }
+
+    public async Task ShowAsync()
+    {
+        _isVisible = true;
+        await InvokeAsync(StateHasChanged);
+    }
+
+    public async Task CloseAsync()
+    {
+        await Close();
+    }
+
+    private async Task HandleOverlayClick()
+    {
+        if (AllowClose)
+        {
+            await Close();
+        }
+    }
+
+    private async Task Close()
+    {
+        _isVisible = false;
+        await OnClose.InvokeAsync();
+    }
+}

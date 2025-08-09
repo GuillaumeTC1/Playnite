@@ -1,0 +1,20 @@
+.progress-content {
+    padding: 1rem;
+}
+
+.progress-message {
+    margin-bottom: 1rem;
+}
+
+.progress-bar {
+    height: 4px;
+    background-color: var(--progress-bg);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-value {
+    height: 100%;
+    background-color: var(--progress-fill);
+    transition: width 0.3s ease-in-out;
+}

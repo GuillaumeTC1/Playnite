@@ -1,5 +1,6 @@
 ﻿using Playnite.Common;
 using Playnite.Database;
+using Playnite.Localization;
 using Playnite.SDK;
 using Playnite.Settings;
 using System;

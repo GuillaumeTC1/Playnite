@@ -1,0 +1,118 @@
+/* Base styles for both Desktop and Fullscreen modes */
+.main-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Desktop mode specific styles */
+.desktop-mode {
+    background-color: var(--desktop-bg-color);
+}
+
+.desktop-mode .nav-menu {
+    height: 48px;
+    background-color: var(--desktop-nav-bg);
+}
+
+/* Fullscreen mode specific styles */
+.fullscreen-mode {
+    background-color: var(--fullscreen-bg-color);
+}
+
+.fullscreen-mode .nav-menu {
+    height: 64px;
+    background-color: var(--fullscreen-nav-bg);
+}
+
+/* Dialog styles */
+.dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.dialog-overlay.visible {
+    display: flex;
+}
+
+.dialog-container {
+    background-color: var(--dialog-bg);
+    border-radius: 4px;
+    padding: 1rem;
+    min-width: 300px;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.dialog-content {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.dialog-footer {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+/* Navigation menu styles */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.nav-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    background: none;
+    color: var(--nav-text-color);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.nav-button:hover {
+    background-color: var(--nav-hover-bg);
+}
+
+.nav-icon {
+    font-size: 1.2rem;
+}
+
+/* Error UI styles */
+#blazor-error-ui {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 1rem;
+    z-index: 1001;
+    background-color: var(--error-bg);
+    color: var(--error-text);
+    display: none;
+}
+
+#blazor-error-ui.visible {
+    display: block;
+}

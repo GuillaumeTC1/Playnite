@@ -1,0 +1,19 @@
+@inject PlayniteStateService StateService
+
+<nav class="nav-menu">
+    @if (StateService.CurrentMode == ApplicationMode.Desktop)
+    {
+        <DesktopNavMenu />
+    }
+    else
+    {
+        <FullscreenNavMenu />
+    }
+</nav>
+
+@code {
+    protected override void OnInitialized()
+    {
+        StateService.ApplicationModeChanged += (_, _) => StateHasChanged();
+    }
+}

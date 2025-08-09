@@ -1,0 +1,38 @@
+@inject PlayniteStateService StateService
+@inject IPlayniteAPI Api
+
+<div class="desktop-nav">
+    <div class="nav-section">
+        <button class="nav-button" @onclick="HandleLibraryClick">
+            <span class="nav-icon">📚</span>
+            <span class="nav-text">Library</span>
+        </button>
+        
+        <button class="nav-button" @onclick="HandleSettingsClick">
+            <span class="nav-icon">⚙️</span>
+            <span class="nav-text">Settings</span>
+        </button>
+
+        <button class="nav-button" @onclick="HandleFullscreenClick">
+            <span class="nav-icon">🖥️</span>
+            <span class="nav-text">Fullscreen Mode</span>
+        </button>
+    </div>
+</div>
+
+@code {
+    private void HandleLibraryClick()
+    {
+        // Implement library navigation
+    }
+
+    private void HandleSettingsClick()
+    {
+        // Implement settings navigation
+    }
+
+    private void HandleFullscreenClick()
+    {
+        StateService.CurrentMode = ApplicationMode.Fullscreen;
+    }
+}
