@@ -1,5 +1,4 @@
-﻿using Playnite.Common;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Forms;
 
 namespace Playnite.Common.Extensions

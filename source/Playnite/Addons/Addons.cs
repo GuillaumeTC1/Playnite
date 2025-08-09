@@ -1,4 +1,5 @@
-﻿using Playnite.Manifests;
+﻿using Playnite.Localization;
+using Playnite.Manifests;
 using Playnite.Plugins;
 using Playnite.SDK;
 using Playnite.SDK.Extensions;

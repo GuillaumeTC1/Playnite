@@ -4,6 +4,7 @@ using Playnite.Common.Extensions;
 using Playnite.Common.Web;
 using Playnite.Controllers;
 using Playnite.Database;
+using Playnite.Localization;
 using Playnite.Manifests;
 using Playnite.Plugins;
 using Playnite.SDK;
@@ -198,7 +199,7 @@ namespace Playnite.App
 
                 try
                 {
-                    Localization.SetLanguage(AppSettings.Language);
+                    AppLocalization.SetLanguage(AppSettings.Language);
                 }
                 catch (Exception exc) when (!PlayniteEnvironment.ThrowAllErrors)
                 {
@@ -323,14 +324,14 @@ namespace Playnite.App
                     if (!AppSettings.FirstTimeWizardComplete)
                     {
                         var cultName = System.Globalization.CultureInfo.CurrentCulture.Name.Replace('-', '_');
-                        var validLang = Localization.AvailableLanguages.FirstOrDefault(a => a.Id == cultName && a.TranslatedPercentage > 75);
+                        var validLang = AppLocalization.AvailableLanguages.FirstOrDefault(a => a.Id == cultName && a.TranslatedPercentage > 75);
                         if (validLang != null)
                         {
                             AppSettings.Language = validLang.Id;
                         }
                     }
 
-                    Localization.SetLanguage(AppSettings.Language);
+                    AppLocalization.SetLanguage(AppSettings.Language);
                 }
                 catch (Exception exc) when (!PlayniteEnvironment.ThrowAllErrors)
                 {
