@@ -86,7 +86,7 @@ namespace Playnite.SDK
         /// <summary>
         /// Gets dispatcher for main UI thread.
         /// </summary>
-        public Dispatcher MainDispatcher { get; }
+        //public Dispatcher MainDispatcher { get; }
 
         /// <summary>
         /// Gets cancelation token source.
@@ -103,7 +103,7 @@ namespace Playnite.SDK
             set
             {
                 progressMaxValue = value;
-                MainDispatcher?.Invoke(() => OnPropertyChanged(), DispatcherPriority.Send);
+                //MainDispatcher?.Invoke(() => OnPropertyChanged(), DispatcherPriority.Send);
             }
         }
 
@@ -117,7 +117,7 @@ namespace Playnite.SDK
             set
             {
                 currentProgressValue = value;
-                MainDispatcher?.Invoke(() => OnPropertyChanged(), DispatcherPriority.Send);
+                //MainDispatcher?.Invoke(() => OnPropertyChanged(), DispatcherPriority.Send);
             }
         }
 
@@ -131,7 +131,7 @@ namespace Playnite.SDK
             set
             {
                 text = value?.GetLocalized();
-                MainDispatcher?.Invoke(() => OnPropertyChanged(), DispatcherPriority.Send);
+                //MainDispatcher?.Invoke(() => OnPropertyChanged(), DispatcherPriority.Send);
             }
         }
 
@@ -145,7 +145,7 @@ namespace Playnite.SDK
             set
             {
                 isIndeterminate = value;
-                MainDispatcher?.Invoke(() => OnPropertyChanged(), DispatcherPriority.Send);
+                //MainDispatcher?.Invoke(() => OnPropertyChanged(), DispatcherPriority.Send);
             }
         }
 
@@ -155,10 +155,10 @@ namespace Playnite.SDK
         /// <param name="mainContext"></param>
         /// <param name="mainDispatcher"></param>
         /// <param name="cancelToken"></param>
-        public GlobalProgressActionArgs(SynchronizationContext mainContext, Dispatcher mainDispatcher, CancellationToken cancelToken)
+        public GlobalProgressActionArgs(SynchronizationContext mainContext, /*Dispatcher mainDispatcher,*/ CancellationToken cancelToken)
         {
             MainContext = mainContext;
-            MainDispatcher = mainDispatcher;
+            //MainDispatcher = mainDispatcher;
             CancelToken = cancelToken;
         }
     }
@@ -356,7 +356,7 @@ namespace Playnite.SDK
         /// </summary>
         /// <param name="messageBoxText">Dialog message text.</param>
         /// <returns></returns>
-        MessageBoxResult ShowErrorMessage(string messageBoxText);
+        //MessageBoxResult ShowErrorMessage(string messageBoxText);
 
         /// <summary>
         /// Displays error dialog window with text message.
@@ -364,7 +364,7 @@ namespace Playnite.SDK
         /// <param name="messageBoxText">Dialog message text.</param>
         /// <param name="caption">Dialog window caption.</param>
         /// <returns></returns>
-        MessageBoxResult ShowErrorMessage(string messageBoxText, string caption);
+        //MessageBoxResult ShowErrorMessage(string messageBoxText, string caption);
 
         /// <summary>
         /// Displays dialog window with text message.
@@ -374,7 +374,7 @@ namespace Playnite.SDK
         /// <param name="button">Available response button.</param>
         /// <param name="icon">Dialog icon.</param>
         /// <returns>Selected dialog response.</returns>
-        MessageBoxResult ShowMessage(string messageBoxText, string caption, MessageBoxButton button, MessageBoxImage icon);
+        //MessageBoxResult ShowMessage(string messageBoxText, string caption, MessageBoxButton button, MessageBoxImage icon);
 
         /// <summary>
         /// Displays dialog window with text message.
@@ -383,7 +383,7 @@ namespace Playnite.SDK
         /// <param name="caption">Dialog window caption.</param>
         /// <param name="button">Available response button.</param>
         /// <returns>Selected dialog response.</returns>
-        MessageBoxResult ShowMessage(string messageBoxText, string caption, MessageBoxButton button);
+        //MessageBoxResult ShowMessage(string messageBoxText, string caption, MessageBoxButton button);
 
         /// <summary>
         /// Displays dialog window with text message.
@@ -391,14 +391,14 @@ namespace Playnite.SDK
         /// <param name="messageBoxText">Dialog message text.</param>
         /// <param name="caption">Dialog window caption.</param>
         /// <returns>Selected dialog response.</returns>
-        MessageBoxResult ShowMessage(string messageBoxText, string caption);
+        //MessageBoxResult ShowMessage(string messageBoxText, string caption);
 
         /// <summary>
         /// Displays dialog window with text message.
         /// </summary>
         /// <param name="messageBoxText">Dialog message text.</param>
         /// <returns>Selected dialog response.</returns>
-        MessageBoxResult ShowMessage(string messageBoxText);
+        //MessageBoxResult ShowMessage(string messageBoxText);
 
         /// <summary>
         /// Displays dialog window custom response options.
@@ -408,7 +408,7 @@ namespace Playnite.SDK
         /// <param name="icon">Dialog icon.</param>
         /// <param name="options">Response options.</param>
         /// <returns>Selected dialog option.</returns>
-        MessageBoxOption ShowMessage(string messageBoxText, string caption, MessageBoxImage icon, List<MessageBoxOption> options);
+        MessageBoxOption ShowMessage(string messageBoxText, string caption, /*MessageBoxImage icon,*/ List<MessageBoxOption> options);
 
         /// <summary>
         /// Displays system dialog for folder selection.
@@ -526,12 +526,12 @@ namespace Playnite.SDK
         /// </summary>
         /// <param name="options">Custom window options.</param>
         /// <returns>New window instance.</returns>
-        Window CreateWindow(WindowCreationOptions options);
+        //Window CreateWindow(WindowCreationOptions options);
 
         /// <summary>
         /// Gets currently active window. If no window is active, main window is returned instead.
         /// </summary>
         /// <returns>Window object.</returns>
-        Window GetCurrentAppWindow();
+        //Window GetCurrentAppWindow();
     }
 }

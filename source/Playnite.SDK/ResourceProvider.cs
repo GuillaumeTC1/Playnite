@@ -57,8 +57,9 @@
             }
             else
             {
-                var resource = Application.Current?.TryFindResource(key);
-                return resource == null ? $"<!{key}!>" : resource as string;
+                throw new NotImplementedException($"Resource provider not set. Use ResourceProvider.SetGlobalProvider to set it.");
+                //var resource = Application.Current?.TryFindResource(key);
+                //return resource == null ? $"<!{key}!>" : resource as string;
             }
         }
 
@@ -75,7 +76,8 @@
             }
             else
             {
-                return Application.Current?.TryFindResource(key);
+                throw new NotImplementedException($"Resource provider not set. Use ResourceProvider.SetGlobalProvider to set it.");
+                //return Application.Current?.TryFindResource(key);
             }
         }
 
@@ -85,10 +87,10 @@
         /// <typeparam name="T"></typeparam>
         /// <param name="key"></param>
         /// <returns></returns>
-        public static T GetResource<T>(string key)
-        {
-            return (T)Application.Current?.TryFindResource(key);
-        }
+        //public static T GetResource<T>(string key)
+        //{
+        //    return (T)Application.Current?.TryFindResource(key);
+        //}
 
         internal static void SetGlobalProvider(IResourceProvider provider)
         {

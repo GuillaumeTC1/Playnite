@@ -107,7 +107,7 @@ namespace Playnite.SDK.Plugins
         /// <summary>
         ///
         /// </summary>
-        public List<IValueConverter> Converters { get; set; }
+        //public List<IValueConverter> Converters { get; set; }
 
         /// <summary>
         ///
@@ -201,10 +201,10 @@ namespace Playnite.SDK.Plugins
         /// <summary>
         /// Gets plugin settings view or null if plugin doesn't provide settings view.
         /// </summary>
-        public virtual UserControl GetSettingsView(bool firstRunView)
-        {
-            return null;
-        }
+        //public virtual UserControl GetSettingsView(bool firstRunView)
+        //{
+        //    return null;
+        //}
 
         /// <summary>
         /// Called before game is started.
@@ -422,10 +422,10 @@ namespace Playnite.SDK.Plugins
         /// </summary>
         /// <param name="args"></param>
         /// <returns></returns>
-        public virtual Control GetGameViewControl(GetGameViewControlArgs args)
-        {
-            return null;
-        }
+        //public virtual Control GetGameViewControl(GetGameViewControlArgs args)
+        //{
+        //    return null;
+        //}
 
         /// <summary>
         ///

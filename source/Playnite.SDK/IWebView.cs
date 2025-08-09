@@ -36,7 +36,7 @@ namespace Playnite.SDK
         /// <summary>
         /// Gets or sets window background color.
         /// </summary>
-        public Color WindowBackground { get; set; }
+        //public Color WindowBackground { get; set; }
     }
 
     /// <summary>
@@ -186,7 +186,7 @@ namespace Playnite.SDK
         /// <summary>
         /// Gets window host for the web view. Doesn't apply to off-screen views.
         /// </summary>
-        Window WindowHost { get; }
+        //Window WindowHost { get; }
     }
 
     /// <summary>
@@ -222,7 +222,7 @@ namespace Playnite.SDK
         /// <param name="height">View height.</param>
         /// <param name="background">View background color.</param>
         /// <returns>Web view.</returns>
-        IWebView CreateView(int width, int height, Color background);
+        //IWebView CreateView(int width, int height, Color background);
 
         /// <summary>
         /// Creates new web view.

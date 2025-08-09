@@ -11,23 +11,23 @@ namespace Playnite.SDK
         /// <summary>
         ///
         /// </summary>
-        public KeyGesture Gesture
-        {
-            get; set;
-        }
+        //public KeyGesture Gesture
+        //{
+        //    get; set;
+        //}
 
         /// <summary>
         ///
         /// </summary>
-        public string GestureText => Gesture?.GetDisplayStringForCulture(CultureInfo.CurrentUICulture);
+        //public string GestureText => Gesture?.GetDisplayStringForCulture(CultureInfo.CurrentUICulture);
 
         /// <summary>
         ///
         /// </summary>
         public event EventHandler CanExecuteChanged
         {
-            add { CommandManager.RequerySuggested += value; }
-            remove { CommandManager.RequerySuggested -= value; }
+            add { /*CommandManager.RequerySuggested += value;*/ }
+            remove { /*CommandManager.RequerySuggested -= value;*/ }
         }
 
         /// <summary>
@@ -56,30 +56,30 @@ namespace Playnite.SDK
         ///
         /// </summary>
         /// <param name="execute"></param>
-        public RelayCommand(Action execute)
-            : this(execute, null, null)
-        {
-        }
+        //public RelayCommand(Action execute)
+        //    : this(execute, null, null)
+        //{
+        //}
 
         /// <summary>
         ///
         /// </summary>
         /// <param name="execute"></param>
         /// <param name="gesture"></param>
-        public RelayCommand(Action execute, KeyGesture gesture)
-            : this(execute, null, gesture)
-        {
-        }
+        //public RelayCommand(Action execute, KeyGesture gesture)
+        //    : this(execute, null, gesture)
+        //{
+        //}
 
         /// <summary>
         ///
         /// </summary>
         /// <param name="execute"></param>
         /// <param name="canExecute"></param>
-        public RelayCommand(Action execute, Func<bool> canExecute)
-            : this(execute, canExecute, null)
-        {
-        }
+        //public RelayCommand(Action execute, Func<bool> canExecute)
+        //    : this(execute, canExecute, null)
+        //{
+        //}
 
         /// <summary>
         ///
@@ -87,12 +87,12 @@ namespace Playnite.SDK
         /// <param name="execute"></param>
         /// <param name="canExecute"></param>
         /// <param name="gesture"></param>
-        public RelayCommand(Action execute, Func<bool> canExecute, KeyGesture gesture)
-        {
-            this.execute = execute;
-            this.canExecute = canExecute;
-            Gesture = gesture;
-        }
+        //public RelayCommand(Action execute, Func<bool> canExecute, KeyGesture gesture)
+        //{
+        //    this.execute = execute;
+        //    this.canExecute = canExecute;
+        //    Gesture = gesture;
+        //}
 
         /// <summary>
         ///
@@ -132,30 +132,30 @@ namespace Playnite.SDK
         ///
         /// </summary>
         /// <param name="execute"></param>
-        public RelayCommand(Action<T> execute)
-            : this(execute, null, null)
-        {
-        }
+        //public RelayCommand(Action<T> execute)
+        //    : this(execute, null, null)
+        //{
+        //}
 
         /// <summary>
         ///
         /// </summary>
         /// <param name="execute"></param>
         /// <param name="gesture"></param>
-        public RelayCommand(Action<T> execute, KeyGesture gesture)
-            : this(execute, null, gesture)
-        {
-        }
+        //public RelayCommand(Action<T> execute, KeyGesture gesture)
+        //    : this(execute, null, gesture)
+        //{
+        //}
 
         /// <summary>
         ///
         /// </summary>
         /// <param name="execute"></param>
         /// <param name="canExecute"></param>
-        public RelayCommand(Action<T> execute, Predicate<T> canExecute)
-            : this(execute, canExecute, null)
-        {
-        }
+        //public RelayCommand(Action<T> execute, Predicate<T> canExecute)
+        //    : this(execute, canExecute, null)
+        //{
+        //}
 
         /// <summary>
         ///
@@ -163,12 +163,12 @@ namespace Playnite.SDK
         /// <param name="execute"></param>
         /// <param name="canExecute"></param>
         /// <param name="gesture"></param>
-        public RelayCommand(Action<T> execute, Predicate<T> canExecute, KeyGesture gesture)
-        {
-            this.execute = execute;
-            this.canExecute = canExecute;
-            Gesture = gesture;
-        }
+        //public RelayCommand(Action<T> execute, Predicate<T> canExecute, KeyGesture gesture)
+        //{
+        //    this.execute = execute;
+        //    this.canExecute = canExecute;
+        //    Gesture = gesture;
+        //}
 
         /// <summary>
         ///

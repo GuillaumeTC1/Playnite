@@ -71,18 +71,18 @@ namespace Playnite.SDK
             Id = id;
             Text = text;
             Type = type;
-            ActivateCommand = new RelayCommand(() =>
-            {
-                if (ActivationAction != null)
-                {
-                    Activated?.Invoke(this, null);
-                }
-            });
+            //ActivateCommand = new RelayCommand(() =>
+            //{
+            //    if (ActivationAction != null)
+            //    {
+            //        Activated?.Invoke(this, null);
+            //    }
+            //});
 
-            CloseCommand = new RelayCommand(() =>
-            {
-                Closed?.Invoke(this, null);
-            });
+            //CloseCommand = new RelayCommand(() =>
+            //{
+            //    Closed?.Invoke(this, null);
+            //});
         }
 
         /// <summary>
