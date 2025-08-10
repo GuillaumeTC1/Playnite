@@ -1,8 +1,6 @@
 ﻿using Playnite.Legacy.Common;
 using Playnite.Legacy.Common.Extensions;
 using Playnite.Legacy.Native;
-using Playnite.SDK;
-using PlayniteInstaller;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -94,7 +92,7 @@ namespace Playnite.Common
         {
             sourcePath = Paths.FixPathLength(sourcePath);
             targetPath = Paths.FixPathLength(targetPath);
-            logger.Debug($"Copying file {sourcePath} to {targetPath}");
+            logger.LogDebug($"Copying file {sourcePath} to {targetPath}");
             PrepareSaveFile(targetPath);
             File.Copy(sourcePath, targetPath, overwrite);
         }
@@ -183,7 +181,7 @@ namespace Playnite.Common
                 }
                 catch (IOException exc)
                 {
-                    logger.Debug($"Can't read from file, trying again. {path}");
+                    logger.LogDebug($"Can't read from file, trying again. {path}");
                     ioException = exc;
                     Task.Delay(500).Wait();
                 }
@@ -204,7 +202,7 @@ namespace Playnite.Common
                 }
                 catch (IOException exc)
                 {
-                    logger.Debug($"Can't read from file, trying again. {path}");
+                    logger.LogDebug($"Can't read from file, trying again. {path}");
                     ioException = exc;
                     Task.Delay(500).Wait();
                 }
@@ -225,7 +223,7 @@ namespace Playnite.Common
                 }
                 catch (IOException exc)
                 {
-                    logger.Debug($"Can't open write file stream, trying again. {path}");
+                    logger.LogDebug($"Can't open write file stream, trying again. {path}");
                     ioException = exc;
                     Task.Delay(500).Wait();
                 }
@@ -246,7 +244,7 @@ namespace Playnite.Common
                 }
                 catch (IOException exc)
                 {
-                    logger.Debug($"Can't open read file stream, trying again. {path}");
+                    logger.LogDebug($"Can't open read file stream, trying again. {path}");
                     ioException = exc;
                     Task.Delay(500).Wait();
                 }
@@ -282,7 +280,7 @@ namespace Playnite.Common
                 }
                 catch (IOException exc)
                 {
-                    logger.Debug($"Can't write to a file, trying again. {path}");
+                    logger.LogDebug($"Can't write to a file, trying again. {path}");
                     ioException = exc;
                     Task.Delay(500).Wait();
                 }
@@ -308,13 +306,13 @@ namespace Playnite.Common
                 }
                 catch (IOException exc)
                 {
-                    logger.Debug($"Can't detele file, trying again. {path}");
+                    logger.LogDebug($"Can't detele file, trying again. {path}");
                     ioException = exc;
                     Task.Delay(500).Wait();
                 }
                 catch (UnauthorizedAccessException exc)
                 {
-                    logger.Error(exc, $"Can't detele file, UnauthorizedAccessException. {path}");
+                    logger.LogError(exc, $"Can't detele file, UnauthorizedAccessException. {path}");
                     return;
                 }
             }
@@ -514,7 +512,7 @@ namespace Playnite.Common
             }
             catch (Exception ex) when (!Debugger.IsAttached)
             {
-                logger.Error(ex, $"Error checking if path exists on different drive \"{originalPath}\"");
+                logger.LogError(ex, $"Error checking if path exists on different drive \"{originalPath}\"");
             }
 
             return false;

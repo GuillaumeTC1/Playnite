@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Playnite.Common;
+using Playnite.Emulators;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
