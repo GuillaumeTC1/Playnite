@@ -1,4 +1,5 @@
-﻿using Playnite.SDK.Database;
+﻿using LiteDB;
+using Playnite.SDK.Database;
 using Playnite.SDK.Models;
 
 namespace Playnite.Database.Collections
@@ -14,8 +15,8 @@ namespace Playnite.Database.Collections
     {
         private readonly GameDatabase db;
 
-        private LiteCollection<GameScannersSettings> settingsCollection;
-        private LiteCollection<GameScannersSettings> SettingsCollection
+        private ILiteCollection<GameScannersSettings> settingsCollection;
+        private ILiteCollection<GameScannersSettings> SettingsCollection
         {
             get
             {

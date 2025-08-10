@@ -1,9 +1,12 @@
-﻿using Playnite.Common.Extensions;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using Playnite.Common.Extensions;
 using Playnite.Legacy.Common;
 using Playnite.SDK;
 using Playnite.SDK.Data;
 using System.Reflection;
 using System.Text;
+using YamlDotNet.Serialization;
 
 namespace Playnite.Common
 {

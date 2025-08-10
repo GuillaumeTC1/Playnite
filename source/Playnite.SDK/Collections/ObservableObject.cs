@@ -11,7 +11,7 @@ namespace Playnite.SDK.Collections
         /// <summary>
         /// If set to <c>true</c> no <see cref="PropertyChanged"/> events will be fired.
         /// </summary>
-        internal bool SuppressNotifications
+        protected bool SuppressNotifications
         {
             get; set;
         } = false;

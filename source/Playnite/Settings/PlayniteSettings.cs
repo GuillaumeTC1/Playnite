@@ -1,10 +1,14 @@
-﻿using Playnite.Common;
+﻿using Newtonsoft.Json;
+using Playnite.Common;
+using Playnite.Localization;
 using Playnite.Metadata;
 using Playnite.SDK;
+using Playnite.SDK.Collections;
 using Playnite.SDK.Extensions;
 using Playnite.SDK.Models;
 using Playnite.SDK.Plugins;
 using System.ComponentModel;
+using System.Configuration;
 using System.Text;
 
 namespace Playnite.Settings
@@ -343,65 +347,65 @@ namespace Playnite.Settings
             }
         }
 
-        private Dock gridViewDetailsPosition = Dock.Right;
-        public Dock GridViewDetailsPosition
-        {
-            get
-            {
-                return gridViewDetailsPosition;
-            }
+        //private Dock gridViewDetailsPosition = Dock.Right;
+        //public Dock GridViewDetailsPosition
+        //{
+        //    get
+        //    {
+        //        return gridViewDetailsPosition;
+        //    }
 
-            set
-            {
-                gridViewDetailsPosition = value;
-                OnPropertyChanged();
-            }
-        }
+        //    set
+        //    {
+        //        gridViewDetailsPosition = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
 
-        private Dock filterPanelPosition = Dock.Right;
-        public Dock FilterPanelPosition
-        {
-            get
-            {
-                return filterPanelPosition;
-            }
+        //private Dock filterPanelPosition = Dock.Right;
+        //public Dock FilterPanelPosition
+        //{
+        //    get
+        //    {
+        //        return filterPanelPosition;
+        //    }
 
-            set
-            {
-                filterPanelPosition = value;
-                OnPropertyChanged();
-            }
-        }
+        //    set
+        //    {
+        //        filterPanelPosition = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
 
-        private Dock explorerPanelPosition = Dock.Left;
-        public Dock ExplorerPanelPosition
-        {
-            get
-            {
-                return explorerPanelPosition;
-            }
+        //private Dock explorerPanelPosition = Dock.Left;
+        //public Dock ExplorerPanelPosition
+        //{
+        //    get
+        //    {
+        //        return explorerPanelPosition;
+        //    }
 
-            set
-            {
-                explorerPanelPosition = value;
-                OnPropertyChanged();
-            }
-        }
+        //    set
+        //    {
+        //        explorerPanelPosition = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
 
-        private Dock detailsListPosition = Dock.Left;
-        public Dock DetailsListPosition
-        {
-            get
-            {
-                return detailsListPosition;
-            }
+        //private Dock detailsListPosition = Dock.Left;
+        //public Dock DetailsListPosition
+        //{
+        //    get
+        //    {
+        //        return detailsListPosition;
+        //    }
 
-            set
-            {
-                detailsListPosition = value;
-                OnPropertyChanged();
-            }
-        }
+        //    set
+        //    {
+        //        detailsListPosition = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
 
         private bool explorerPanelVisible = false;
         public bool ExplorerPanelVisible
@@ -552,37 +556,37 @@ namespace Playnite.Settings
             }
         }
 
-        private Stretch coverArtStretch = Stretch.UniformToFill;
-        public Stretch CoverArtStretch
-        {
-            get
-            {
-                return coverArtStretch;
-            }
+        //private Stretch coverArtStretch = Stretch.UniformToFill;
+        //public Stretch CoverArtStretch
+        //{
+        //    get
+        //    {
+        //        return coverArtStretch;
+        //    }
 
-            set
-            {
-                coverArtStretch = value;
-                OnPropertyChanged();
-            }
-        }
+        //    set
+        //    {
+        //        coverArtStretch = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
 
-        private int gridItemSpacing = 8;
-        public int GridItemSpacing
-        {
-            get
-            {
-                return gridItemSpacing;
-            }
+        //private int gridItemSpacing = 8;
+        //public int GridItemSpacing
+        //{
+        //    get
+        //    {
+        //        return gridItemSpacing;
+        //    }
 
-            set
-            {
-                gridItemSpacing = value;
-                OnPropertyChanged();
-                ItemSpacingMargin = GetItemSpacingMargin();
-                OnPropertyChanged(nameof(ItemSpacingMargin));
-            }
-        }
+        //    set
+        //    {
+        //        gridItemSpacing = value;
+        //        OnPropertyChanged();
+        //        ItemSpacingMargin = GetItemSpacingMargin();
+        //        OnPropertyChanged(nameof(ItemSpacingMargin));
+        //    }
+        //}
 
         private int gridItemMargin = 2;
         public int GridItemMargin
@@ -599,49 +603,49 @@ namespace Playnite.Settings
             }
         }
 
-        private int fullscreenItemSpacing = 20;
-        public int FullscreenItemSpacing
-        {
-            get
-            {
-                return fullscreenItemSpacing;
-            }
+        //private int fullscreenItemSpacing = 20;
+        //public int FullscreenItemSpacing
+        //{
+        //    get
+        //    {
+        //        return fullscreenItemSpacing;
+        //    }
 
-            set
-            {
-                fullscreenItemSpacing = value;
-                OnPropertyChanged();
-                FullscreenItemSpacingMargin = GetFullscreenItemSpacingMargin();
-                OnPropertyChanged(nameof(FullscreenItemSpacingMargin));
-            }
-        }
+        //    set
+        //    {
+        //        fullscreenItemSpacing = value;
+        //        OnPropertyChanged();
+        //        FullscreenItemSpacingMargin = GetFullscreenItemSpacingMargin();
+        //        OnPropertyChanged(nameof(FullscreenItemSpacingMargin));
+        //    }
+        //}
 
-        [JsonIgnore]
-        public Thickness ItemSpacingMargin
-        {
-            get; private set;
-        }
+        //[JsonIgnore]
+        //public Thickness ItemSpacingMargin
+        //{
+        //    get; private set;
+        //}
 
-        [JsonIgnore]
-        public Thickness FullscreenItemSpacingMargin
-        {
-            get; private set;
-        }
+        //[JsonIgnore]
+        //public Thickness FullscreenItemSpacingMargin
+        //{
+        //    get; private set;
+        //}
 
-        private bool firstTimeWizardComplete;
-        public bool FirstTimeWizardComplete
-        {
-            get
-            {
-                return firstTimeWizardComplete;
-            }
+        //private bool firstTimeWizardComplete;
+        //public bool FirstTimeWizardComplete
+        //{
+        //    get
+        //    {
+        //        return firstTimeWizardComplete;
+        //    }
 
-            set
-            {
-                firstTimeWizardComplete = value;
-                OnPropertyChanged();
-            }
-        }
+        //    set
+        //    {
+        //        firstTimeWizardComplete = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
 
         private bool disableHwAcceleration = false;
         [RequiresRestart]
@@ -976,20 +980,20 @@ namespace Playnite.Settings
             }
         }
 
-        private Dock sidebarPosition = Dock.Left;
-        public Dock SidebarPosition
-        {
-            get
-            {
-                return sidebarPosition;
-            }
+        //private Dock sidebarPosition = Dock.Left;
+        //public Dock SidebarPosition
+        //{
+        //    get
+        //    {
+        //        return sidebarPosition;
+        //    }
 
-            set
-            {
-                sidebarPosition = value;
-                OnPropertyChanged();
-            }
-        }
+        //    set
+        //    {
+        //        sidebarPosition = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
 
         private bool mainMenuButtonSidebarMove = true;
         public bool MainMenuButtonSidebarMove
@@ -1879,16 +1883,16 @@ namespace Playnite.Settings
             }
         }
 
-        private Dock pluginTopPanelAlignment = Dock.Right;
-        public Dock PluginTopPanelAlignment
-        {
-            get => pluginTopPanelAlignment;
-            set
-            {
-                pluginTopPanelAlignment = value;
-                OnPropertyChanged();
-            }
-        }
+        //private Dock pluginTopPanelAlignment = Dock.Right;
+        //public Dock PluginTopPanelAlignment
+        //{
+        //    get => pluginTopPanelAlignment;
+        //    set
+        //    {
+        //        pluginTopPanelAlignment = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
 
         private Guid selectedFilterPreset;
         public Guid SelectedFilterPreset
@@ -2268,8 +2272,8 @@ namespace Playnite.Settings
             }
 
             InstallInstanceId = Guid.NewGuid().ToString();
-            ItemSpacingMargin = GetItemSpacingMargin();
-            FullscreenItemSpacingMargin = GetFullscreenItemSpacingMargin();
+            //ItemSpacingMargin = GetItemSpacingMargin();
+            //FullscreenItemSpacingMargin = GetFullscreenItemSpacingMargin();
             UpdateGridItemHeight();
         }
 
@@ -2523,56 +2527,56 @@ namespace Playnite.Settings
 
         public static void ConfigureLogger()
         {
-            var config = new LoggingConfiguration();
-            config.DefaultCultureInfo = new System.Globalization.CultureInfo("en-US");
-#if DEBUG
-            var consoleTarget = new ColoredConsoleTarget()
-            {
-                Layout = @"${level:uppercase=true:padding=-5}|${logger}:${message}${onexception:${newline}${exception}}"
-            };
+//            var config = new LoggingConfiguration();
+//            config.DefaultCultureInfo = new System.Globalization.CultureInfo("en-US");
+//#if DEBUG
+//            var consoleTarget = new ColoredConsoleTarget()
+//            {
+//                Layout = @"${level:uppercase=true:padding=-5}|${logger}:${message}${onexception:${newline}${exception}}"
+//            };
 
-            config.AddTarget("console", consoleTarget);
+//            config.AddTarget("console", consoleTarget);
 
-            var rule1 = new LoggingRule("*", LogLevel.Trace, consoleTarget);
-            config.LoggingRules.Add(rule1);
-#endif
-            var coreFileTarget = new FileTarget()
-            {
-                FileName = Path.Combine(PlaynitePaths.ConfigRootPath, "playnite.log"),
-                Layout = "${date:format=dd-MM HH\\:mm\\:ss.fff}|${level:uppercase=true:padding=-5}|${logger}:${message}${onexception:${newline}${exception:format=toString}}",
-                KeepFileOpen = false,
-                ArchiveFileName = Path.Combine(PlaynitePaths.ConfigRootPath, "playnite.{#####}.log"),
-                ArchiveAboveSize = 4096000,
-                ArchiveNumbering = ArchiveNumberingMode.Sequence,
-                MaxArchiveFiles = 2,
-                Encoding = Encoding.UTF8
-            };
+//            var rule1 = new LoggingRule("*", LogLevel.Trace, consoleTarget);
+//            config.LoggingRules.Add(rule1);
+//#endif
+//            var coreFileTarget = new FileTarget()
+//            {
+//                FileName = Path.Combine(PlaynitePaths.ConfigRootPath, "playnite.log"),
+//                Layout = "${date:format=dd-MM HH\\:mm\\:ss.fff}|${level:uppercase=true:padding=-5}|${logger}:${message}${onexception:${newline}${exception:format=toString}}",
+//                KeepFileOpen = false,
+//                ArchiveFileName = Path.Combine(PlaynitePaths.ConfigRootPath, "playnite.{#####}.log"),
+//                ArchiveAboveSize = 4096000,
+//                ArchiveNumbering = ArchiveNumberingMode.Sequence,
+//                MaxArchiveFiles = 2,
+//                Encoding = Encoding.UTF8
+//            };
 
-            var extensionFileTarget = new FileTarget()
-            {
-                FileName = Path.Combine(PlaynitePaths.ConfigRootPath, "extensions.log"),
-                Layout = "${date:format=dd-MM HH\\:mm\\:ss.fff}|${level:uppercase=true:padding=-5}|${logger}:${message}${onexception:${newline}${exception:format=toString}}",
-                KeepFileOpen = false,
-                ArchiveFileName = Path.Combine(PlaynitePaths.ConfigRootPath, "extensions.{#####}.log"),
-                ArchiveAboveSize = 4096000,
-                ArchiveNumbering = ArchiveNumberingMode.Sequence,
-                MaxArchiveFiles = 2,
-                Encoding = Encoding.UTF8
-            };
+//            var extensionFileTarget = new FileTarget()
+//            {
+//                FileName = Path.Combine(PlaynitePaths.ConfigRootPath, "extensions.log"),
+//                Layout = "${date:format=dd-MM HH\\:mm\\:ss.fff}|${level:uppercase=true:padding=-5}|${logger}:${message}${onexception:${newline}${exception:format=toString}}",
+//                KeepFileOpen = false,
+//                ArchiveFileName = Path.Combine(PlaynitePaths.ConfigRootPath, "extensions.{#####}.log"),
+//                ArchiveAboveSize = 4096000,
+//                ArchiveNumbering = ArchiveNumberingMode.Sequence,
+//                MaxArchiveFiles = 2,
+//                Encoding = Encoding.UTF8
+//            };
 
-            var allRule = new LoggingRule("*", LogLevel.Trace, coreFileTarget);
-            allRule.Filters.Add(new NLog.Filters.ConditionBasedFilter()
-            {
-                Condition = "contains('${logger}', '#')",
-                Action = NLog.Filters.FilterResult.Ignore
-            });
+//            var allRule = new LoggingRule("*", LogLevel.Trace, coreFileTarget);
+//            allRule.Filters.Add(new NLog.Filters.ConditionBasedFilter()
+//            {
+//                Condition = "contains('${logger}', '#')",
+//                Action = NLog.Filters.FilterResult.Ignore
+//            });
 
-            config.LoggingRules.Add(allRule);
-            config.LoggingRules.Add(new LoggingRule("*#*", LogLevel.Trace, extensionFileTarget));
+//            config.LoggingRules.Add(allRule);
+//            config.LoggingRules.Add(new LoggingRule("*#*", LogLevel.Trace, extensionFileTarget));
 
-            NLog.LogManager.Configuration = config;
-            LogManager.Init(new NLogLogProvider());
-            logger = LogManager.GetLogger();
+//            NLog.LogManager.Configuration = config;
+//            LogManager.Init(new NLogLogProvider());
+//            logger = LogManager.GetLogger();
         }
 
         public static string GetAppConfigValue(string key)
@@ -2596,17 +2600,17 @@ namespace Playnite.Settings
         {
         }
 
-        private Thickness GetItemSpacingMargin()
-        {
-            return new Thickness(GridItemSpacing / 2, GridItemSpacing / 2, GridItemSpacing / 2, GridItemSpacing / 2); ;
-        }
+        //private Thickness GetItemSpacingMargin()
+        //{
+        //    return new Thickness(GridItemSpacing / 2, GridItemSpacing / 2, GridItemSpacing / 2, GridItemSpacing / 2); ;
+        //}
 
-        private Thickness GetFullscreenItemSpacingMargin()
-        {
-            double marginX = FullscreenItemSpacing / 2;
-            double marginY = CoverAspectRatio.GetWidth(FullscreenItemSpacing) / 2;
-            return new Thickness(marginY / 2, marginX / 2, marginY / 2, marginX / 2);
-        }
+        //private Thickness GetFullscreenItemSpacingMargin()
+        //{
+        //    double marginX = FullscreenItemSpacing / 2;
+        //    double marginY = CoverAspectRatio.GetWidth(FullscreenItemSpacing) / 2;
+        //    return new Thickness(marginY / 2, marginX / 2, marginY / 2, marginX / 2);
+        //}
 
         private void UpdateGridItemHeight()
         {

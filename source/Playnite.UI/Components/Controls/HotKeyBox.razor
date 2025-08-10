@@ -1,0 +1,126 @@
+@using Microsoft.AspNetCore.Components.Web
+@implements IDisposable
+
+<div class="hotkey-box @CssClass" 
+     @attributes="AdditionalAttributes"
+     tabindex="0"
+     @onfocusin="OnFocusIn"
+     @onfocusout="OnFocusOut"
+     @onkeydown="OnKeyDown"
+     @onkeydown:preventDefault>
+    <span class="hotkey-text">@(Hotkey?.ToString() ?? "None")</span>
+</div>
+
+@code {
+    private bool isFocused = false;
+    private DotNetObjectReference<HotKeyBox>? objRef;
+
+    [Parameter]
+    public HotKey? Hotkey { get; set; }
+
+    [Parameter]
+    public EventCallback<HotKey?> HotkeyChanged { get; set; }
+
+    [Parameter]
+    public bool ClearWithDeleteKeys { get; set; } = true;
+
+    [Parameter]
+    public string? CssClass { get; set; }
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public Dictionary<string, object>? AdditionalAttributes { get; set; }
+
+    [Inject]
+    private IJSRuntime JSRuntime { get; set; } = default!;
+
+    protected override void OnInitialized()
+    {
+        objRef = DotNetObjectReference.Create(this);
+    }
+
+    private void OnFocusIn()
+    {
+        isFocused = true;
+    }
+
+    private void OnFocusOut()
+    {
+        isFocused = false;
+    }
+
+    private async Task OnKeyDown(KeyboardEventArgs e)
+    {
+        if (!isFocused) return;
+
+        if (ClearWithDeleteKeys && (e.Key == "Delete" || e.Key == "Backspace"))
+        {
+            await UpdateHotkey(null);
+            return;
+        }
+
+        var hotkey = new HotKey
+        {
+            Key = e.Key,
+            Modifiers = GetModifiers(e)
+        };
+
+        await UpdateHotkey(hotkey);
+    }
+
+    private async Task UpdateHotkey(HotKey? newHotkey)
+    {
+        if (!EqualityComparer<HotKey?>.Default.Equals(Hotkey, newHotkey))
+        {
+            Hotkey = newHotkey;
+            await HotkeyChanged.InvokeAsync(newHotkey);
+        }
+    }
+
+    private HotkeyModifiers GetModifiers(KeyboardEventArgs e)
+    {
+        var modifiers = HotkeyModifiers.None;
+        
+        if (e.CtrlKey) modifiers |= HotkeyModifiers.Ctrl;
+        if (e.ShiftKey) modifiers |= HotkeyModifiers.Shift;
+        if (e.AltKey) modifiers |= HotkeyModifiers.Alt;
+        
+        return modifiers;
+    }
+
+    public void Dispose()
+    {
+        objRef?.Dispose();
+    }
+
+    public class HotKey
+    {
+        public string Key { get; set; } = string.Empty;
+        public HotkeyModifiers Modifiers { get; set; }
+
+        public override string ToString()
+        {
+            var modifierStr = GetModifierString();
+            return string.IsNullOrEmpty(modifierStr) ? Key : $"{modifierStr}+{Key}";
+        }
+
+        private string GetModifierString()
+        {
+            var modifiers = new List<string>();
+            
+            if (Modifiers.HasFlag(HotkeyModifiers.Ctrl)) modifiers.Add("Ctrl");
+            if (Modifiers.HasFlag(HotkeyModifiers.Shift)) modifiers.Add("Shift");
+            if (Modifiers.HasFlag(HotkeyModifiers.Alt)) modifiers.Add("Alt");
+            
+            return string.Join("+", modifiers);
+        }
+    }
+
+    [Flags]
+    public enum HotkeyModifiers
+    {
+        None = 0,
+        Alt = 1,
+        Ctrl = 2,
+        Shift = 4
+    }
+}

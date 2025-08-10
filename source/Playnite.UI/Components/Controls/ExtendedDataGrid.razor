@@ -1,0 +1,145 @@
+@using Microsoft.AspNetCore.Components
+@typeparam TItem
+
+<div class="extended-datagrid @CssClass" @attributes="AdditionalAttributes">
+    <div class="datagrid-header">
+        @if (Columns != null)
+        {
+            <div class="header-row">
+                @foreach (var column in Columns)
+                {
+                    <div class="header-cell" 
+                         style="width: @(column.Width)px"
+                         @onclick="() => OnHeaderClick(column)">
+                        @column.Header
+                        @if (column.IsSortable)
+                        {
+                            <span class="sort-indicator">
+                                @(GetSortIndicator(column))
+                            </span>
+                        }
+                    </div>
+                }
+            </div>
+        }
+    </div>
+
+    <div class="datagrid-body">
+        @if (Items != null)
+        {
+            @foreach (var item in SortedItems)
+            {
+                var isSelected = SelectedItems?.Contains(item) ?? false;
+                <div class="data-row @(isSelected ? "selected" : "")"
+                     @onclick="() => OnRowClick(item)"
+                     @onkeydown="@(e => OnRowKeyDown(e, item))"
+                     tabindex="0">
+                    @foreach (var column in Columns!)
+                    {
+                        <div class="data-cell" style="width: @(column.Width)px">
+                            @column.CellTemplate(item)
+                        </div>
+                    }
+                </div>
+            }
+        }
+    </div>
+</div>
+
+@code {
+    private string? sortColumn;
+    private bool sortAscending = true;
+
+    [Parameter]
+    public IEnumerable<TItem>? Items { get; set; }
+
+    [Parameter]
+    public IList<TItem>? SelectedItems { get; set; }
+
+    [Parameter]
+    public EventCallback<IList<TItem>> SelectedItemsChanged { get; set; }
+
+    [Parameter]
+    public List<DataGridColumn<TItem>>? Columns { get; set; }
+
+    [Parameter]
+    public string? CssClass { get; set; }
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public Dictionary<string, object>? AdditionalAttributes { get; set; }
+
+    private IEnumerable<TItem> SortedItems
+    {
+        get
+        {
+            if (Items == null || string.IsNullOrEmpty(sortColumn))
+                return Items ?? Enumerable.Empty<TItem>();
+
+            var column = Columns?.FirstOrDefault(c => c.Field == sortColumn);
+            if (column == null)
+                return Items;
+
+            var sorted = Items.OrderBy(item => column.GetValue(item));
+            return sortAscending ? sorted : sorted.Reverse();
+        }
+    }
+
+    private async Task OnRowClick(TItem item)
+    {
+        if (SelectedItems == null)
+        {
+            SelectedItems = new List<TItem>();
+        }
+
+        if (!SelectedItems.Contains(item))
+        {
+            SelectedItems.Clear();
+            SelectedItems.Add(item);
+            await SelectedItemsChanged.InvokeAsync(SelectedItems);
+        }
+    }
+
+    private async Task OnRowKeyDown(KeyboardEventArgs e, TItem item)
+    {
+        if (e.Key == "Enter" || e.Key == " ")
+        {
+            await OnRowClick(item);
+        }
+    }
+
+    private void OnHeaderClick(DataGridColumn<TItem> column)
+    {
+        if (!column.IsSortable)
+            return;
+
+        if (sortColumn == column.Field)
+        {
+            sortAscending = !sortAscending;
+        }
+        else
+        {
+            sortColumn = column.Field;
+            sortAscending = true;
+        }
+
+        StateHasChanged();
+    }
+
+    private string GetSortIndicator(DataGridColumn<TItem> column)
+    {
+        if (column.Field != sortColumn)
+            return "↕";
+
+        return sortAscending ? "↑" : "↓";
+    }
+
+    public class DataGridColumn<T>
+    {
+        public string Header { get; set; } = string.Empty;
+        public string Field { get; set; } = string.Empty;
+        public int Width { get; set; } = 100;
+        public bool IsSortable { get; set; } = true;
+        public RenderFragment<T> CellTemplate { get; set; } = null!;
+        public Func<T, object?> GetValue { get; set; } = null!;
+    }
+}

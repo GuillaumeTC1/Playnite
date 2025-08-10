@@ -1,4 +1,6 @@
-﻿namespace Playnite.App
+﻿using Playnite.SDK.Collections;
+
+namespace Playnite.App
 {
     public class UpdateManifest : ObservableObject
     {

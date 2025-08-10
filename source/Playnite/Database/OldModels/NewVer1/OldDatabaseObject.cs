@@ -1,4 +1,6 @@
-﻿namespace Playnite.Database.OldModels.NewVer1
+﻿using Playnite.SDK.Collections;
+
+namespace Playnite.Database.OldModels.NewVer1
 {
     /// <summary>
     /// Represents base database object item.

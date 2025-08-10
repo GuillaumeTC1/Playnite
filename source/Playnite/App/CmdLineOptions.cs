@@ -1,4 +1,6 @@
-﻿namespace Playnite.App
+﻿using CommandLine;
+
+namespace Playnite.App
 {
     public class CmdLineOptions
     {

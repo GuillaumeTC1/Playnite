@@ -1,0 +1,28 @@
+.extended-listbox {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 4px;
+    overflow-y: auto;
+}
+
+.extended-listbox .list-item {
+    padding: 8px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 4px;
+}
+
+.extended-listbox .list-item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.extended-listbox .list-item.selected {
+    background-color: var(--selection-color, #0078D4);
+    color: white;
+}
+
+.extended-listbox .list-item:focus {
+    outline: 2px solid var(--focus-color, #0078D4);
+    outline-offset: -2px;
+}

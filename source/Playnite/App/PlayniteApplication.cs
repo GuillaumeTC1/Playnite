@@ -3,19 +3,18 @@ using Playnite.Commands;
 using Playnite.Common;
 using Playnite.Common.Web;
 using Playnite.Controllers;
-using Playnite.Controls;
 using Playnite.Database;
 using Playnite.Legacy.Common.Extensions;
 using Playnite.Localization;
 using Playnite.Manifests;
 using Playnite.Plugins;
 using Playnite.SDK;
+using Playnite.SDK.Collections;
 using Playnite.SDK.Events;
 using Playnite.SDK.Extensions;
 using Playnite.Services;
 using Playnite.Settings;
 using Playnite.ViewModels;
-using Playnite.Windows;
 using System.Diagnostics;
 using System.Net;
 
@@ -55,12 +54,12 @@ namespace Playnite.App
         public GameDatabase Database { get; set; }
         public GameControllerFactory Controllers { get; set; }
         public CmdLineOptions CmdLine { get; set; }
-        public DpiScale DpiScale { get; set; } = new DpiScale(1, 1);
+        //public DpiScale DpiScale { get; set; } = new DpiScale(1, 1);
         public ComputerScreen CurrentScreen { get; set; } = Computer.GetPrimaryScreen();
         public DiscordManager Discord { get; set; }
         public SynchronizationContext SyncContext { get; private set; }
         public Action<PlayniteUriEventArgs> AppUriHandler { get; set; }
-        public static Application CurrentNative { get; private set; }
+        //public static Application CurrentNative { get; private set; }
         public static PlayniteApplication Current { get; private set; }
         public ServicesClient ServicesClient { get; private set; }
         public MainViewModelBase MainModelBase { get; set; }

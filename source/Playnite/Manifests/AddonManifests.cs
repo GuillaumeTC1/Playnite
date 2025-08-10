@@ -1,4 +1,5 @@
-﻿using Playnite.Common;
+﻿using Newtonsoft.Json;
+using Playnite.Common;
 using Playnite.Common.Web;
 using Playnite.Legacy.Common;
 using Playnite.Legacy.Common.Extensions;
@@ -7,7 +8,7 @@ using Playnite.SDK;
 using Playnite.SDK.Extensions;
 using Playnite.Settings;
 using Playnite.ViewModels;
-using Playnite.Windows;
+using YamlDotNet.Serialization;
 
 namespace Playnite.Manifests
 {

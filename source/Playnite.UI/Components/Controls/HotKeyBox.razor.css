@@ -1,0 +1,21 @@
+.hotkey-box {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px;
+    border: 1px solid var(--border-color, #ccc);
+    border-radius: 4px;
+    background-color: var(--input-bg, white);
+    min-width: 100px;
+    height: 30px;
+    cursor: text;
+}
+
+.hotkey-box:focus {
+    outline: 2px solid var(--focus-color, #0078D4);
+    outline-offset: -2px;
+}
+
+.hotkey-text {
+    color: var(--text-color, #000);
+    user-select: none;
+}

@@ -1,5 +1,6 @@
 ﻿using Playnite.Database;
 using Playnite.SDK;
+using Playnite.SDK.Collections;
 using Playnite.SDK.Extensions;
 using Playnite.SDK.Models;
 

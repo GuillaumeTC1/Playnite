@@ -1,4 +1,6 @@
-﻿namespace Playnite.Manifests
+﻿using Playnite.SDK.Collections;
+
+namespace Playnite.Manifests
 {
     public enum AddonType
     {

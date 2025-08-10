@@ -1,6 +1,8 @@
-﻿using Playnite.Common;
+﻿using Newtonsoft.Json;
+using Playnite.Common;
 using Playnite.Manifests;
 using Playnite.SDK;
+using Playnite.SDK.Collections;
 
 namespace Playnite.Settings
 {

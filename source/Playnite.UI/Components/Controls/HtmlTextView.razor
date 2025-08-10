@@ -1,0 +1,141 @@
+@using Microsoft.AspNetCore.Components
+@using Microsoft.JSInterop
+@implements IAsyncDisposable
+
+<div class="html-text-view @CssClass" @attributes="AdditionalAttributes">
+    <div class="html-content" @ref="contentRef">
+        @((MarkupString)ProcessedHtml)
+    </div>
+    @if (ShowMoreButton)
+    {
+        <button class="more-button" @onclick="LoadMoreContent">
+            @MoreButtonText
+        </button>
+    }
+</div>
+
+@code {
+    private ElementReference contentRef;
+    private IJSObjectReference? module;
+    private int currentLoadedLength = 0;
+    private readonly int loadPartLength = 10000;
+    private bool isFullyLoaded => Text == null || currentLoadedLength >= Text.Length;
+
+    [Parameter]
+    public string? Text { get; set; }
+
+    [Parameter]
+    public string FontFamily { get; set; } = "Segoe UI";
+
+    [Parameter]
+    public int FontSize { get; set; } = 12;
+
+    [Parameter]
+    public string Foreground { get; set; } = "#000000";
+
+    [Parameter]
+    public string LinkForeground { get; set; } = "#0066cc";
+
+    [Parameter]
+    public string MoreButtonText { get; set; } = "Show More";
+
+    [Parameter]
+    public string? CssClass { get; set; }
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public Dictionary<string, object>? AdditionalAttributes { get; set; }
+
+    [Parameter]
+    public string? TemplatePath { get; set; }
+
+    [Inject]
+    private IJSRuntime JSRuntime { get; set; } = default!;
+
+    private bool ShowMoreButton => !isFullyLoaded;
+
+    private string ProcessedHtml
+    {
+        get
+        {
+            if (string.IsNullOrEmpty(Text))
+                return string.Empty;
+
+            var template = string.IsNullOrEmpty(TemplatePath) ? DefaultTemplate : File.ReadAllText(TemplatePath);
+            var content = Text.Substring(0, Math.Min(currentLoadedLength, Text.Length));
+            
+            return template
+                .Replace("{foreground}", Foreground)
+                .Replace("{font_family}", FontFamily)
+                .Replace("{font_size}", FontSize.ToString())
+                .Replace("{link_foreground}", LinkForeground)
+                .Replace("{text}", content);
+        }
+    }
+
+    private string DefaultTemplate = @"
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=""UTF-8"">
+    <style type=""text/css"">
+        HTML,BODY
+        {
+            color: {foreground};
+            font-family: ""{font_family}"";
+            font-size: {font_size}px;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            color: {link_foreground};
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div>
+{text}
+</div>
+</body>
+</html>";
+
+    protected override async Task OnInitializedAsync()
+    {
+        module = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./_content/Playnite.UI/js/htmlTextView.js");
+        currentLoadedLength = loadPartLength;
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (Text != null && currentLoadedLength > Text.Length)
+        {
+            currentLoadedLength = Text.Length;
+        }
+    }
+
+    private async Task LoadMoreContent()
+    {
+        if (Text == null) return;
+        
+        currentLoadedLength = Math.Min(currentLoadedLength + loadPartLength, Text.Length);
+        await InvokeAsync(StateHasChanged);
+
+        if (module != null)
+        {
+            await module.InvokeVoidAsync("scrollToBottom", contentRef);
+        }
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        if (module is not null)
+        {
+            await module.DisposeAsync();
+        }
+    }
+}

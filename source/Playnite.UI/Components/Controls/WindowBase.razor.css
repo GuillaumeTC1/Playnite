@@ -1,0 +1,83 @@
+.window-base {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background: var(--window-bg, white);
+    border: 1px solid var(--border-color, #ccc);
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    min-height: 100px;
+}
+
+.window-base.maximized {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: none;
+    border-radius: 0;
+}
+
+.window-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    background: var(--header-bg, #f5f5f5);
+    border-bottom: 1px solid var(--border-color, #ccc);
+    cursor: move;
+    user-select: none;
+}
+
+.window-title {
+    font-weight: 500;
+    margin-right: 8px;
+}
+
+.window-controls {
+    display: flex;
+    gap: 4px;
+}
+
+.window-button {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: var(--button-color, #666);
+}
+
+.window-button:hover {
+    background: var(--button-hover-bg, rgba(0, 0, 0, 0.1));
+}
+
+.window-button.close:hover {
+    background: var(--close-button-hover-bg, #e81123);
+    color: white;
+}
+
+.window-content {
+    flex: 1;
+    overflow: auto;
+    padding: 16px;
+}
+
+.resize-handle {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 16px;
+    height: 16px;
+    cursor: se-resize;
+    background: 
+        linear-gradient(135deg, transparent 50%, var(--resize-handle-color, #ccc) 50%),
+        linear-gradient(135deg, transparent 60%, var(--resize-handle-color, #ccc) 60%),
+        linear-gradient(135deg, transparent 70%, var(--resize-handle-color, #ccc) 70%);
+}

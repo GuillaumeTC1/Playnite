@@ -1,4 +1,5 @@
 ﻿using Playnite.SDK.Models;
+using YamlDotNet.Serialization;
 
 namespace Playnite.Manifests
 {

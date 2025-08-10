@@ -1,8 +1,10 @@
 ﻿using Playnite.Common.Extensions;
 using Playnite.Database.Collections;
 using Playnite.Legacy.Common.Extensions;
+using Playnite.Localization;
 using Playnite.Plugins;
 using Playnite.SDK;
+using Playnite.SDK.Collections;
 using Playnite.SDK.Database;
 using Playnite.SDK.Extensions;
 using Playnite.SDK.Models;

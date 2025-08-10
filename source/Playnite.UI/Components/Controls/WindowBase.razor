@@ -1,0 +1,132 @@
+@using Microsoft.AspNetCore.Components
+@using Microsoft.JSInterop
+
+<div class="window-base @(IsMaximized ? "maximized" : "") @CssClass"
+     @attributes="AdditionalAttributes"
+     @ref="windowRef">
+    <div class="window-header" @onmousedown="StartDrag">
+        <div class="window-title">@Title</div>
+        <div class="window-controls">
+            @if (ShowMinimizeButton)
+            {
+                <button class="window-button minimize" @onclick="Minimize" title="Minimize">
+                    <span>―</span>
+                </button>
+            }
+            @if (ShowMaximizeButton)
+            {
+                <button class="window-button maximize" @onclick="ToggleMaximize" title="@(IsMaximized ? "Restore" : "Maximize")">
+                    <span>□</span>
+                </button>
+            }
+            @if (ShowCloseButton)
+            {
+                <button class="window-button close" @onclick="Close" title="Close">
+                    <span>×</span>
+                </button>
+            }
+        </div>
+    </div>
+    <div class="window-content">
+        @ChildContent
+    </div>
+    @if (ShowResizeHandle && !IsMaximized)
+    {
+        <div class="resize-handle" @onmousedown="StartResize"></div>
+    }
+</div>
+
+@code {
+    private ElementReference windowRef;
+    private IJSObjectReference? module;
+    private bool isDragging = false;
+    private bool isResizing = false;
+
+    [Parameter]
+    public string Title { get; set; } = string.Empty;
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter]
+    public bool ShowMinimizeButton { get; set; } = true;
+
+    [Parameter]
+    public bool ShowMaximizeButton { get; set; } = true;
+
+    [Parameter]
+    public bool ShowCloseButton { get; set; } = true;
+
+    [Parameter]
+    public bool ShowResizeHandle { get; set; } = true;
+
+    [Parameter]
+    public bool IsMaximized { get; set; }
+
+    [Parameter]
+    public EventCallback<bool> IsMaximizedChanged { get; set; }
+
+    [Parameter]
+    public EventCallback OnClose { get; set; }
+
+    [Parameter]
+    public string? CssClass { get; set; }
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public Dictionary<string, object>? AdditionalAttributes { get; set; }
+
+    [Inject]
+    private IJSRuntime JSRuntime { get; set; } = default!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        module = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./_content/Playnite.UI/js/windowBase.js");
+    }
+
+    private async Task StartDrag()
+    {
+        if (module == null || IsMaximized) return;
+        isDragging = true;
+        await module.InvokeVoidAsync("initializeDrag", windowRef);
+    }
+
+    private async Task StartResize()
+    {
+        if (module == null || IsMaximized) return;
+        isResizing = true;
+        await module.InvokeVoidAsync("initializeResize", windowRef);
+    }
+
+    private async Task Minimize()
+    {
+        if (module == null) return;
+        await module.InvokeVoidAsync("minimizeWindow", windowRef);
+    }
+
+    private async Task ToggleMaximize()
+    {
+        IsMaximized = !IsMaximized;
+        await IsMaximizedChanged.InvokeAsync(IsMaximized);
+        
+        if (module != null)
+        {
+            if (IsMaximized)
+                await module.InvokeVoidAsync("maximizeWindow", windowRef);
+            else
+                await module.InvokeVoidAsync("restoreWindow", windowRef);
+        }
+    }
+
+    private async Task Close()
+    {
+        await OnClose.InvokeAsync();
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        if (module is not null)
+        {
+            await module.DisposeAsync();
+        }
+    }
+}

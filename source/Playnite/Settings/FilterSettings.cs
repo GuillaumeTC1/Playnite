@@ -1,5 +1,7 @@
-﻿using Playnite.Common;
+﻿using Newtonsoft.Json;
+using Playnite.Common;
 using Playnite.Legacy.Common.Extensions;
+using Playnite.SDK.Collections;
 using Playnite.SDK.Extensions;
 using SdkModels = Playnite.SDK.Models;
 

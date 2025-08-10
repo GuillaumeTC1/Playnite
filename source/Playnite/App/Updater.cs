@@ -1,8 +1,10 @@
-﻿using Playnite.Common;
+﻿using Flurl;
+using Playnite.Common;
 using Playnite.Common.Web;
 using Playnite.Legacy.Common.Extensions;
 using Playnite.SDK;
 using Playnite.Settings;
+using System.Configuration;
 using System.Net;
 
 namespace Playnite.App

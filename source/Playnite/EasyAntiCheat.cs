@@ -1,4 +1,5 @@
-﻿using Playnite.Common;
+﻿using Newtonsoft.Json;
+using Playnite.Common;
 
 namespace Playnite
 {

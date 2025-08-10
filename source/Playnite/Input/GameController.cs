@@ -3,7 +3,6 @@ using Playnite.Native;
 using Playnite.SDK;
 using Playnite.SDK.Events;
 using Playnite.Settings;
-using Playnite.Windows;
 using System.Diagnostics;
 using System.Windows.Input;
 using static Playnite.SDL;

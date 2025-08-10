@@ -2,6 +2,7 @@
 using Playnite.Common.Extensions;
 using Playnite.Legacy.Common.Extensions;
 using Playnite.SDK;
+using YamlDotNet.Serialization;
 
 namespace Playnite.Manifests
 {

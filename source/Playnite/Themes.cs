@@ -1,7 +1,5 @@
 ﻿using Playnite.App;
-using Playnite.Common;
 using Playnite.Common.Extensions;
-using Playnite.Extensions.Markup;
 using Playnite.Legacy.Common.Extensions;
 using Playnite.Manifests;
 using Playnite.Plugins;

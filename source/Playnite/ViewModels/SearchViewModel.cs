@@ -1,14 +1,14 @@
 ﻿using Playnite.Common.Extensions;
-using Playnite.Converters;
 using Playnite.Database;
 using Playnite.Legacy.Common.Extensions;
+using Playnite.Localization;
 using Playnite.Plugins;
 using Playnite.SDK;
+using Playnite.SDK.Collections;
 using Playnite.SDK.Extensions;
 using Playnite.SDK.Models;
 using Playnite.SDK.Plugins;
 using Playnite.Settings;
-using Playnite.Windows;
 using System.Diagnostics;
 using System.Globalization;
 

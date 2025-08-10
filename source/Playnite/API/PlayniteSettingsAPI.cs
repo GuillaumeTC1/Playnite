@@ -67,7 +67,7 @@ namespace Playnite.API
         public bool DiscordPresenceEnabled => settings.DiscordPresenceEnabled;
         public AgeRatingOrg AgeRatingOrgPriority => settings.AgeRatingOrgPriority;
         public bool SidebarVisible => settings.ShowSidebar;
-        public Dock SidebarPosition => settings.SidebarPosition;
+        //public Dock SidebarPosition => settings.SidebarPosition;
         public IFullscreenSettingsAPI Fullscreen { get; }
         public ICompletionStatusSettignsApi CompletionStatus { get; }
         public bool ForcePlayTimeSync => false;

@@ -1,4 +1,6 @@
-﻿using Playnite.SDK;
+﻿using Newtonsoft.Json;
+using Playnite.SDK;
+using Playnite.SDK.Collections;
 using Playnite.SDK.Extensions;
 
 namespace Playnite.Metadata

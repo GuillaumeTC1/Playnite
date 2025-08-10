@@ -1,0 +1,170 @@
+@using Microsoft.AspNetCore.Components
+@using Microsoft.JSInterop
+@implements IAsyncDisposable
+
+<div class="fade-image" @ref="ImageContainer">
+    <img class="image @(CurrentImage == ImageState.Image1 ? "active" : "")"
+         src="@GetImageUrl(Image1Source)"
+         style="opacity: @(GetOpacity(ImageState.Image1))"
+         @onload="OnImage1Loaded" />
+    <img class="image @(CurrentImage == ImageState.Image2 ? "active" : "")"
+         src="@GetImageUrl(Image2Source)"
+         style="opacity: @(GetOpacity(ImageState.Image2))"
+         @onload="OnImage2Loaded" />
+    @if (ImageDarkeningBrush != null)
+    {
+        <div class="darkening-overlay" style="background: @ImageDarkeningBrush; opacity: @DarkeningOpacity;"></div>
+    }
+</div>
+
+@code {
+    private enum ImageState
+    {
+        Image1,
+        Image2,
+        None
+    }
+
+    private ImageState CurrentImage = ImageState.None;
+    private ElementReference ImageContainer;
+    private IJSObjectReference? module;
+    private object? Image1Source;
+    private object? Image2Source;
+    private double Image1Opacity = 0;
+    private double Image2Opacity = 0;
+    private double DarkeningOpacity = 1;
+    private System.Timers.Timer? sourceChangeTimer;
+
+    [Parameter]
+    public object? Source { get; set; }
+
+    [Parameter]
+    public double SourceUpdateDelay { get; set; } = 0;
+
+    [Parameter]
+    public bool AnimationEnabled { get; set; } = true;
+
+    [Parameter]
+    public string? ImageDarkeningBrush { get; set; }
+
+    [Parameter]
+    public string? ImageOpacityMask { get; set; }
+
+    [Inject]
+    private IJSRuntime JSRuntime { get; set; } = default!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        module = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./_content/Playnite.UI/js/fadeImage.js");
+        sourceChangeTimer = new System.Timers.Timer() { AutoReset = false };
+        sourceChangeTimer.Elapsed += OnSourceChangeTimerElapsed;
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (!EqualityComparer<object>.Default.Equals(Source, Image1Source) &&
+            !EqualityComparer<object>.Default.Equals(Source, Image2Source))
+        {
+            if (SourceUpdateDelay > 0)
+            {
+                sourceChangeTimer!.Interval = SourceUpdateDelay;
+                sourceChangeTimer.Start();
+            }
+            else
+            {
+                await UpdateSourceAsync();
+            }
+        }
+    }
+
+    private async void OnSourceChangeTimerElapsed(object? sender, System.Timers.ElapsedEventArgs e)
+    {
+        await InvokeAsync(UpdateSourceAsync);
+    }
+
+    private async Task UpdateSourceAsync()
+    {
+        if (CurrentImage == ImageState.None || CurrentImage == ImageState.Image2)
+        {
+            Image1Source = Source;
+            if (AnimationEnabled)
+            {
+                await FadeIn(ImageState.Image1);
+                await FadeOut(ImageState.Image2);
+            }
+            CurrentImage = ImageState.Image1;
+        }
+        else
+        {
+            Image2Source = Source;
+            if (AnimationEnabled)
+            {
+                await FadeIn(ImageState.Image2);
+                await FadeOut(ImageState.Image1);
+            }
+            CurrentImage = ImageState.Image2;
+        }
+    }
+
+    private string? GetImageUrl(object? source)
+    {
+        // Implementation needed to convert source object to URL string
+        // This will depend on your image source type
+        return source?.ToString();
+    }
+
+    private double GetOpacity(ImageState state)
+    {
+        return state switch
+        {
+            ImageState.Image1 => Image1Opacity,
+            ImageState.Image2 => Image2Opacity,
+            _ => 0
+        };
+    }
+
+    private async Task FadeIn(ImageState state)
+    {
+        if (module == null) return;
+
+        var opacity = state == ImageState.Image1 ? Image1Opacity : Image2Opacity;
+        await module.InvokeVoidAsync("fadeIn", 
+            DotNetObjectReference.Create(this),
+            state.ToString(),
+            opacity);
+    }
+
+    private async Task FadeOut(ImageState state)
+    {
+        if (module == null) return;
+
+        var opacity = state == ImageState.Image1 ? Image1Opacity : Image2Opacity;
+        await module.InvokeVoidAsync("fadeOut",
+            DotNetObjectReference.Create(this),
+            state.ToString(),
+            opacity);
+    }
+
+    [JSInvokable]
+    public void UpdateOpacity(string state, double value)
+    {
+        if (Enum.TryParse<ImageState>(state, out var imageState))
+        {
+            if (imageState == ImageState.Image1)
+                Image1Opacity = value;
+            else
+                Image2Opacity = value;
+            
+            StateHasChanged();
+        }
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        sourceChangeTimer?.Dispose();
+        if (module is not null)
+        {
+            await module.DisposeAsync();
+        }
+    }
+}

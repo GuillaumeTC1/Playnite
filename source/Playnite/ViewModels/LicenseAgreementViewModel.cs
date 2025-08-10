@@ -1,5 +1,5 @@
 ﻿using Playnite.SDK;
-using Playnite.Windows;
+using Playnite.SDK.Collections;
 
 namespace Playnite.ViewModels
 {

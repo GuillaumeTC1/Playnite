@@ -1,6 +1,5 @@
 ﻿using Playnite.Common;
 using Playnite.Database;
-using Playnite.Extensions.Markup;
 using Playnite.Legacy.Common.Extensions;
 using Playnite.SDK;
 using System.Drawing.Imaging;
