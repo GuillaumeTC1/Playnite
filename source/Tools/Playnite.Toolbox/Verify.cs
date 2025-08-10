@@ -1,6 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using Playnite.Common;
+using Playnite.Common.Extensions;
+using Playnite.Common.Web;
+using Playnite.Legacy.Common.Extensions;
+using Playnite.Manifests;
+using Playnite.SDK.Extensions;
+using Playnite.Settings;
 
 namespace Playnite.Toolbox
 {
@@ -171,7 +175,7 @@ namespace Playnite.Toolbox
                 return false;
             }
 
-            if (!HttpDownloader.GetResponseCode(url, new System.Threading.CancellationTokenSource(Timer.SecondsToMilliseconds(10)).Token, out var _).IsSuccess())
+            if (!HttpDownloader.GetResponseCode(url, new System.Threading.CancellationTokenSource(Common.Timer.SecondsToMilliseconds(10)).Token, out var _).IsSuccess())
             {
                 logger.Error($"{propertyName} doesn't point to reachable HTTP location.\n{url}");
                 passRes = false;

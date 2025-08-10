@@ -1,0 +1,10 @@
+﻿<div>
+    <h2>@Name</h2>
+    <p>This is a description for @Name.</p>
+    <button class="btn btn-primary">Play @Name</button>
+</div>
+
+@code {
+    [Parameter]
+    public string Name { get; set; } = null!;
+}

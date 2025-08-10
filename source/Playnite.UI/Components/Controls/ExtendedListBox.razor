@@ -30,7 +30,7 @@
     public EventCallback<IList<TItem>> SelectedItemsChanged { get; set; }
 
     [Parameter]
-    public SelectionMode SelectionMode { get; set; } = SelectionMode.Single;
+    public SelectionModes SelectionMode { get; set; } = SelectionModes.Single;
 
     [Parameter]
     public RenderFragment<TItem>? ItemTemplate { get; set; }
@@ -43,7 +43,7 @@
 
     private async Task OnItemClick(TItem item)
     {
-        if (SelectionMode == SelectionMode.Single)
+        if (SelectionMode == SelectionModes.Single)
         {
             await UpdateSingleSelection(item);
         }
@@ -108,7 +108,7 @@
         }
     }
 
-    public enum SelectionMode
+    public enum SelectionModes
     {
         Single,
         Multiple

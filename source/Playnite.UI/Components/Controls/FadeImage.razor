@@ -6,11 +6,11 @@
     <img class="image @(CurrentImage == ImageState.Image1 ? "active" : "")"
          src="@GetImageUrl(Image1Source)"
          style="opacity: @(GetOpacity(ImageState.Image1))"
-         @onload="OnImage1Loaded" />
+         @* @onload="OnImage1Loaded" *@ />
     <img class="image @(CurrentImage == ImageState.Image2 ? "active" : "")"
          src="@GetImageUrl(Image2Source)"
          style="opacity: @(GetOpacity(ImageState.Image2))"
-         @onload="OnImage2Loaded" />
+         @* @onload="OnImage2Loaded" *@ />
     @if (ImageDarkeningBrush != null)
     {
         <div class="darkening-overlay" style="background: @ImageDarkeningBrush; opacity: @DarkeningOpacity;"></div>

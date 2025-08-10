@@ -1,7 +1,10 @@
-﻿using Playnite.SDK.Extensions;
-using System;
+﻿using Playnite.Common;
+using Playnite.Legacy.Common.Extensions;
+using Playnite.Manifests;
+using Playnite.Plugins;
+using Playnite.SDK.Extensions;
+using Playnite.Settings;
 using System.Globalization;
-using System.IO;
 using System.IO.Compression;
 using System.Text;
 
@@ -106,7 +109,7 @@ namespace Playnite.Toolbox
 
         public static string GeneratePluginExtension(ExtensionType type, string name, string directory)
         {
-            var normalizedName = Common.Paths.GetSafePathName(name).Replace(" ", string.Empty);
+            var normalizedName = Paths.GetSafePathName(name).Replace(" ", string.Empty);
             var outDir = Path.Combine(directory, normalizedName);
             if (Directory.Exists(outDir))
             {
@@ -191,7 +194,7 @@ namespace Playnite.Toolbox
 
             extInfo.VerifyManifest();
 
-            var packedPath = Path.Combine(targetPath, $"{Common.Paths.GetSafePathName(extInfo.Id).Replace(' ', '_')}_{extInfo.Version.ToString().Replace(".", "_")}{PlaynitePaths.PackedExtensionFileExtention}");
+            var packedPath = Path.Combine(targetPath, $"{Paths.GetSafePathName(extInfo.Id).Replace(' ', '_')}_{extInfo.Version.ToString().Replace(".", "_")}{PlaynitePaths.PackedExtensionFileExtention}");
             FileSystem.PrepareSaveFile(packedPath);
             var ignoreFiles = File.ReadAllLines(Paths.ExtFileIgnoreListPath);
 

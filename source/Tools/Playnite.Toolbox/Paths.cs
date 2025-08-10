@@ -1,7 +1,6 @@
-﻿using Playnite.SDK;
-using System;
-using System.IO;
-using System.Linq;
+﻿using Playnite.Manifests;
+using Playnite.SDK;
+using Playnite.Settings;
 
 namespace Playnite.Toolbox
 {

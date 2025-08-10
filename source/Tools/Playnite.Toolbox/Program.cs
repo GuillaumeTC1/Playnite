@@ -1,10 +1,12 @@
 ﻿using CommandLine;
 using CommandLine.Text;
+using Playnite.Common;
+using Playnite.Legacy.Common.Extensions;
+using Playnite.Manifests;
+using Playnite.Plugins;
 using Playnite.SDK;
-using System;
-using System.Collections.Generic;
+using Playnite.Settings;
 using System.Diagnostics;
-using System.IO;
 using System.Runtime;
 
 namespace Playnite.Toolbox

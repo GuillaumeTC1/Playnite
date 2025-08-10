@@ -1,10 +1,11 @@
-﻿using Playnite.SDK;
+﻿using Playnite.Common;
+using Playnite.Common.Extensions;
+using Playnite.Manifests;
+using Playnite.Plugins;
+using Playnite.SDK;
 using Playnite.SDK.Extensions;
-using System;
-using System.Collections.Generic;
-using System.IO;
+using Playnite.Settings;
 using System.IO.Compression;
-using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 
@@ -195,7 +196,7 @@ namespace Playnite.Toolbox
             }
 
             var defaultThemeDir = Path.Combine(Paths.GetThemesPath(mode), "Default");
-            targetPath = Path.Combine(targetPath, $"{Common.Paths.GetSafePathName(extInfo.Id).Replace(' ', '_')}_{extInfo.Version.ToString().Replace(".", "_")}{PlaynitePaths.PackedThemeFileExtention}");
+            targetPath = Path.Combine(targetPath, $"{Paths.GetSafePathName(extInfo.Id).Replace(' ', '_')}_{extInfo.Version.ToString().Replace(".", "_")}{PlaynitePaths.PackedThemeFileExtention}");
             FileSystem.PrepareSaveFile(targetPath);
             using (var zipStream = new FileStream(targetPath, FileMode.Create))
             {
@@ -302,7 +303,7 @@ namespace Playnite.Toolbox
             {
                 foreach (var changedFile in themeChanges)
                 {
-                    var subpath = Common.Paths.FixSeparators(Regex.Replace(changedFile.Path, ".+Themes/(Desktop|Fullscreen)/Default/", ""));
+                    var subpath = Paths.FixSeparators(Regex.Replace(changedFile.Path, ".+Themes/(Desktop|Fullscreen)/Default/", ""));
                     var curThemePath = Path.Combine(themeDirectory, subpath);
                     var defaultPath = Path.Combine(defaultThemeDir, subpath);
                     if (changedFile.ChangeType == "D")
@@ -453,7 +454,7 @@ namespace Playnite.Toolbox
 
         public static string GenerateNewTheme(ApplicationMode mode, string themeName)
         {
-            var themeDirName = Common.Paths.GetSafePathName(themeName).Replace(" ", string.Empty);
+            var themeDirName = Paths.GetSafePathName(themeName).Replace(" ", string.Empty);
             var defaultThemeDir = Path.Combine(Paths.GetThemesPath(mode), "Default");
             var outDir = Path.Combine(PlaynitePaths.ThemesProgramPath, mode.GetDescription(), themeDirName);
             if (Directory.Exists(outDir))

@@ -2,6 +2,20 @@
 
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<div>
+    @foreach (var game in Games) {
+        <GameItem Name=@game />
+    }
+</div>
 
-Welcome to your new app.
+<div>
+    <label>Zoom</label>
+</div>
+
+@code {
+    IEnumerable<string> Games = [
+        "Game 1",
+        "Game 2",
+        "Game 3"
+    ];
+}
