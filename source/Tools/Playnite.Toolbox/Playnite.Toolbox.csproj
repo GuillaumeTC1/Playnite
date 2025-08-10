@@ -59,7 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\PlayniteSDK\Playnite.Legacy.SDK.csproj" />
-    <ProjectReference Include="..\..\Playnite\Playnite.csproj" />
+    <ProjectReference Include="..\..\Playnite\Playnite.Legacy.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Templates\Themes\Desktop\Fonts\" />

@@ -66,7 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PlayniteSDK\Playnite.Legacy.SDK.csproj" />
-    <ProjectReference Include="..\Playnite\Playnite.csproj" />
+    <ProjectReference Include="..\Playnite\Playnite.Legacy.csproj" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\contributors.txt" />
